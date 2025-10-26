@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,9 +16,17 @@ export default function Home() {
           <circle cx="180" cy="340" r="3" fill="#166534" opacity="0.8"/>
         </svg>
       </div>
-      <h1 className="text-4xl font-bold text-green-800 relative z-10 bg-white/80 px-8 py-4 rounded-lg shadow-lg">
-        Welcome to Wonderland
-      </h1>
+      <div className="flex flex-col items-center gap-6 relative z-10">
+        <h1 className="text-4xl font-bold text-green-800 bg-white/80 px-8 py-4 rounded-lg shadow-lg">
+          Welcome to Wonderland
+        </h1>
+        <Link
+          href="/notes"
+          className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors"
+        >
+          Notes
+        </Link>
+      </div>
     </div>
   );
 }
