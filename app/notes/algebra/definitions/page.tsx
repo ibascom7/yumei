@@ -10,7 +10,7 @@ export default function DefinitionsPage() {
                   \\\\ \\quad 1. \\text{ (Closure) } \\forall a, b \\in G, a * b \\in G 
                   \\\\ \\quad 2. \\text{ (Associativity) } \\forall a, b, c \\in G, (a * b) * c = a * (b * c) 
                   \\\\ \\quad 3. \\text{ (Identity) } \\exists e \\in G \\text{ such that } \\forall a \\in G, e * a = a * e = a 
-                  \\\\ \\quad 4. \\text{ (Inverse) } \\forall a \\in G, \\exists a^{-1} \\in G \\text{ such that } a * a^{-1} = a^{-1} * a = e",`
+                  \\\\ \\quad 4. \\text{ (Inverse) } \\forall a \\in G, \\exists a^{-1} \\in G \\text{ such that } a * a^{-1} = a^{-1} * a = e,`,
     },
     {
       number: 2,
@@ -31,10 +31,16 @@ export default function DefinitionsPage() {
       definition: `\\text{Given an equivalence relation } \\sim \\text{ on a set } A, 
                   \\\\ \\text{the equivalence class of an element } x \\in A \\text{ is the set:}
                   \\\\ [x] = \\{ y \\in A \\ | \\ x \\sim y \\}`,
-
-    }
+    },
+    {
+      number: 5,
+      term: "Homomorphism",
+      definition: `\\text{Let } G \\text{ and } K \\text{ be two groups.}
+                  \\\\ \\text{A map } \\phi: G \\to K \\text{ is called a homomorphism}
+                  \\\\ \\text{if } \\forall a, b \\in G, \\phi(ab) = \\phi(a)\\phi(b)
+      `,
+    },
   ];
-
   return (
     <div>
       <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50 rounded-lg border border-gray-200">
