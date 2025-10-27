@@ -53,7 +53,7 @@ export default function TheoremCard({ number, title, statement, proof }: Theorem
       {proof && isProofOpen && (
         <div className="mt-4 pt-4 border-t border-gray-200">
           <div className="font-semibold mb-2 text-gray-700">Proof:</div>
-          <div className="text-black" style={{ marginLeft: "3.5em" }}>
+          <div className="text-black" style={{ marginLeft: "3.5em", overflowX: "auto", overflowWrap: "break-word" }}>
             <BlockMath math={proof} />
           </div>
         </div>

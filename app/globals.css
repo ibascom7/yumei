@@ -29,6 +29,8 @@ body {
 .katex-display {
   text-align: left !important;
   margin: 0 !important;
+  overflow-x: auto !important;
+  overflow-wrap: break-word !important;
 }
 
 .katex-display > .katex {
