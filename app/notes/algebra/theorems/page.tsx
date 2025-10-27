@@ -227,7 +227,7 @@ export default function TheoremsPage() {
     },
     {
       number: 12,
-      title: "Quotient Group Structure",
+      title: "Quotient Group",
       statement: `\\text{Let } H \\trianglelefteq G. \\text{ Then } G/H \\text{ with coset multiplication is a group}`,
       proof: `\\text{First, we check * is associative.}
               \\\\ \\text{Let } x, y, z \\in G.
@@ -248,6 +248,15 @@ export default function TheoremsPage() {
               \\\\ \\text{Thus, } (G/H, *) \\text{ is a group.}
       `
     },
+    {
+      number: 13,
+      title: "First Isomorphism Theorem",
+      statement: `\\text{Let } G \\text{ and } K \\text{ be groups,}
+                  \\\\ \\text{and let } \\phi: G \\to K \\text{ be a homomorphism.}
+                  \\\\ \\text{Then } \\ker(\\phi) \\trianglelefteq G, \\text{ and } G/\\ker(\\phi) \\cong Im(\\phi) \\text{ canonically.}
+      `,
+      proof: `meow`
+    }
   ];
 
   return (
