@@ -18,8 +18,6 @@ export default function AlgebraLayout({
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Abstract Algebra</h1>
-
       {/* Tab Navigation */}
       <div className="flex gap-2 mb-6 border-b border-gray-300">
         {tabs.map((tab) => {

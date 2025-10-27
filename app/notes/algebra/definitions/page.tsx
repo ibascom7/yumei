@@ -22,17 +22,14 @@ export default function DefinitionsPage() {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">Definitions</h2>
-      <div>
-        {definitions.map((def) => (
-          <DefinitionCard
-            key={def.number}
-            number={def.number}
-            term={def.term}
-            definition={def.definition}
-          />
-        ))}
-      </div>
+      {definitions.map((def) => (
+        <DefinitionCard
+          key={def.number}
+          number={def.number}
+          term={def.term}
+          definition={def.definition}
+        />
+      ))}
     </div>
   );
 }

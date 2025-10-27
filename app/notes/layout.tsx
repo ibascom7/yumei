@@ -17,10 +17,10 @@ export default function NotesLayout({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black flex">
-      {/* Sidebar */}
-      <aside className="w-64 border-r border-gray-300 p-6">
-        <div className="flex items-center gap-3 mb-6">
+    <div className="min-h-screen bg-white text-black flex flex-col">
+      {/* Top Navigation Bar */}
+      <nav className="border-b border-gray-300 px-4 py-3">
+        <div className="flex items-center gap-6">
           <Link
             href="/"
             className="hover:opacity-70 transition-opacity"
@@ -28,37 +28,37 @@ export default function NotesLayout({
             <Image
               src="/icon.png"
               alt="Home"
-              width={32}
-              height={32}
+              width={28}
+              height={28}
               className="rounded"
             />
           </Link>
-          <h2 className="text-2xl font-bold">Notes</h2>
-        </div>
-        <nav className="space-y-2">
-          {classes.map((cls) => {
-            const isActive = pathname.startsWith(cls.href);
-            const underlineColor = cls.color === "red" ? "#dc2626" : "#2563eb";
-            const hoverBg = cls.color === "red" ? "hover:bg-red-100" : "hover:bg-blue-100";
+          <h2 className="text-xl font-bold">Notes</h2>
+          <div className="flex gap-4 ml-auto">
+            {classes.map((cls) => {
+              const isActive = pathname.startsWith(cls.href);
+              const underlineColor = cls.color === "red" ? "#dc2626" : "#2563eb";
+              const hoverBg = cls.color === "red" ? "hover:bg-red-100" : "hover:bg-blue-100";
 
-            return (
-              <Link
-                key={cls.href}
-                href={cls.href}
-                className={`block px-4 py-2 rounded-md transition-colors text-black ${hoverBg}`}
-                style={isActive ? {
-                  textDecoration: "underline",
-                  textDecorationColor: underlineColor,
-                  textDecorationThickness: "2px",
-                  textUnderlineOffset: "4px"
-                } : undefined}
-              >
-                {cls.name}
-              </Link>
-            );
-          })}
-        </nav>
-      </aside>
+              return (
+                <Link
+                  key={cls.href}
+                  href={cls.href}
+                  className={`px-4 py-2 rounded-md transition-colors text-black ${hoverBg}`}
+                  style={isActive ? {
+                    textDecoration: "underline",
+                    textDecorationColor: underlineColor,
+                    textDecorationThickness: "2px",
+                    textUnderlineOffset: "4px"
+                  } : undefined}
+                >
+                  {cls.name}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
 
       {/* Main content */}
       <main className="flex-1 p-8">{children}</main>

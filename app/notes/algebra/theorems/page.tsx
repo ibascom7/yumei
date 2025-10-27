@@ -19,18 +19,15 @@ export default function TheoremsPage() {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">Theorems</h2>
-      <div>
-        {theorems.map((theorem) => (
-          <TheoremCard
-            key={theorem.number}
-            number={theorem.number}
-            title={theorem.title}
-            statement={theorem.statement}
-            proof={theorem.proof}
-          />
-        ))}
-      </div>
+      {theorems.map((theorem) => (
+        <TheoremCard
+          key={theorem.number}
+          number={theorem.number}
+          title={theorem.title}
+          statement={theorem.statement}
+          proof={theorem.proof}
+        />
+      ))}
     </div>
   );
 }

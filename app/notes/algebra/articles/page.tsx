@@ -5,11 +5,6 @@ import { BlockMath, InlineMath } from "react-katex";
 export default function ArticlesPage() {
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">Articles</h2>
-      <p className="text-gray-600 mb-6">
-        Write explanatory articles here to connect theorems and definitions together.
-      </p>
-
       {/* Example article structure */}
       <article className="border border-gray-300 rounded-lg p-6 mb-6 bg-white shadow-sm">
         <h3 className="text-xl font-bold mb-4">Understanding Groups</h3>
