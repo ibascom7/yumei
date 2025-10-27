@@ -290,7 +290,30 @@ export default function TheoremsPage() {
     {
       number: 14,
       title: "The Group of Automorphisms",
-      statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}"
+      statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}", 
+      proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G \\text{ (called the identity function}).
+              \\\\ \\Lambda \\text{ is } \\textbf{obviously} \\text{ a bijective homomorphism that maps } G \\to G.\
+              \\\\ \\text{So } \\Lambda \\in \\text{Aut}(G).
+              \\\\ \\text{(For funsies) Let } \\phi \\in \\text{Aut}(G) \\text{ and } x \\in G.
+              \\\\ \\text{Then } (\\phi \\circ \\Lambda)(x) = \\phi(x) \\text{ and } (\\Lambda \\circ \\phi)(x) = \\phi(x).
+              \\\\ \\text{So } \\Lambda \\text{ is the identity element of Aut}(G). 
+              \\\\ (\\Lambda \\text{ is called the identity function})
+              \\\\ \\text{Let } \\phi, \\psi \\in \\text{Aut}(G).
+              \\\\ \\text{Then } \\phi \\text{ and } \\psi \\text{ are bijective}
+              \\\\ \\text{and for every } x, y \\in G 
+              \\\\ (\\phi \\circ \\psi)(xy) = \\phi(\\psi(xy)) = \\phi(\\psi(x)\\psi(y)) = \\phi(\\psi(x)) \\phi(\\psi(y)).
+              \\\\ 
+              \\\\ \\text{Which shows } \\phi \\circ \\psi \\text{ is a homomorphism.}
+              \\\\ \\text{Since compositions of bijective mappings}
+              \\\\ \\text{are bijective, } \\phi \\circ \\psi \\in \\text{Aut}(G).
+              \\\\ \\text{Let } \\phi \\in \\text{Aut}(G).
+              \\\\ \\text{Since } \\phi \\text{ is bijective, there exists a function}
+              \\\\ \\psi: G \\to G \\text{ such that } \\phi \\circ \\psi = x = \\psi(\\phi(x)) \\ \\ \\forall x \\in G.
+              \\\\ \\text{We show } \\psi \\text{ is also a homomorphism.}
+              \\\\ \\text{}
+              
+
+      `
     }
   ];
 
