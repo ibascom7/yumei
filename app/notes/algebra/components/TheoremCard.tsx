@@ -7,10 +7,11 @@ interface TheoremCardProps {
   number: number;
   title: string;
   statement: string;
+  description?: string;
   proof?: string;
 }
 
-export default function TheoremCard({ number, title, statement, proof }: TheoremCardProps) {
+export default function TheoremCard({ number, title, statement, description, proof }: TheoremCardProps) {
   const [isProofOpen, setIsProofOpen] = useState(false);
 
   // Calculate approximate width of "Theorem X. " for indentation
@@ -29,6 +30,9 @@ export default function TheoremCard({ number, title, statement, proof }: Theorem
           </div>
           <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
             <BlockMath math={statement} />
+          </div>
+          <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
+            <p>{description}</p>
           </div>
         </div>
         {proof && (

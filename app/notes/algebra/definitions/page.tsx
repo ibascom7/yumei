@@ -19,13 +19,29 @@ export default function DefinitionsPage() {
     },
     {
       number: 3,
-      term: "Cyclic Group",
-      definition: "\\text{A group } G \\text{ is cyclic if there exists } a \\in G \\text{ such that } G = \\langle a \\rangle = \\{a^n : n \\in \\mathbb{Z}\\}",
+      term: "Equivalence Relation",
+      definition: `\\text{A relation } \\sim \\text{ on a set } A \\text{ is an equivalence relation if it is:}
+                  \\\\ \\quad \\text{1) Reflexive: if } \\forall x \\in A, \\ x \\sim x
+                  \\\\ \\quad \\text{2) Symmetric: if } \\forall x, y \\in A, \\ x \\sim y \\ \\Rightarrow \\ y \\sim x
+                  \\\\ \\quad \\text{3) Transitive: if } \\forall x, y, z \\in A, \\ x \\sim y \\ \\text{ and } \\ y \\sim z \\ \\Rightarrow \\ x \\sim z`,
     },
+    {
+      number: 4,
+      term: "Equivalence Class",
+      definition: `\\text{Given an equivalence relation } \\sim \\text{ on a set } A, 
+                  \\\\ \\text{the equivalence class of an element } x \\in A \\text{ is the set:}
+                  \\\\ [x] = \\{ y \\in A \\ | \\ x \\sim y \\}`,
+
+    }
   ];
 
   return (
     <div>
+      <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <p className="text-gray-700 text-sm sm:text-base">
+          Catalog of Definitions. Used Fraleigh's "A First Course in Abstract Algebra" as reference.
+        </p>
+      </div>
       {definitions.map((def) => (
         <DefinitionCard
           key={def.number}

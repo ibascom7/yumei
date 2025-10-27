@@ -30,20 +30,50 @@ export default function TheoremsPage() {
     {
       number: 3,
       title: "Subgroup Test",
-      statement: `\\text{Let } G \\text{ be a group and let } b,c,d \\in G. \\text{ If necessarily } 
-                  \\\\ \\text{If } H \\text{ is a subgroup of } G \\text{ then } e \\in H \\text{ necessarily} 
-                  \\\\ \\text{and values if we have } a=b \\text{ in } H \\text{ \\& } b^{-1} \\in H`,
+      statement: `\\text{Let } G \\text{ be a group and let } H \\subseteq G.
+                  \\\\ \\text{Then } H \\text{ is a subgroup of } G \\text{ iff } H \\text{ is non-empty} \\text{ and}
+                  \\\\  \\forall a, b \\in H \\text{ we have } a^{-1}b \\in H`,
+      proof: `\\text{Assume H} \\leq G. \\text{ Let } a, b \\in H.
+              \\\\ \\text{By definition of subgroup, } \\forall a \\in H \\ \\exists a^{-1} \\in H,
+              \\\\ \\forall a, b \\in H \\ ab \\in H, \\text{ and } e \\in H. \\text{ (For shits and giggles)}
+              \\\\ \\text{Since } e \\in H, \\text{ it is non-empty.}
+              \\\\ \\text{By inverse property, } a^{-1} \\in H.
+              \\\\ \\text{By closure property, } a^{-1}b \\in H.
+              \\\\ \\text{Conversely, assume H is non-empty and}
+              \\\\ \\forall a, b \\in H \\text{ we have } a^{-1}b \\in H.
+              \\\\ \\text{Since } H \\text{ is non-empty, } \\exists x \\in H.
+              \\\\ \\text{Take } a = b = x \\text{ then, } a^{-1}b = x^{-1}x = e \\in H.
+              \\\\ \\text{Now assume } y \\in H, \\text{ take } a = y \\text{ and } b = e.
+              \\\\ \\text{Then } a^{-1}b = y^{-1}e = y^{-1} \\in H.
+              \\\\ \\text{Finally, given } x, y \\in H \\text{ take } a = x^{-1}, b = y.
+              \\\\ \\text{Then } a^{-1}b = (x^{-1})^{-1}y = xy \\in H.
+              \\\\ \\text{Hence, } H \\leq G.
+              `
     },
     {
       number: 4,
-      title: "Subgroup Test",
-      statement: `\\text{Let } G \\text{ be a group and let } H \\subseteq G \\text{ and } e \\in H. 
-                  \\\\ \\text{For every } x \\in H, \\text{ define } x^{-1} \\cdot (x)^{-1} = e \\in H. 
-                  \\\\ \\text{Then } H \\text{ is a subgroup if and only if it is non-empty \\& closed under}`,
+      title: "Subgroup Equivalence Relation",
+      statement: `\\text{Let } G \\text{ be a group and let } H \\leq G.
+                  \\\\ \\text{The relation } \\forall x, y \\in G 
+                  \\\\ x^{-1}y \\sim (x)^{-1} \\iff x^{-1}y \\in H,
+                  \\\\ \\text{is an equivalence relation.}`,
+      proof: `\\text{Let } x \\in G.
+              \\\\ \\text{Then } x^{-1}x = e \\in H.
+              \\\\ \\text{So, } x \\sim x, \\text{ hence } \\sim \\text{ is reflexive.}
+              \\\\ \\text{Now, let } x, y \\in G \\text{ such that } x \\sim y.
+              \\\\ \\text{Since } H \\text{ is a subgroup, } (x^{-1}y)^{-1} \\in H, 
+              \\\\ \\text{so } y^{-1}x \\in H, \\text{ hence } \\sim \\text{ is symmetric.}
+              \\\\ \\text{Let } x, y, z \\in G \\text{ such that } x \\sim y \\text{ and } y \\sim z.
+              \\\\ \\text{Then } x^{-1}y \\in H \\text{ and } y^{-1}z \\in H.
+              \\\\ \\text{Since } H \\text{ is a subgroup, } (x^{-1}y)(y^{-1}z) = x^{-1}z \\in H,
+              \\\\ \\text{hence } x \\sim z, \\text{ so } \\sim \\text{ is transitive.}
+              \\\\ \\text{Therefore, } \\sim \\text{ is an equivalence relation.}
+                            `,
+      description: ""
     },
     {
       number: 5,
-      title: "Coset Intersection",
+      title: "Equivalence Class of x are Left Cosets",
       statement: `\\text{Let } H \\subseteq G \\text{ and } x \\in G, x \\notin H. 
                   \\\\ \\text{Unless we have } H \\cap xH \\in H \\cap xH \\neq \\emptyset`,
     },
@@ -94,12 +124,20 @@ export default function TheoremsPage() {
 
   return (
     <div>
+      <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <p className="text-gray-700 text-sm sm:text-base">
+          This is a catalog of theorems I have learned in my Abstract Algebra course,
+          alongside proofs for each. <br />
+          Apologies in advance as all statements are presented as theorems for my sake.
+        </p>
+      </div>
       {theorems.map((theorem) => (
         <TheoremCard
           key={theorem.number}
           number={theorem.number}
           title={theorem.title}
           statement={theorem.statement}
+          description={theorem.description}
           proof={theorem.proof}
         />
       ))}
