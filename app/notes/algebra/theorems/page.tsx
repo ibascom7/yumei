@@ -73,15 +73,28 @@ export default function TheoremsPage() {
     },
     {
       number: 5,
-      title: "Equivalence Class of x are Left Cosets",
-      statement: `\\text{Let } H \\subseteq G \\text{ and } x \\in G, x \\notin H. 
-                  \\\\ \\text{Unless we have } H \\cap xH \\in H \\cap xH \\neq \\emptyset`,
+      title: "Left Cosets of x are Equivalence Classes of x",
+      statement: `\\text{Let } H \\leq G \\text{ and } x^{-1}y \\sim (x)^{-1} \\iff x^{-1}y \\in H. 
+                  \\\\ \\text{Then } \\forall x \\in G, \\text{ we have } [x] = \\{xh \\ | \\ h \\in H\\}.
+                  `,
+      proof: `\\text{Let } y \\in [x].
+              \\\\ \\text{Then } y \\sim x, \\text{and by symmetry}, x \\sim y.
+              \\\\ \\text{So, } x^{-1}y \\in H.
+              \\\\ \\text{Let } h_0 = x^{-1}y. \\text{ Then } xh_0 = y.
+              \\\\ \\text{So } y \\in \\{xh \\ | \\ h \\in H\\}.
+              \\\\ \\text{Conversely, let } y \\in \\{xh \\ | \\ h \\in H\\}.
+              \\\\ \\text{So } \\exists h_0 \\in H \\text{ such that } y = xh_0.
+              \\\\ \\text{Then } x^{-1}y = h_0 \\in H, \\text{ hence } x^{-1}y \\in H.
+              \\\\ \\text{So } y \\sim x, \\text{ and therefore } y \\in [x].
+              \\\\ \\text{Hence } [x] = \\{xh \\ | \\ h \\in H\\}.
+
+              `
     },
     {
       number: 6,
       title: "Intersection of Subgroups",
       statement: `\\text{Let } G \\text{ be a group and let } H \\text{ and } K \\text{ be two subgroups.} 
-                  \\\\ H \\cap K \\text{ is also a subgroup of } G`,
+                  \\\\ \\text{Then } H \\cap K \\text{ is also a subgroup of } G`,
     },
     {
       number: 7,
