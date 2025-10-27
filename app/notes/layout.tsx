@@ -37,20 +37,21 @@ export default function NotesLayout({
         </div>
         <nav className="space-y-2">
           {classes.map((cls) => {
-            const isActive = pathname === cls.href;
-            const colorClasses = cls.color === "red"
-              ? isActive
-                ? "bg-red-600 text-white"
-                : "hover:bg-red-100 text-black"
-              : isActive
-                ? "bg-blue-600 text-white"
-                : "hover:bg-blue-100 text-black";
+            const isActive = pathname.startsWith(cls.href);
+            const underlineColor = cls.color === "red" ? "#dc2626" : "#2563eb";
+            const hoverBg = cls.color === "red" ? "hover:bg-red-100" : "hover:bg-blue-100";
 
             return (
               <Link
                 key={cls.href}
                 href={cls.href}
-                className={`block px-4 py-2 rounded-md transition-colors ${colorClasses}`}
+                className={`block px-4 py-2 rounded-md transition-colors text-black ${hoverBg}`}
+                style={isActive ? {
+                  textDecoration: "underline",
+                  textDecorationColor: underlineColor,
+                  textDecorationThickness: "2px",
+                  textUnderlineOffset: "4px"
+                } : undefined}
               >
                 {cls.name}
               </Link>

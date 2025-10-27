@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Force KaTeX display math to be left-aligned */
+.katex-display {
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.katex-display > .katex {
+  text-align: left !important;
+}
