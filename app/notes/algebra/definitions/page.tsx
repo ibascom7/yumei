@@ -40,6 +40,21 @@ export default function DefinitionsPage() {
                   \\\\ \\text{if } \\forall a, b \\in G, \\phi(ab) = \\phi(a)\\phi(b)
       `,
     },
+    {
+      number: 6,
+      term: "Kernel of a Homomorphism",
+      definition: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism between groups } G \\text{ and } K.
+                  \\\\ \\text{The kernel of } \\phi \\text{ is the set:}
+                  \\\\ \\ker(\\phi) = \\{ x \\in G \\ | \\ \\phi(x) = e_K \\}`,
+    },
+    {
+      number: 7,
+      term: "Normal Subgroup",
+      definition: `\\text{A subgroup } H \\text{ of a group } G \\text{ is called normal (denoted } H \\trianglelefteq G \\text{) if:}
+                  \\\\ \\forall g \\in G, \\forall h \\in H, ghg^{-1} \\in H.
+                  \\\\ H \\triangleleft G \\text{ if } H \\subset G.
+                  `,
+    }
   ];
   return (
     <div>

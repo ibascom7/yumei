@@ -33,7 +33,9 @@ export default function NotesLayout({
               className="rounded sm:w-7 sm:h-7"
             />
           </Link>
-          <h2 className="text-lg sm:text-xl font-bold">Notes</h2>
+          <Link href="/notes" className="text-lg sm:text-xl font-bold hover:opacity-70 transition-opacity">
+            Notes
+          </Link>
           <div className="flex gap-1 sm:gap-4 ml-auto text-sm sm:text-base">
             {classes.map((cls) => {
               const isActive = pathname.startsWith(cls.href);
