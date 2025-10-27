@@ -8,8 +8,8 @@ export default function NotesPage() {
     {
       name: "Abstract Algebra",
       href: "/notes/algebra",
-      theorems: 12,
-      definitions: 3,
+      theorems: 13,
+      definitions: 7,
       articles: 1,
       color: "#ef4444", // red-500
     },

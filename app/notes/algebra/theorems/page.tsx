@@ -86,7 +86,7 @@ export default function TheoremsPage() {
               \\\\ \\text{So } \\exists h_0 \\in H \\text{ such that } y = xh_0.
               \\\\ \\text{Then } x^{-1}y = h_0 \\in H, \\text{ hence } x^{-1}y \\in H.
               \\\\ \\text{So } y \\sim x, \\text{ and therefore } y \\in [x].
-              \\\\ \\text{Hence } [x] = \\{xh \\ | \\ h \\in H\\}.
+              \\\\ \\text{Hence } [x] = \\{xh \\ | \\ h \\in H\\}. \\ \\ \\blacksquare
               `
     },
     {
@@ -126,7 +126,7 @@ export default function TheoremsPage() {
     {
       number: 8,
       title: "Image of a Subgroup is a Subgroup",
-      statement: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism.} and \\text{ let } H \\leq G.
+      statement: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism. and let } H \\leq G.
                   \\\\ \\text{Then } \\phi(H) \\leq K.
       `,
       proof: `\\text{Since } H \\text{ is non-empty, } \\phi(H) \\text{ is non-empty}.
@@ -134,7 +134,7 @@ export default function TheoremsPage() {
               \\\\ \\text{So } \\exists a, b \\in H \\text{ such that } x = \\phi(a) \\text{ and } y = \\phi(b).
               \\\\ \\text{Then } x^{-1}y = \\phi(a^{-1}) \\phi(b) = \\phi(a^{-1}b).
               \\\\ \\text{Since } H \\leq G, \\ a^{-1}b \\in H. \\text{ So, } \\phi(a^{-1}b) \\in \\phi(H).
-              \\\\ \\text{So } x^{-1}y \\in \\phi(H), \\text{ and therefore }, \\phi(H) \\leq K.
+              \\\\ \\text{So } x^{-1}y \\in \\phi(H), \\text{ and therefore }, \\phi(H) \\leq K. \\ \\ \\blacksquare
       `
     },
     {
@@ -165,7 +165,7 @@ export default function TheoremsPage() {
               \\\\ \\text{Which shows, } a^{-1}b \\in \\ker(\\phi).
               \\\\ \\text{By our assumption, } a^{-1}b = e.
               \\\\ \\text{Hence, } a = b.
-              \\\\ \\text{Therefore, } \\phi \\text{ is injective.}
+              \\\\ \\text{Therefore, } \\phi \\text{ is injective.} \\ \\ \\blacksquare
       `
     },
     {
@@ -180,7 +180,8 @@ export default function TheoremsPage() {
                   `,
       proof: `(1) \\implies (2)
               \\\\ \\text{Assume } H \\trianglelefteq G. 
-              \\\\ \\text{We show } xH * yH = xyH \\ \\forall x, y \\in G \\text{ is a well-defined operation.}
+              \\\\ \\text{We show } xH * yH = xyH \\ \\ \\forall x, y \\in G 
+              \\\\ \\text{ is a well-defined operation.}
               \\\\ \\text{For this, let } x, y, a, b \\in G \\text{ such that } x \\sim a \\text{ and } y \\sim b.
               \\\\ \\text{We need to show that } xy \\sim ab.
               \\\\ \\text{Since } x \\sim a, \\text{ we have } x^{-1}a \\in H. 
@@ -221,7 +222,7 @@ export default function TheoremsPage() {
               \\\\ \\text{So } \\exists h' \\in H  \\text{ such that } gh = h'g.
               \\\\ \\text{Then } ghg^{-1} = h' \\in H.
               \\\\ \\text{Thus, } \\forall g \\in G \\ \\forall h \\in H \\ ghg^{-1} \\in H.
-              \\\\ \\text{Hence } H \\trianglelefteq G. \\ \\blacksquare
+              \\\\ \\text{Hence } H \\trianglelefteq G. \\ \\ \\blacksquare
             
       `
     },
@@ -255,7 +256,41 @@ export default function TheoremsPage() {
                   \\\\ \\text{and let } \\phi: G \\to K \\text{ be a homomorphism.}
                   \\\\ \\text{Then } \\ker(\\phi) \\trianglelefteq G, \\text{ and } G/\\ker(\\phi) \\cong Im(\\phi) \\text{ canonically.}
       `,
-      proof: `meow`
+      proof: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism, and let } N = \\ker(\\phi).
+              \\\\ \\text{To show } N \\text{ is normal, let } g \\in G \\text{ and } x \\in N.
+              \\\\ \\text{Then } \\phi(gxg^{-1}) = \\phi(g) \\phi(x) \\phi(g^{-1}) = \\phi(g) \\phi(g)^{-1} = e.
+              \\\\ \\text{Which shows } gxg^{-1} \\in N.
+              \\\\ \\text{By Theorem 9, } N \\leq G .
+              \\\\ \\text{Thus, } N \\trianglelefteq G.
+              \\\\ \\text{Next we show } G/N \\cong \\phi(G).
+              \\\\ \\text{Define } \\psi: G/N \\to \\phi(G) \\text{ by } \\psi(gN) = \\phi(g) \\ \\ \\forall g \\in G.
+              \\\\ \\text{First, we need to check that } \\psi \\text{ is well-defined,}
+              \\\\ \\text{i.e. whenever gN= hN for } g, h \\in G \\text{ we have } \\phi(g) = \\phi(h).
+              \\\\ \\text{So, assume } g, h \\in G \\text{ and } gN = hN.
+              \\\\ \\text{This means } g \\sim h \\text{ and } g^{-1}h \\in N.
+              \\\\ \\text{So, } \\phi(g^{-1}h) = e \\text{ and therefore } \\phi(g^{-1}) \\phi(h) = e.
+              \\\\ \\text{Which implies } \\phi(h) = \\phi(g),
+              \\\\ \\text{hence } \\psi \\text{ is well-defined.} 
+              \\\\ \\text{We next show that } \\psi \\text{ is an isomorphism.}
+              \\\\ \\text{To show } \\psi \\text{ is a homomorphism, } \\text{ let } xN, yN \\in G/N.
+              \\\\ \\text{We have } \\psi(xN * yN) = \\psi(xyN) = \\phi(xy)
+              \\\\ = \\phi(x) \\phi(y) = \\psi(xN) \\psi(yN).
+              \\\\ \\text{So } \\psi \\text{ is a homomorphism.}
+              \\\\ \\text{To see } \\psi \\text{ is injective, let } \\psi(xN) = \\psi(yN) \\text{ for some } x, y \\in G.
+              \\\\ \\text{Which implies } e = \\phi(x)^{-1} \\phi(y) = \\phi(x^{-1}y).
+              \\\\ \\text{So } x^{-1}y \\text{ in } N, \\text{ hence } xN = yN,
+              \\\\ \\text{ and so } \\psi \\text{ is injective.}
+              \\\\ \\text{Finally to show } \\psi \\text{ is surjective,}
+              \\\\ \\text{let } z \\in \\phi(g).
+              \\\\ \\text{Then } \\exists g \\in G \\text{ such that } z = \\phi(g).
+              \\\\ \\text{Then } \\psi(gN) = \\phi(g) = z,
+              \\\\ \\text{and so } \\psi \\text{ is surjective.} \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 14,
+      title: "The Group of Automorphisms",
+      statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}"
     }
   ];
 
@@ -265,7 +300,8 @@ export default function TheoremsPage() {
         <p className="text-gray-700 text-sm sm:text-base">
           This is a catalog of results I have learned in my Abstract Algebra course,
           alongside proofs for each. <br />
-          Apologies in advance as all statements are presented as theorems for my sake.
+          Apologies in advance as all statements are presented as theorems for my sake. <br />
+          My favorites got a tombstone for how well they've been put to rest.
         </p>
       </div>
       {theorems.map((theorem) => (
