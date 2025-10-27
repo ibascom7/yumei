@@ -323,8 +323,17 @@ export default function TheoremsPage() {
               \\\\ \\text{and } (\\phi \\circ (\\psi \\circ \\tau))(a) = \\phi(a) \\circ \\psi(\\tau(a)) = \\phi(\\psi(\\tau(a))).
               \\\\ \\text{So } ((\\phi \\circ \\psi) \\circ \\tau)(a) = (\\phi \\circ (\\psi \\circ \\tau))(a).
               \\\\ \\text{Which shows } \\circ \\text{ is associative.}
-              
 
+      `
+    },
+    {
+      number:15,
+      title:"Inner Automorphism",
+      statement: `\\text{Let } g \\in G. 
+                  \\\\ \\text{Define } \\phi_g: G \\to G \\text{ such that } \\phi_g(x) = gxg^{-1} \\ \\ \\forall x \\in G.
+                  \\\\ \\phi_g \\text{ is an automorphism}.
+      `,
+      proof: `\\text{Because I said so}.
       `
     }
   ];
