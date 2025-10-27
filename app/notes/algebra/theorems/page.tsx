@@ -333,8 +333,29 @@ export default function TheoremsPage() {
                   \\\\ \\text{Define } \\phi_g: G \\to G \\text{ such that } \\phi_g(x) = gxg^{-1} \\ \\ \\forall x \\in G.
                   \\\\ \\phi_g \\text{ is an automorphism}.
       `,
-      proof: `\\text{Because I said so}.
+      proof: `\\text{First, to show } \\phi_g \\text{ is a homomorphism,}
+              \\\\ \\text{let } x, y \\in G.
+              \\\\ \\text{Then } \\phi_g(x) \\phi_g(y) = (gxg^{-1})(gyg^{-1})
+              \\\\ by associativity, (gxg^{-1})(gyg^{-1}) = gxyg^{-1} = \\phi_g(xy).
+              \\\\ \\text{So } \\phi_g \\text{ is a homomorphism.}
+              \\\\ \\text{Next, to show } \\phi_g \\text{ is injective,}
+              \\\\ \\text{let } x, y \\in G \\text{ such that } \\phi_g(x) = \\phi_g(y).
+              \\\\ \\text{Then } gxg^{-1} = gyg^{-1} \\implies gxg^{-1}g = gyg^{-1}g
+              \\\\ \\implies gx = gy \\implies g^{-1}gx = g^{-1}gy \\implies x = y.
+              \\\\ \\text{So } \\phi_g \\text{ is injective.}
+              \\\\ \\text{Finally, to show } \\phi_g \\text{ is surjective, let } z \\in G.
+              \\\\ \\text{Let } g, x \\in G \\text{ such that } x = g^{-1}zg. 
+              \\\\ \\text{Then } \\phi_g(x) = g(g^{-1}zg)g^{-1} = z.
+              \\\\ \\text{So } \\phi_g \\text{ is surjective.}
+              \\\\ \\text{Hence, } \\phi_g \\text{ is an automorphism.}
       `
+    },
+    {
+      number: 16,
+      title: "Subscript of Inner Automorphisms is Homomorphic",
+      statement: `\\text{The map } \\Phi: G \\to \\text{Aut}(G) \\text{ defined by }
+                  \\\\ \\Phi(g) = \\phi_g \\ \\ \\forall g \\in G,
+      `,
     }
   ];
 
