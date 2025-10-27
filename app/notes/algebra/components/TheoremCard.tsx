@@ -17,23 +17,24 @@ export default function TheoremCard({ number, title, statement, proof }: Theorem
   const labelWidth = number < 10 ? "6em" : "6.5em";
 
   return (
-    <div
-      className={`border border-gray-300 rounded-lg p-4 mb-4 bg-white shadow-sm ${proof ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}
-      onClick={() => proof && setIsProofOpen(!isProofOpen)}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <div className="mb-3">
+    <div className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm">
+      <div className="flex items-start justify-between gap-2 sm:gap-4">
+        <div className="flex-1 min-w-0">
+          <div
+            className={`mb-2 sm:mb-3 text-sm sm:text-base ${proof ? 'cursor-pointer hover:opacity-75 transition-opacity' : ''}`}
+            onClick={() => proof && setIsProofOpen(!isProofOpen)}
+          >
             <span className="font-bold text-red-600">Theorem {number}. </span>
             <span className="font-semibold text-black">{title}</span>
           </div>
-          <div className="text-black" style={{ marginLeft: labelWidth }}>
+          <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
             <BlockMath math={statement} />
           </div>
         </div>
         {proof && (
-          <div
-            className="flex-shrink-0 text-gray-600 transition-transform"
+          <button
+            onClick={() => setIsProofOpen(!isProofOpen)}
+            className="flex-shrink-0 text-gray-600 hover:text-black transition-all cursor-pointer"
             style={{ transform: isProofOpen ? "rotate(180deg)" : "rotate(0deg)" }}
           >
             <svg
@@ -42,18 +43,18 @@ export default function TheoremCard({ number, title, statement, proof }: Theorem
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
-          </div>
+          </button>
         )}
       </div>
 
       {proof && isProofOpen && (
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <div className="font-semibold mb-2 text-gray-700">Proof:</div>
-          <div className="text-black" style={{ marginLeft: "3.5em", overflowX: "auto", overflowWrap: "break-word" }}>
+        <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
+          <div className="font-semibold mb-2 text-gray-700 text-sm sm:text-base">Proof:</div>
+          <div className="text-black text-sm sm:text-base ml-0 sm:ml-[3.5em]" style={{ overflowX: "auto", overflowWrap: "break-word", lineHeight: "2" }}>
             <BlockMath math={proof} />
           </div>
         </div>

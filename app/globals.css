@@ -36,3 +36,14 @@ body {
 .katex-display > .katex {
   text-align: left !important;
 }
+
+/* Make KaTeX more readable on mobile */
+@media (max-width: 640px) {
+  .katex {
+    font-size: 0.95em !important;
+  }
+
+  .katex-display {
+    padding: 0.5em 0 !important;
+  }
+}

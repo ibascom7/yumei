@@ -19,7 +19,13 @@ export default function TheoremsPage() {
     {
       number: 2,
       title: "Uniqueness of Inverse",
-      statement: "\\text{For any group, the inverse of any element } x^{-1} \\text{ is unique}",
+      statement: "\\text{For any group, the inverse of any element } a \\text{ is unique}",
+      proof: `\\text{Let } a, b, c \\in G.
+              \\\\ \\text{Assume } b \\text{ and } c \\text{ are inverses of } a.
+              \\\\ \\text{So } ab = e \\text{ and } ac = e \\text{ are true}.
+              \\\\ \\text{Then, } b = eb = (ca)b = c(ab) = ce = c.
+              \\\\ \\text{Therefore, the inverse of } a \\text{ is unique.}
+              ` 
     },
     {
       number: 3,
