@@ -317,8 +317,12 @@ export default function TheoremsPage() {
               \\\\ \\text{Since } \\phi \\text{ is injective, it follows that } \\psi(xy) = \\psi(x)\\psi(y).
               \\\\ \\text{Hence, } \\psi \\text{ is a homomorphism,} 
               \\\\ \\text{and so } \\psi \\in \\text{Aut}(G) \\text{ is the inverse of } \\phi.
-              \\\\ \\text{To show } \\circ \\text{ is associative, let } \\phi, \\psi, \\tau \\in \\text{Aut}(G).
-              \\\\ ((\\phi))
+              \\\\ \\text{To show } \\circ \\text{ is associative, }
+              \\\\ \\text{let } \\phi, \\psi, \\tau \\in \\text{Aut}(G) \\text{ and } a \\in G.
+              \\\\ \\text{We have } ((\\phi \\circ \\psi) \\circ \\tau)(a) = \\phi(\\psi(a)) \\circ \\tau(a) = \\phi(\\psi(\\tau(a)))
+              \\\\ \\text{and } (\\phi \\circ (\\psi \\circ \\tau))(a) = \\phi(a) \\circ \\psi(\\tau(a)) = \\phi(\\psi(\\tau(a))).
+              \\\\ \\text{So } ((\\phi \\circ \\psi) \\circ \\tau)(a) = (\\phi \\circ (\\psi \\circ \\tau))(a).
+              \\\\ \\text{Which shows } \\circ \\text{ is associative.}
               
 
       `
