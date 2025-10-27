@@ -292,7 +292,7 @@ export default function TheoremsPage() {
       title: "The Group of Automorphisms",
       statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}", 
       proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G \\text{ (called the identity function}).
-              \\\\ \\Lambda \\text{ is } \\textbf{obviously} \\text{ a bijective homomorphism that maps } G \\to G.\
+              \\\\ \\Lambda \\text{ is } \\textbf{obviously} \\text{ a bijective homomorphism mapping } G \\to G.\
               \\\\ \\text{So } \\Lambda \\in \\text{Aut}(G).
               \\\\ \\text{(For funsies) Let } \\phi \\in \\text{Aut}(G) \\text{ and } x \\in G.
               \\\\ \\text{Then } (\\phi \\circ \\Lambda)(x) = \\phi(x) \\text{ and } (\\Lambda \\circ \\phi)(x) = \\phi(x).
@@ -310,7 +310,15 @@ export default function TheoremsPage() {
               \\\\ \\text{Since } \\phi \\text{ is bijective, there exists a function}
               \\\\ \\psi: G \\to G \\text{ such that } \\phi \\circ \\psi = x = \\psi(\\phi(x)) \\ \\ \\forall x \\in G.
               \\\\ \\text{We show } \\psi \\text{ is also a homomorphism.}
-              \\\\ \\text{}
+              \\\\ \\text{For this, let } x, y \\in G.
+              \\\\ \\text{Then } xy = \\phi(\\psi(xy))
+              \\\\ \\text{and } xy = \\phi(\\psi(x)) \\phi(\\psi(y)) = \\phi(\\psi(x)\\psi(y)).
+              \\\\ \\text{So } \\phi(\\psi(xy)) = \\phi(\\psi(x)\\psi(y)).
+              \\\\ \\text{Since } \\phi \\text{ is injective, it follows that } \\psi(xy) = \\psi(x)\\psi(y).
+              \\\\ \\text{Hence, } \\psi \\text{ is a homomorphism,} 
+              \\\\ \\text{and so } \\psi \\in \\text{Aut}(G) \\text{ is the inverse of } \\phi.
+              \\\\ \\text{To show } \\circ \\text{ is associative, let } \\phi, \\psi, \\tau \\in \\text{Aut}(G).
+              \\\\ ((\\phi))
               
 
       `
