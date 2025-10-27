@@ -160,7 +160,7 @@ export default function TheoremsPage() {
               \\\\ \\text{So, } \\ker(\\phi) = \\{e\\}.
               \\\\ \\text{Conversely, assume } \\ker(\\phi) = \\{e\\}.
               \\\\ \\text{Let } a, b \\in G \\text{ such that } \\phi(a) = \\phi(b).
-              \\\\ \\text{Then } \\phi(a^{-1}) \\phi(a) = phi(a^{-1}) \\phi(b).
+              \\\\ \\text{Then } \\phi(a^{-1}) \\phi(a) = \\phi(a^{-1}) \\phi(b).
               \\\\ \\text{So, } e = \\phi(a^{-1}b).
               \\\\ \\text{Which shows, } a^{-1}b \\in \\ker(\\phi).
               \\\\ \\text{By our assumption, } a^{-1}b = e.
