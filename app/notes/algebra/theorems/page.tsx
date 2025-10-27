@@ -87,14 +87,22 @@ export default function TheoremsPage() {
               \\\\ \\text{Then } x^{-1}y = h_0 \\in H, \\text{ hence } x^{-1}y \\in H.
               \\\\ \\text{So } y \\sim x, \\text{ and therefore } y \\in [x].
               \\\\ \\text{Hence } [x] = \\{xh \\ | \\ h \\in H\\}.
-
               `
     },
     {
       number: 6,
       title: "Intersection of Subgroups",
       statement: `\\text{Let } G \\text{ be a group and let } H \\text{ and } K \\text{ be two subgroups.} 
-                  \\\\ \\text{Then } H \\cap K \\text{ is also a subgroup of } G`,
+                  \\\\ \\text{Then } H \\cap K \\text{ is also a subgroup of } G
+                  `,
+      proof: `\\text{Since } e \\in H \\text{ and } e \\in K, \\text{ we have } e \\in H \\cap K,
+              \\\\ \\text{so the intersection is non-empty.}
+              \\\\ \\text{Let } a, b \\in H \\cap K.
+              \\\\ \\text{Then } a, b \\in H \\text{ and } a, b \\in K.
+              \\\\ \\text{Since } H \\leq G \\text{ and } K \\leq G, \\ a^{-1}b \\in H \\text{ and } a^{-1}b \\in K.
+              \\\\ \\text{Therefore, } a^{-1}b \\in H \\cap K.
+              \\\\ \\text{Hence, } H \\cap K \\leq G.
+              `
     },
     {
       number: 7,
