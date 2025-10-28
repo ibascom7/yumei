@@ -291,7 +291,7 @@ export default function TheoremsPage() {
       number: 14,
       title: "The Group of Automorphisms",
       statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}", 
-      proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G \\text{ (called the identity function}).
+      proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G \\text{ (called the identity function }id).
               \\\\ \\Lambda \\text{ is } \\textbf{obviously} \\text{ a bijective homomorphism mapping } G \\to G.\
               \\\\ \\text{So } \\Lambda \\in \\text{Aut}(G).
               \\\\ \\text{(For funsies) Let } \\phi \\in \\text{Aut}(G) \\text{ and } x \\in G.
@@ -336,7 +336,7 @@ export default function TheoremsPage() {
       proof: `\\text{First, to show } \\phi_g \\text{ is a homomorphism,}
               \\\\ \\text{let } x, y \\in G.
               \\\\ \\text{Then } \\phi_g(x) \\phi_g(y) = (gxg^{-1})(gyg^{-1})
-              \\\\ by associativity, (gxg^{-1})(gyg^{-1}) = gxyg^{-1} = \\phi_g(xy).
+              \\\\ \\text{by associativity, } (gxg^{-1})(gyg^{-1}) = gxyg^{-1} = \\phi_g(xy).
               \\\\ \\text{So } \\phi_g \\text{ is a homomorphism.}
               \\\\ \\text{Next, to show } \\phi_g \\text{ is injective,}
               \\\\ \\text{let } x, y \\in G \\text{ such that } \\phi_g(x) = \\phi_g(y).
@@ -354,8 +354,55 @@ export default function TheoremsPage() {
       number: 16,
       title: "Subscript of Inner Automorphisms is Homomorphic",
       statement: `\\text{The map } \\Phi: G \\to \\text{Aut}(G) \\text{ defined by }
-                  \\\\ \\Phi(g) = \\phi_g \\ \\ \\forall g \\in G,
+                  \\\\ \\Phi(g) = \\phi_g \\ \\ \\forall g \\in G, \\text{ is a homomorphism.}
       `,
+      proof: `\\text{Let } g, h \\in G. 
+              \\\\ \\text{Then for every } x \\in G,
+              \\\\ \\text{we have } \\phi_{gh}(x) = ghx(gh)^{-1} = ghxh^{-1}g^{-1}.
+              \\\\ \\text{On the other hand,}
+              \\\\ (\\phi_g \\circ \\phi_h)(x) = \\phi_g(\\phi_h(x)) = \\phi_g(hxh^{-1}) = ghxh^{-1}g^{-1}.
+              \\\\ \\text{Hence, } \\phi_{gh}(x) = (\\phi_g \\circ \\phi_h)(x).
+              \\\\ \\text{Which shows, } \\Phi(gh) = \\Phi(g) \\circ \\Phi(h).
+                         `
+    },
+    {
+      number: 17,
+      title: "The Inner Automorphisms Are A Normal Subgroup of Automorphisms",
+      statement: "\\text{Inn}(G) \\trianglelefteq \\text{Aut}(G)",
+      proof: `\\text{First, to show Inn}(G) \\leq \\text{Aut}(G),
+              \\\\ \\text{let } \\phi_g \\in \\text{Inn}(G).
+              \\\\ \\text{We know } \\phi_g \\text{ is an automporphism by Theorem 15.}
+              \\\\ \\text{To show } id \\in \\text{Inn}(G), \\text{ let } \\phi_e \\in \\text{Inn}(G)
+              \\\\ \\text{Then } \\phi_e = exe^{-1} = x = id.
+              \\\\ \\text{So } id \\in \\text{Inn}(G).
+              \\\\ \\text{Next, to show } \\circ \\text{ is well-defined in Inn}(G).
+              \\\\ \\text{Let } g, h \\in G. \\text{ Then } \\forall x \\in G \\text{ we have,}
+              \\\\ \\phi_{gh}(x) = ghx(gh)^{-1} = ghxh^{-1}g^{-1}.
+              \\\\ \\text{On the other hand},
+              \\\\ (\\phi_g \\circ \\phi_h)(x) = \\phi_g(hxh^{-1}) = ghxh^{-1}g^{-1}.
+              \\\\ \\text{So, } \\phi_{gh}(x) = (\\phi_g \\circ \\phi_h)(x).
+              \\\\ \\text{Which shows } \\circ \\text{ is well-defined in Inn}(G).
+              \\\\ \\text{Finally, to show } \\phi_g \\text{ has an inverse in Inn}(G),
+              \\\\ \\text{let } g, g^{-1} \\in G. \\text{ Then } \\ \\forall x \\in G, \\text{we have}
+              \\\\ (\\phi_g \\circ \\phi_{g^{-1}})(x) = \\phi_g(g^{-1}xg) = gg^{-1}xgg^{-1} = x = id.
+              \\\\ \\text{This shows } \\phi_g \\text{ has an inverse in Inn}(G).
+              \\\\ \\text{Thus, Inn}(G) \\leq \\text{Aut}(G).
+                            `
+    },
+    {
+      number: 18,
+      title: "Sets of the Same Cardinality have Isomorphic Permutation Groups",
+      statement: `\\text{Let X and Y be sets.}
+                  \\\\ \\text{If } |X| = |Y|, \\text{ then } S_X \\cong S_Y.
+      `,
+    },
+    {
+      number: 19,
+      title: "Left Multiplication is a Bijective Permutation that is the Image of any Group",
+      statement: `\\text{Let } G \\text{ be a group.}
+                  \\\\ \\text{For each } a \\in G \\text{ define } f_a: G \\to G \\text{ by } f_a(x) = ax.
+                  \\\\ \\text{Then } f_a \\text{ is bijective } \\ \\forall a \\in G. 
+      `
     }
   ];
 
