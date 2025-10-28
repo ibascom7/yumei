@@ -387,6 +387,15 @@ export default function TheoremsPage() {
               \\\\ (\\phi_g \\circ \\phi_{g^{-1}})(x) = \\phi_g(g^{-1}xg) = gg^{-1}xgg^{-1} = x = id.
               \\\\ \\text{This shows } \\phi_g \\text{ has an inverse in Inn}(G).
               \\\\ \\text{Thus, Inn}(G) \\leq \\text{Aut}(G).
+              \\\\ \\text{To show Inn}(G) \\trianglelefteq \\text{Aut}(G), 
+              \\\\ \\text{let } g \\in G, \\psi \\in \\text{Aut}(G), \\text{ and } \\phi_g \\in \\text{Inn}(G).
+              \\\\ \\text{Then for every } x \\in G,
+              \\\\ (\\psi \\circ \\phi_g \\circ \\psi^{-1})(x) = \\psi(g \\ \\psi(x)^{-1} \\ g^{-1}).
+              \\\\ \\text{Because } \\psi \\in \\text{Aut}(G),
+              \\\\ \\psi(g \\ \\psi(x)^{-1} \\ g^{-1}) = \\psi(g) \\ x \\ \\psi(g)^{-1}
+              \\\\ = \\phi_{\\psi(g)}(x) \\in \\text{Inn}(G).
+              \\\\ \\text{So, } (\\psi \\circ \\phi_g \\circ \\psi^{-1})(x) \\in \\text{Inn}(G).
+              \\\\ \\text{Hence, Inn}(G) \\trianglelefteq \\text{Aut}(G).
                             `
     },
     {
