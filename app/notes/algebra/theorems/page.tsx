@@ -472,8 +472,27 @@ export default function TheoremsPage() {
               \\\\ \\text{So } ab \\in \\text{Im}(j)
               \\\\ \\text{Thus, our operation is well-defined in Im}(j).
               \\\\ \\text{To show } e \\in \\text{Im}(j), 
-
+              \\\\ ej(e) = j(e) = j(ee) = j(e)j(e)
+              \\\\ \\text{by cancellation law, } j(e) = e.
+              \\\\ \\text{So } e \\in \\text{Im}(j).
+              \\\\ \\text{To show the inverse element is in Im}(j),
+              \\\\ \\text{let } x \\in \\text{Im}(j) \\text{ such that } j(a) = x \\text{ for every } a \\in G.
+              \\\\ \\text{Then } e = j(e) = j(aa^{-1}) = j(a)j(a^{-1}) = xj(a^{-1}).
+              \\\\ \\text{So } e = xj(a^{-1}), \\text{ which implies } x^{-1} = j(a^{-1}) \\in \\text{Im}(j).
+              \\\\ \\text{Thus, Im}(j) \\leq S_G.
+              \\\\ \\text{Finally, we have } G \\cong \\text{Im}(j),
+              \\\\ \\text{since we know } j \\text{ is an injective homomorphism}
+              \\\\ \\text{and by definition } j \\text{ is onto Im}(j). \\ \\ \\blacksquare
       `
+    },
+    {
+      number: 21,
+      title: "Cycles are equivalence relations",
+      statement: `\\text{Let } \\sigma \\in S_n \\text{ be fixed.}
+                  \\\\ \\text{Then the relation on } \\{1, 2, 3, ..., n\\},
+                  \\\\ \\forall \\ 1 \\leq i, j \\leq n, \\ i \\sim j \\iff \\sigma^{k}(i) = j \\text{ for some } k \\in \\Z,
+                  \\\\ \\text{is an equivalence relation.}
+      `,
     }
   ];
 
