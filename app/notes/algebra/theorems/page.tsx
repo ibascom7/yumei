@@ -1,4 +1,5 @@
 import TheoremCard from "../components/TheoremCard";
+import Image from "next/image";
 
 export default function TheoremsPage() {
   const theorems = [
@@ -291,18 +292,17 @@ export default function TheoremsPage() {
       number: 14,
       title: "The Group of Automorphisms",
       statement: "\\text{The set Aut}(G) \\text{ with composition is a group.}", 
-      proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G \\text{ (called the identity function }id).
+      proof: `\\text{Define } \\Lambda \\text{ as } \\Lambda(x) = x \\ \\ \\forall x \\in G.
               \\\\ \\Lambda \\text{ is } \\textbf{obviously} \\text{ a bijective homomorphism mapping } G \\to G.\
               \\\\ \\text{So } \\Lambda \\in \\text{Aut}(G).
               \\\\ \\text{(For funsies) Let } \\phi \\in \\text{Aut}(G) \\text{ and } x \\in G.
               \\\\ \\text{Then } (\\phi \\circ \\Lambda)(x) = \\phi(x) \\text{ and } (\\Lambda \\circ \\phi)(x) = \\phi(x).
               \\\\ \\text{So } \\Lambda \\text{ is the identity element of Aut}(G). 
-              \\\\ (\\Lambda \\text{ is called the identity function})
+              \\\\ (\\Lambda \\text{ is called the identity function } id)
               \\\\ \\text{Let } \\phi, \\psi \\in \\text{Aut}(G).
               \\\\ \\text{Then } \\phi \\text{ and } \\psi \\text{ are bijective}
               \\\\ \\text{and for every } x, y \\in G 
               \\\\ (\\phi \\circ \\psi)(xy) = \\phi(\\psi(xy)) = \\phi(\\psi(x)\\psi(y)) = \\phi(\\psi(x)) \\phi(\\psi(y)).
-              \\\\ 
               \\\\ \\text{Which shows } \\phi \\circ \\psi \\text{ is a homomorphism.}
               \\\\ \\text{Since compositions of bijective mappings}
               \\\\ \\text{are bijective, } \\phi \\circ \\psi \\in \\text{Aut}(G).
@@ -435,6 +435,44 @@ export default function TheoremsPage() {
       statement: `\\text{Let } G \\text{ be a group.}
                   \\\\ \\text{For each } a \\in G \\text{ define } f_a: G \\to G \\text{ by } f_a(x) = ax.
                   \\\\ \\text{Then } f_a \\text{ is bijective } \\ \\forall a \\in G. 
+                  \\\\ \\text{Define } j: G \\to S_G \\text{ by } j(a) = f_a.
+                  \\\\ \\text{Then } j \\text{ is an injective homomorphism.}
+      `,
+      proof: `\\text{Fix } a \\in G.
+              \\\\ \\text{To show } f_a(x) \\text{ is injective,}
+              \\\\ \\text{Let } x, y \\in G \\text{ such that } f_a(x) = f_b(x)
+              \\\\ \\text{Then } ax = ay, \\text{ which implies } x = y.
+              \\\\ \\text{Hence } f_a \\text{ is injective.}
+              \\\\ \\text{To see if } f_a \\text{ is surjective, let } y \\in G. 
+              \\\\ \\text{Choose } x = a^{-1}y.
+              \\\\ \\text{Then } f_a(x) = ax = aa^{-1}y = y.
+              \\\\ \\text{Thus, } f_a \\text{ is surjective.} 
+              \\\\ \\text{This shows that } f_a \\text{ is bijective.} 
+              \\\\ \\text{To see that } j \\text{ is injective,}
+              \\\\ \\text{let } a, b \\in G \\text{ such that } j(a) = j(b), \\text{ that is, } f_a = f_b.
+              \\\\ \\text{In particular, } a = ae = f_a(e) = f_b(e) = be = b.
+              \\\\ \\text{Thus, } a = b. \\text{ This shows } j \\text{ is injective.}
+              \\\\ \\text{To show } j \\text{ is a homomorphism, let } a, b \\in G.
+              \\\\ \\text{Then } \\forall x \\in G, \\ j(ab)(x) = f_{ab}(x) = abx
+              \\\\ \\text{and } (j(a) \\circ j(b))(x) = j(a)(j(b)(x)) = j(a)(bx) = abx.
+              \\\\ \\text{Thus, } j(ab) = j(a) \\circ j(b). \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 20,
+      title: "Every Group is Isomorphic to a Subgroup of a Symmetric Group",
+      statement: "\\text{Let G be a group and } K \\leq S_G. \\text{ Then } G \\cong K.",
+      proof: `\\text{Define } f_a: G \\to G \\text{ by } f_a(x) = ax \\ \\ \\forall x \\in G.
+              \\\\ \\text{Define } j: G \\to S_G \\text{ by } j(a) = f_a \\ \\ \\forall a \\in G.
+              \\\\ \\text{By Theorem 19, } f_a \\text{ is bijective } \\forall a \\in G 
+              \\\\ \\text{and } j \\text{ is an injective homomorphism.} 
+              \\\\ \\text{To show } \\text{Im}(j) \\leq S_G, \\text{ let } x, y \\in \\text{Im}(j).
+              \\\\ \\text{Then } \\exists a, b \\in G \\text{ such that } j(a) = x \\text{ and } j(b) = y.
+              \\\\ \\text{Since } j \\text{ is a homomorphism, } j(ab) = j(a)j(b) = xy.
+              \\\\ \\text{So } ab \\in \\text{Im}(j)
+              \\\\ \\text{Thus, our operation is well-defined in Im}(j).
+              \\\\ \\text{To show } e \\in \\text{Im}(j), 
+
       `
     }
   ];
@@ -459,6 +497,15 @@ export default function TheoremsPage() {
           proof={theorem.proof}
         />
       ))}
+      <div className="mt-8 flex justify-center">
+        <Image
+          src="/algebra/fun.avif"
+          alt="Fun times in algebra"
+          width={800}
+          height={600}
+          className="rounded-lg"
+        />
+      </div>
     </div>
   );
 }
