@@ -395,7 +395,7 @@ export default function TheoremsPage() {
               \\\\ \\psi(g \\ \\psi(x)^{-1} \\ g^{-1}) = \\psi(g) \\ x \\ \\psi(g)^{-1}
               \\\\ = \\phi_{\\psi(g)}(x) \\in \\text{Inn}(G).
               \\\\ \\text{So, } (\\psi \\circ \\phi_g \\circ \\psi^{-1})(x) \\in \\text{Inn}(G).
-              \\\\ \\text{Hence, Inn}(G) \\trianglelefteq \\text{Aut}(G).
+              \\\\ \\text{Hence, Inn}(G) \\trianglelefteq \\text{Aut}(G). \\ \\ \\blacksquare
                             `
     },
     {
@@ -404,6 +404,30 @@ export default function TheoremsPage() {
       statement: `\\text{Let X and Y be sets.}
                   \\\\ \\text{If } |X| = |Y|, \\text{ then } S_X \\cong S_Y.
       `,
+      proof: `\\text{Since } |X| = |Y|,
+              \\\\ \\exists \\text{ a bijective function } \\rho: X \\to Y.
+              \\\\ \\text{Define } \\Phi: S_X \\to S_Y \\text{ by } \\Phi(f) = \\rho \\circ f \\circ \\rho^{-1}.
+              \\\\ \\text{Notice that } \\rho^{-1}: Y \\to X, f: X \\to X, \\text{ and } \\rho: X \\to Y,
+              \\\\ \\text{so their composition } \\Phi(f) \\text{ maps } Y \\to Y.
+              \\\\ \\text{Since } \\rho^{-1}, \\rho, \\text{ and } f \\text{ are all bijective,}
+              \\\\ \\Phi(f) \\text{ is also bijective}.
+              \\\\ \\text{Hence, } \\Phi(f) \\in S_Y. 
+              \\\\ \\text{To check } \\Phi \\text{ is a homomorphism,}
+              \\\\ \\text{let } f_1, f_2 \\in S_X.
+              \\\\ \\text{Then } \\Phi(f_1) \\circ \\Phi(f_2) = (\\rho \\circ f_1  \\circ \\rho^{-1}) \\circ (\\rho \\circ f_2 \\circ \\rho^{-1})
+              \\\\ = \\rho \\circ f_1 \\circ f_2 \\circ \\rho^{-1} = \\Phi(f_1 \\circ f_2).
+              \\\\ \\text{This shows } \\Phi \\text{ is a homomorphism.} 
+              \\\\ \\text{To show } \\Phi \\text{ is injective,}
+              \\\\ \\text{let } f_1, f_2 \\in S_X \\text{ such that } \\Phi(f_1) = \\Phi(f_2).
+              \\\\ \\text{Then } \\rho \\circ f_1 \\circ \\rho^{-1} = \\rho \\circ f_2 \\circ \\rho^{-1}
+              \\\\ \\implies \\rho^{-1} \\circ (\\rho \\circ f_1 \\circ \\rho^{-1}) \\circ \\rho = \\rho^{-1} \\circ (\\rho \\circ f_2 \\circ \\rho^{-1}) \\circ \\rho.
+              \\\\ \\text{Thus, } f_1 = f_2. \\text{ Hence } \\Phi \\text{ is injective}.
+              \\\\ \\text{To show } \\Phi \\text{ is surjective, let } g \\in S_Y 
+              \\\\ \\text{ and } f = \\rho^{-1} \\circ g \\circ \\rho.
+              \\\\ \\text{Then } f \\in S_X \\text{ and } \\Phi(f) = \\rho \\circ f \\circ \\rho^{-1}
+              \\\\ = \\rho \\circ (\\rho^{-1} \\circ g \\circ \\rho) \\circ \\rho^{-1} = g.
+              \\\\ \\text{Hence } \\Phi \\text{ is surjective.} \\ \\ \\blacksquare 
+      `
     },
     {
       number: 19,
