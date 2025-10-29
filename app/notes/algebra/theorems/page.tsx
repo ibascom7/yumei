@@ -506,7 +506,7 @@ export default function TheoremsPage() {
     },
     {
       number: 22,
-      title: "Cycles are equivalence relations",
+      title: "Cycles are Equivalence Relations",
       statement: `\\text{Let } \\sigma \\in S_n \\text{ be fixed.}
                   \\\\ \\text{Then the relation on } \\{1, 2, 3, ..., n\\},
                   \\\\ \\forall \\ 1 \\leq i, j \\leq n, \\ i \\sim j \\iff \\sigma^{k}(i) = j \\text{ for some } k \\in \\Z,
@@ -514,7 +514,7 @@ export default function TheoremsPage() {
       `,
       proof: [
         {
-          title: "Proof for k ∈ ℕ",
+          title: "Proof from notes for k ∈ ℕ",
           content: `\\text{By Theorem 21,}
                   \\\\ \\text{since } S_n \\text{ is finite, } \\exists m \\in \\N \\text{ such that } \\sigma^m = id.
                   \\\\ \\text{Let } 1 \\leq i \\leq n.
@@ -556,10 +556,58 @@ export default function TheoremsPage() {
                   \\\\ \\text{Then } \\sigma^{k_1+k_2}(i) = \\sigma^{k_2}(\\sigma^{k_1}(i)) = \\sigma^{k_2}(j) = \\ell.
                   \\\\ \\text{Since } k_1, k_2 \\in \\Z, \\text{ we have } k_1 + k_2 \\in \\Z.
                   \\\\ \\text{Therefore, } i \\sim \\ell, \\text{ which shows } \\sim \\text{ is transitive.}
-                  \\\\ \\text{Hence, } \\sim \\text{ is an equivalence relation.} \\ \\ \\blacksquare
+                  \\\\ \\text{Hence, } \\sim \\text{ is an equivalence relation.}
                   `
         }
       ]
+    },
+    {
+      number: 23,
+      title: `Equivalence classes of a permutation times a transposition differs by 1`,
+      statement: `\\text{Let } n \\in \\N \\text{ such that } 2 \\leq n, \\text{ and } \\sigma \\in S_n.
+                  \\\\ \\text{Let } 1 \\leq i \\not= j \\leq n, \\text{ and } \\tau = (i \\ j).
+                  \\\\ \\text{Then the number of equivalence classes of}
+                  \\\\ \\text{the relations defined by } \\sigma \\text{ and } \\tau \\sigma \\text{ differs by 1}.
+      `,
+      proof: `\\text{Suppose i and j are in different equivalence classes of } \\sigma.
+              \\\\ \\text{Then we can write } \\sigma \\text{ is the product of disjoint cycles,}
+              \\\\ \\text{and write the first two cycles as}
+              \\\\ (b \\ j \\ x \\ x \\ x) (a \\ i \\ x \\ x)
+              \\\\ \\text{where x is other possible elements in the cycles.}
+              \\\\ \\text{Since } \\tau \\sigma = (i \\ j) \\sigma,
+              \\\\ \\text{we have } (i \\ j)(b \\ j \\ x \\ x \\ x)(a \\ i \\ x \\ x)
+              \\\\ = (a \\ j \\ x \\ x \\ x \\ b \\ i \\ x \\ x).
+              \\\\ \\text{Suppose i and j are in the same equivalence class of } \\sigma.
+              \\\\ \\text{Then we can write } \\sigma \\text{ as the product of disjoint cycles,}
+              \\\\ \\text{and write the first cycle as}
+              \\\\ (a \\ i \\ x \\ x \\ x \\ b \\ j \\ x \\ x)
+              \\\\ \\text{where x is other possible elements in the cycles.}
+              \\\\ \\text{Since } \\tau \\sigma = (i \\ j) \\sigma,
+              \\\\ \\text{we have } (i \\ j)(a \\ i \\ x \\ x \\ x \\ b \\ j \\ x \\ x)
+              \\\\ = (a \\ j \\ x \\ x)(b \\ i \\ x \\ x \\ x).
+              \\\\ \\text{Thus, in both cases we see that the number of cycles}
+              \\\\ \\text{of } \\tau \\sigma \\text{ differs from the number of cycles}
+              \\\\ \\text{of } \\sigma \\text{ by } 1.
+      `
+    },
+    {
+      number: 24,
+      title: "Any Permutation is the Product of Transpositions",
+      statement: `\\text{Let } n \\geq 2. \\text{ Any permutation } \\sigma \\in S_n
+                  \\\\ \\text{is a product of transpositions.}
+      `,
+      proof: `\\text{Let } \\sigma \\in S_n \\text{ be a product of disjoint cycles.}
+              \\\\ \\text{Then we can write the first cycle as}
+              \\\\ (i_1 \\ i_2 \\ ... \\\ i_m) = (i_1 \\ i_m)(i_1 \\ i_{m-1}) \\ ... \\ (i_1 \\ i_2).
+              \\\\ \\text{By computing the product of each transposition},
+              \\\\ \\text{we get } (i_1 \\ i_2 \\ ... \\ i_m)
+      `
+    },
+    {
+      number: 25,
+      title: "A Permutation is either Odd or Even",
+      statement: `\\text{Suppose }
+      `
     }
   ];
 
