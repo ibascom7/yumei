@@ -487,15 +487,21 @@ export default function TheoremsPage() {
     },
     {
       number:21,
-      title: "In Finite Groups, Infinite Sequences Repeat (PP1 Q10)",
+      title: "In Finite Groups, Elements Have Finite Order (PP1 Q10)",
       statement: `\\text{Let } (G,*) \\text{ be a finite group. Prove that for every } a \\in G 
                   \\\\ \\exists \\text{ a natural number } n \\geq 1 \\text{ such that } a^n = e.
                   `,
-      proof: `\\text{Since } G \\text{ is finite,}
+      proof: `\\text{Since } G \\text{ is finite}
+              \\\\ \\text{and we are considering infinite powers of } a,
               \\\\ \\text{by pigeonhole principle we know that }
-              \\\\ \\exists i, j \\in \\N \\text{ with } i \\gt j \\text{ such that } a^i = a^j \\ \\ \\forall a \\in G.
+              \\\\ \\exists i, j \\in \\N \\text{ with } i \\gt j 
+              \\\\ \\text{ such that } a^i = a^j \\ \\ \\forall a \\in G.
               \\\\ \\text{Which implies } a^ia^{-j} = a^{i-j} = e. 
-              \\\\ \\text{Since } i \\in N \\text{ and } j \\in N, 
+              \\\\ \\text{Let } n = i-j.
+              \\\\ \\text{Since } i > j \\text{ and both are in } \\N 
+              \\\\ \\text{we have } n \\geq 1. 
+              \\\\ \\text{Therefore, } n \\text{ is a natural number such that } 
+              \\\\ a^n = e. \\ \\ \\blacksquare
       ` 
     },
     {
@@ -505,8 +511,8 @@ export default function TheoremsPage() {
                   \\\\ \\text{Then the relation on } \\{1, 2, 3, ..., n\\},
                   \\\\ \\forall \\ 1 \\leq i, j \\leq n, \\ i \\sim j \\iff \\sigma^{k}(i) = j \\text{ for some } k \\in \\Z,
                   \\\\ \\text{is an equivalence relation.}
-      `,
-      proof: `\\text{By }
+      `, 
+      proof: `\\text{By Theorem 21}
       `
     }
   ];
