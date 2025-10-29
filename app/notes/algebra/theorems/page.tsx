@@ -460,8 +460,8 @@ export default function TheoremsPage() {
     },
     {
       number: 20,
-      title: "Every Group is Isomorphic to a Subgroup of a Symmetric Group",
-      statement: "\\text{Let G be a group and } K \\leq S_G. \\text{ Then } G \\cong K.",
+      title: "Cayley's Theorem",
+      statement: "\\text{Every Group is Isomorphic to a Subgroup of a Symmetric Group}",
       proof: `\\text{Define } f_a: G \\to G \\text{ by } f_a(x) = ax \\ \\ \\forall x \\in G.
               \\\\ \\text{Define } j: G \\to S_G \\text{ by } j(a) = f_a \\ \\ \\forall a \\in G.
               \\\\ \\text{By Theorem 19, } f_a \\text{ is bijective } \\forall a \\in G 
@@ -486,13 +486,28 @@ export default function TheoremsPage() {
       `
     },
     {
-      number: 21,
+      number:21,
+      title: "In Finite Groups, Infinite Sequences Repeat (PP1 Q10)",
+      statement: `\\text{Let } (G,*) \\text{ be a finite group. Prove that for every } a \\in G 
+                  \\\\ \\exists \\text{ a natural number } n \\geq 1 \\text{ such that } a^n = e.
+                  `,
+      proof: `\\text{Since } G \\text{ is finite,}
+              \\\\ \\text{by pigeonhole principle we know that }
+              \\\\ \\exists i, j \\in \\N \\text{ with } i \\gt j \\text{ such that } a^i = a^j \\ \\ \\forall a \\in G.
+              \\\\ \\text{Which implies } a^ia^{-j} = a^{i-j} = e. 
+              \\\\ \\text{Since } i \\in N \\text{ and } j \\in N, 
+      ` 
+    },
+    {
+      number: 22,
       title: "Cycles are equivalence relations",
       statement: `\\text{Let } \\sigma \\in S_n \\text{ be fixed.}
                   \\\\ \\text{Then the relation on } \\{1, 2, 3, ..., n\\},
                   \\\\ \\forall \\ 1 \\leq i, j \\leq n, \\ i \\sim j \\iff \\sigma^{k}(i) = j \\text{ for some } k \\in \\Z,
                   \\\\ \\text{is an equivalence relation.}
       `,
+      proof: `\\text{By }
+      `
     }
   ];
 
