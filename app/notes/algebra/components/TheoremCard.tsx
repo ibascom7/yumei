@@ -3,12 +3,17 @@
 import { useState } from "react";
 import { InlineMath, BlockMath } from "react-katex";
 
+interface Proof {
+  title?: string;
+  content: string;
+}
+
 interface TheoremCardProps {
   number: number;
   title: string;
   statement: string;
   description?: string;
-  proof?: string;
+  proof?: string | Proof[];
 }
 
 export default function TheoremCard({ number, title, statement, description, proof }: TheoremCardProps) {
@@ -16,6 +21,13 @@ export default function TheoremCard({ number, title, statement, description, pro
 
   // Calculate approximate width of "Theorem X. " for indentation
   const labelWidth = number < 10 ? "6em" : "6.5em";
+
+  // Normalize proof to array format
+  const proofs: Proof[] = proof
+    ? typeof proof === 'string'
+      ? [{ content: proof }]
+      : proof
+    : [];
 
   return (
     <div className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm">
@@ -57,10 +69,16 @@ export default function TheoremCard({ number, title, statement, description, pro
 
       {proof && isProofOpen && (
         <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
-          <div className="font-semibold mb-2 text-gray-700 text-sm sm:text-base">Proof:</div>
-          <div className="text-black text-sm sm:text-base ml-0 sm:ml-[3.5em]" style={{ lineHeight: "2" }}>
-            <BlockMath math={proof} />
-          </div>
+          {proofs.map((p, index) => (
+            <div key={index} className={index > 0 ? "mt-4 pt-4 border-t border-gray-100" : ""}>
+              <div className="font-semibold mb-2 text-gray-700 text-sm sm:text-base">
+                {p.title ? `${p.title}:` : proofs.length > 1 ? `Proof ${index + 1}:` : "Proof:"}
+              </div>
+              <div className="text-black text-sm sm:text-base ml-0 sm:ml-[3.5em]" style={{ lineHeight: "2" }}>
+                <BlockMath math={p.content} />
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

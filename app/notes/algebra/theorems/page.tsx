@@ -494,8 +494,8 @@ export default function TheoremsPage() {
       proof: `\\text{Since } G \\text{ is finite}
               \\\\ \\text{and we are considering infinite powers of } a,
               \\\\ \\text{by pigeonhole principle we know that }
-              \\\\ \\exists i, j \\in \\N \\text{ with } i \\gt j 
-              \\\\ \\text{ such that } a^i = a^j \\ \\ \\forall a \\in G.
+              \\\\ \\text{for any } a \\in G \\text{ there exists } i, j \\in \\N \\text{ with } i \\gt j 
+              \\\\ \\text{ such that } a^i = a^j \\ \\ 
               \\\\ \\text{Which implies } a^ia^{-j} = a^{i-j} = e. 
               \\\\ \\text{Let } n = i-j.
               \\\\ \\text{Since } i > j \\text{ and both are in } \\N 
@@ -511,9 +511,55 @@ export default function TheoremsPage() {
                   \\\\ \\text{Then the relation on } \\{1, 2, 3, ..., n\\},
                   \\\\ \\forall \\ 1 \\leq i, j \\leq n, \\ i \\sim j \\iff \\sigma^{k}(i) = j \\text{ for some } k \\in \\Z,
                   \\\\ \\text{is an equivalence relation.}
-      `, 
-      proof: `\\text{By Theorem 21}
-      `
+      `,
+      proof: [
+        {
+          title: "Proof for k ∈ ℕ",
+          content: `\\text{By Theorem 21,}
+                  \\\\ \\text{since } S_n \\text{ is finite, } \\exists m \\in \\N \\text{ such that } \\sigma^m = id.
+                  \\\\ \\text{Let } 1 \\leq i \\leq n.
+                  \\\\ \\text{Then } \\sigma^m(i) = i,
+                  \\\\ (\\text{because we called } \\sigma^m = id \\text{ and } id \\text{ maps } g \\mapsto g.)
+                  \\\\ \\text{So } \\sim \\text{ is reflexive.}
+                  \\\\ \\text{Let } 1 \\leq i, j \\leq n, \\text{ and assume } i \\sim j.
+                  \\\\ \\text{This means } \\exists k \\in \\N \\text{ such that } \\sigma^k(i) = j.
+                  \\\\ \\text{Then we get } i = \\sigma^{-k}(\\sigma^k(i)) = \\sigma^{-k}(j), \\text{ by substituting}.
+                  \\\\ \\text{Since } \\sigma^m = id,
+                  \\\\ \\text{we have } \\sigma^m \\sigma^{-1} = id \\sigma^{-1} \\iff \\sigma^{m-1} = \\sigma^{-1}
+                  \\\\ \\text{So } (\\sigma^{m-1})^k = (\\sigma^{-1})^k, \\text{ we have } \\sigma^{km-k} = \\sigma^{-k}.
+                  \\\\ \\text{Therefore, } i = \\sigma^{km-k}(j)
+                  \\\\ \\text{and notice that } km-k \\in \\N.
+                  \\\\ \\text{Thus, } j \\sim i, \\text{ which shows } \\sim \\text{ is symmetric.}
+                  \\\\ \\text{Let } 1 \\leq i, j, \\ell \\leq n, \\text{ and }
+                  \\\\ \\text{assume } i\\sim j \\text{ and } j \\sim \\ell.
+                  \\\\ \\text{This means } \\exists m_1, m_2 \\in \\N
+                  \\\\ \\text{such that } \\sigma^{m_1}(i) = j \\text{ and } \\sigma^{m_2}(j) = \\ell.
+                  \\\\ \\text{Then } \\sigma^{m_1+m_2}(i) = \\sigma^{m_2}(\\sigma^{m_1}(i)) = \\sigma^{m_2}(j) = \\ell.
+                  \\\\ \\text{So } i \\sim \\ell, \\text{ which shows } \\sim \\text{ is transitive.}`
+        },
+        {
+          title: "Proof for k ∈ ℤ",
+          content: `\\text{To show } \\sim \\text{ is reflexive, let } 1 \\leq i \\leq n.
+                  \\\\ \\text{Take } k = 0 \\in \\Z.
+                  \\\\ \\text{Then } \\sigma^0(i) = id(i) = i.
+                  \\\\ \\text{So } i \\sim i, \\text{ hence } \\sim \\text{ is reflexive.}
+                  \\\\ \\text{To show } \\sim \\text{ is symmetric,}
+                  \\\\ \\text{let } 1 \\leq i, j \\leq n \\text{ and assume } i \\sim j.
+                  \\\\ \\text{This means } \\exists k \\in \\Z \\text{ such that } \\sigma^k(i) = j.
+                  \\\\ \\text{Then } i = \\sigma^{-k}(\\sigma^k(i)) = \\sigma^{-k}(j).
+                  \\\\ \\text{Since } k \\in \\Z, \\text{ we have } -k \\in \\Z.
+                  \\\\ \\text{Therefore, } j \\sim i, \\text{ which shows } \\sim \\text{ is symmetric.}
+                  \\\\ \\text{To show } \\sim \\text{ is transitive,}
+                  \\\\ \\text{let } 1 \\leq i, j, \\ell \\leq n \\text{ and assume } i \\sim j \\text{ and } j \\sim \\ell.
+                  \\\\ \\text{This means } \\exists k_1, k_2 \\in \\Z
+                  \\\\ \\text{such that } \\sigma^{k_1}(i) = j \\text{ and } \\sigma^{k_2}(j) = \\ell.
+                  \\\\ \\text{Then } \\sigma^{k_1+k_2}(i) = \\sigma^{k_2}(\\sigma^{k_1}(i)) = \\sigma^{k_2}(j) = \\ell.
+                  \\\\ \\text{Since } k_1, k_2 \\in \\Z, \\text{ we have } k_1 + k_2 \\in \\Z.
+                  \\\\ \\text{Therefore, } i \\sim \\ell, \\text{ which shows } \\sim \\text{ is transitive.}
+                  \\\\ \\text{Hence, } \\sim \\text{ is an equivalence relation.} \\ \\ \\blacksquare
+                  `
+        }
+      ]
     }
   ];
 
