@@ -736,14 +736,14 @@ export default function TheoremsPage() {
                   \\\\ ([G:H] = |G:H| = \\text{ Number of distinct left cosets of H in G})
       `,
       proof: `\\text{This follows directly from Theorem 28.}
-              \\\\ \\text{Since } G \\text{ is finite,}
+              \\\\ \\text{Since } G \\text{ is finite and } [G:H] \\in \\N,
               \\\\ G \\text{ is partitioned into [G:H] many distinct left cosets of } H.
               \\\\ \\text{By Theorem 28, each left coset has } |H| \\text{ elements.}
               \\\\ \\text{Thus, } |G| = |H| * [G:H]. \\ \\ \\blacksquare
       `
     },
     {
-      number: 31,
+      number: 30,
       title: "Actually Lagrange's Theorem",
       statement: `\\text{Let } G \\text{ be a finite group, and } H \\leq G.
                   \\\\ \\text{Then } o(H) \\text{ divides } o(G).
@@ -754,7 +754,7 @@ export default function TheoremsPage() {
       `
     },
     {
-      number: 32,
+      number: 31,
       title: "Order of the Alternating Group",
       statement: `|A_n| = \\frac{n!}{2} \\ \\ \\text{for } n \\geq 2.`,
       proof: `\\text{By Theorem 27, } A_n \\trianglelefteq S_n.
@@ -767,6 +767,11 @@ export default function TheoremsPage() {
               \\\\ \\text{Therefore, } |A_n| = \\frac{n!}{2}.
       `
     },
+    {
+      number: 32,
+      title: "Direct Product of Groups is a Group",
+      statement: ""
+    }
     
   ];
 
