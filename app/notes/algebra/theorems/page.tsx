@@ -682,7 +682,7 @@ export default function TheoremsPage() {
                   \\\\ \\end{cases}
                   \\\\ \\text{This is a homomorphism.}
         `,
-      proof: `\\text{Let } \\sigma_1, \\sigma_2 \\text{ be even, and } \\sigma_1 \\cap \\sigma_2 = \\emptyset.
+      proof: `\\text{Let } \\sigma_1, \\sigma_2 \\text{ be even.}e
               \\\\ \\text{Then } \\phi(\\sigma_1) \\phi(\\sigma_2) = 0 * 0 = 0
               \\\\ \\text{and } \\sigma_1 \\sigma_2 \\text{ is an even permutation, }
               \\\\ \\text{so } \\phi(\\sigma_1 \\sigma_2) = 0.
@@ -700,6 +700,56 @@ export default function TheoremsPage() {
               \\\\ \\text{is the parity homomorphism from Theorem 26.}
               \\\\ \\text{Hence, by FIT (Theorem 13), }
               \\\\ A_n \\trianglelefteq S_n. \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 28,
+      title: "Cosets of H have the same Cardinality as H",
+      statement: `\\text{Let G be a finite group,} \\text{and let } H \\leq G.
+                  \\\\ \\text{For every } x, y \\in G, \\text{ the map } f: xH \\to yH
+                  \\\\ \\text{defined by } f(xh) = yh \\ \\ \\forall h \\in H
+                  \\\\ \\text{is a bijection.}
+      `,
+      proof: `\\text{To show } f \\text{ is well-defined,}
+              \\\\ \\text{let } xh_1, xh_2 \\in xH \\text{ such that } xh_2 = xh_1.
+              \\\\ \\text{Then } h_2 = x^{-1}xh_2 = x^{-1}xh_1 = h_1.
+              \\\\ \\text{So, } f(xh_2) = yh_2 = yh_1 = f(xh_1).
+              \\\\ \\text{Thus, } f \\text{ is well-defined.}
+              \\\\ \\text{To show } f \\text{ is injective,}
+              \\\\ \\text{let } xh_1, xh_2 \\in xH \\text{ such that } f(xh_1) = f(xh_2).
+              \\\\ \\text{Then } yh_1 = yh_2, \\text{ which implies } h_1 = h_2.
+              \\\\ \\text{So, } xh_1 = xh_2.
+              \\\\ \\text{Thus, } f \\text{ is injective.}
+              \\\\ \\text{To show } f \\text{ is surjective,}
+              \\\\ \\text{let } yh \\in yH \\text{ for some } h \\in H.
+              \\\\ \\text{Then } f(xh) = yh.
+              \\\\ \\text{Thus, } f \\text{ is surjective.}  
+              \\\\ \\text{Hence, } f \\text{ is a bijection.}
+              \\\\ \\text{Therefore, } |xH| = |yH| = |H|.
+      `
+    },
+    {
+      number: 29,
+      title: "Pretty Much Lagrange's Theorem",
+      statement: `\\text{Let } G \\text{ be a finite group, and } H \\leq G.
+                  \\\\ \\text{Then } o(G) = o(H) [G:H].
+                  \\\\ (\\text{})
+      `,
+      proof: `
+      `
+    },
+    {
+      number: 100,
+      title: "Order of the Alternating Group",
+      statement: `|A_n| = \\frac{n!}{2} \\ \\ \\text{for } n \\geq 2.`,
+      proof: `\\text{By Theorem 27, } A_n \\trianglelefteq S_n.
+              \\\\ \\text{By Theorem 26, } \\text{Im}(\\phi) = \\Z_2,
+              \\\\ \\text{where } \\phi: S_n \\to \\Z_2 \\text{ is the parity homomorphism.}
+              \\\\ \\text{By FIT (Theorem 13), } S_n / A_n \\cong \\Z_2.
+              \\\\ \\text{Thus, } |S_n / A_n| = |\\Z_2| = 2.
+              \\\\ \\text{By Lagrange's Theorem (Theorem 7), }
+              \\\\ |S_n| = |A_n| * |S_n / A_n| \\implies n! = |A_n| * 2.
+              \\\\ \\text{Therefore, } |A_n| = \\frac{n!}{2}. \\ \\ \\blacksquare
       `
     }
   ];
