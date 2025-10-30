@@ -798,7 +798,17 @@ export default function TheoremsPage() {
     },
     {
       number: 33,
+      title: "",
+      statement: "",
+      proof: ""
+    },
+    {
+      number: 34,
       title: "Cyclic Groups with Same Order are Isomorphic",
+      statement: `\\text{Let } G \\text{ and } K \\text{ be cyclic groups.}
+                  \\\\ \\text{Then we have } G \\cong K \\iff |G| = |K|. 
+      `,
+      proof: ""
     }
     
   ];
