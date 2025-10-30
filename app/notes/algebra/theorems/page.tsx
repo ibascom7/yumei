@@ -743,7 +743,18 @@ export default function TheoremsPage() {
       `
     },
     {
-      number: 100,
+      number: 31,
+      title: "Actually Lagrange's Theorem",
+      statement: `\\text{Let } G \\text{ be a finite group, and } H \\leq G.
+                  \\\\ \\text{Then } o(H) \\text{ divides } o(G).
+      `,
+      proof: `\\text{By Theorem 29, } o(G) = o(H) * [G:H].
+              \\\\ \\text{Since } [G:H] \\in \\N,
+              \\\\ \\text{we have that } o(H) \\mid o(G).
+      `
+    },
+    {
+      number: 32,
       title: "Order of the Alternating Group",
       statement: `|A_n| = \\frac{n!}{2} \\ \\ \\text{for } n \\geq 2.`,
       proof: `\\text{By Theorem 27, } A_n \\trianglelefteq S_n.
@@ -751,11 +762,12 @@ export default function TheoremsPage() {
               \\\\ \\text{where } \\phi: S_n \\to \\Z_2 \\text{ is the parity homomorphism.}
               \\\\ \\text{By FIT (Theorem 13), } S_n / A_n \\cong \\Z_2.
               \\\\ \\text{Thus, } |S_n / A_n| = |\\Z_2| = 2.
-              \\\\ \\text{By Lagrange's Theorem (Theorem 7), }
+              \\\\ \\text{By Lagrange's Theorem (Theorem 29), }
               \\\\ |S_n| = |A_n| * |S_n / A_n| \\implies n! = |A_n| * 2.
-              \\\\ \\text{Therefore, } |A_n| = \\frac{n!}{2}. \\ \\ \\blacksquare
+              \\\\ \\text{Therefore, } |A_n| = \\frac{n!}{2}.
       `
-    }
+    },
+    
   ];
 
   return (
