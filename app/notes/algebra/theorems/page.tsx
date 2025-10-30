@@ -596,17 +596,110 @@ export default function TheoremsPage() {
       statement: `\\text{Let } n \\geq 2. \\text{ Any permutation } \\sigma \\in S_n
                   \\\\ \\text{is a product of transpositions.}
       `,
-      proof: `\\text{Let } \\sigma \\in S_n \\text{ be a product of disjoint cycles.}
+      proof: [
+        {
+          title: "Claude called this an informal proof",
+          content: `\\text{Let } \\sigma \\in S_n \\text{ be a product of disjoint cycles.}
               \\\\ \\text{Then we can write the first cycle as}
               \\\\ (i_1 \\ i_2 \\ ... \\\ i_m) = (i_1 \\ i_m)(i_1 \\ i_{m-1}) \\ ... \\ (i_1 \\ i_2).
               \\\\ \\text{By computing the product of each transposition},
               \\\\ \\text{we get } (i_1 \\ i_2 \\ ... \\ i_m)
-      `
+          `
+        },
+        {
+          title: "Claude proof",
+          content: `\\text{Let } \\sigma \\in S_n.
+              \\\\ \\text{If } \\sigma = id, \\text{ then } \\sigma = (1 \\ 2)(1 \\ 2),
+              \\\\ \\text{which is a product of transpositions.}
+              \\\\ \\text{Now assume } \\sigma \\not= id.
+              \\\\ \\text{By Theorem 22, } \\sigma \\text{ can be written as}
+              \\\\ \\text{a product of disjoint cycles.}
+              \\\\ \\text{It suffices to show that any cycle}
+              \\\\ \\text{can be written as a product of transpositions.}
+              \\\\ \\text{Let } (i_1 \\ i_2 \\ ... \\ i_m) \\text{ be a cycle with } m \\geq 2.
+              \\\\ \\text{We claim that}
+              \\\\ (i_1 \\ i_2 \\ ... \\ i_m) = (i_1 \\ i_m)(i_1 \\ i_{m-1}) \\cdots (i_1 \\ i_3)(i_1 \\ i_2).
+              \\\\ \\text{To verify this, we compute where each element maps.}
+              \\\\ \\text{First, consider } i_1.
+              \\\\ \\text{By the product } (i_1 \\ i_m)(i_1 \\ i_{m-1}) \\cdots (i_1 \\ i_2),
+              \\\\ \\text{we have } i_1 \\mapsto i_2 \\mapsto i_2 \\mapsto \\cdots \\mapsto i_2.
+              \\\\ \\text{So } i_1 \\mapsto i_2, \\text{ which matches the cycle.}
+              \\\\ \\text{Next, consider } i_k \\text{ for } 2 \\leq k \\leq m-1.
+              \\\\ \\text{The transposition } (i_1 \\ i_{k+1}) \\text{ sends } i_k \\mapsto i_k,
+              \\\\ \\text{and all other transpositions to the right fix } i_k.
+              \\\\ \\text{The transposition } (i_1 \\ i_k) \\text{ sends } i_k \\mapsto i_1.
+              \\\\ \\text{Then all transpositions to the left of } (i_1 \\ i_k) \\text{ fix } i_1
+              \\\\ \\text{except } (i_1 \\ i_{k+1}), \\text{ which sends } i_1 \\mapsto i_{k+1}.
+              \\\\ \\text{So } i_k \\mapsto i_{k+1}, \\text{ which matches the cycle.}
+              \\\\ \\text{Finally, consider } i_m.
+              \\\\ \\text{All transpositions except } (i_1 \\ i_m) \\text{ fix } i_m.
+              \\\\ \\text{The transposition } (i_1 \\ i_m) \\text{ sends } i_m \\mapsto i_1.
+              \\\\ \\text{So } i_m \\mapsto i_1, \\text{ which matches the cycle.}
+              \\\\ \\text{Any other element } j \\not\\in \\{i_1, i_2, ..., i_m\\}
+              \\\\ \\text{is fixed by all transpositions, hence } j \\mapsto j.
+              \\\\ \\text{Therefore, the product of transpositions equals the cycle.}
+              \\\\ \\text{Since each cycle is a product of transpositions}
+              \\\\ \\text{and } \\sigma \\text{ is a product of cycles,}
+              \\\\ \\text{we have } \\sigma \\text{ is a product of transpositions.}
+          `
+        }
+      ]
     },
     {
       number: 25,
       title: "A Permutation is either Odd or Even",
-      statement: `\\text{Suppose }
+      statement: `\\text{A permutation } \\sigma \\in S_n \\text{ can't be written}
+                  \\\\ \\text{as a product of an even number of transpositions}
+                  \\\\ \\text{and an odd number of transpositions.}
+      `,
+      proof: `\\text{Let } \\sigma \\in S_n.
+              \\\\ \\text{Assume } \\sigma \\text{ can be written as a product of}
+              \\\\ \\text{an even number of transpositions}.
+              \\\\ \\text{By Theorem 23,}
+              \\\\ \\sigma \\text{ has an odd number of equivalence classes.}
+              \\\\ \\text{Now assume } \\sigma \\text{ can be written}
+              \\\\ \\text{as a product of an odd number of transpositions}.
+              \\\\ \\text{By Theorem 23,}
+              \\\\ \\sigma \\text{ has an even number of equivalence classes}.
+              \\\\ \\text{Similarly, if n is even, } 
+              \\\\ \\sigma \\text{ has an odd number of equivalence classes}
+              \\\\ \\text{and if n is odd, } 
+              \\\\ \\sigma \\text{ has an even number of equivalence classes.}
+              \\\\ \\text{Thus, a permutation can't be written}
+              \\\\ \\text{as a product of an even number of transpositions}
+              \\\\ \\text{and an odd number of transpositions.} 
+
+              ` 
+    },
+    {
+      number: 26,
+      title: "Parity Homomorphism",
+      statement: `\\text{Let } n \\geq 2. \\text{ Define}
+                  \\\\ \\phi: S_n \\to \\Z_2 \\text{ by }
+                  \\\\ \\phi(\\sigma) =  \\begin{cases}
+                  0, & \\text{if } \\sigma \\text{ is even}
+                  \\\\ 1, & \\text{if } \\sigma \\text{ is odd}
+                  \\\\ \\end{cases}
+                  \\\\ \\text{This is a homomorphism.}
+        `,
+      proof: `\\text{Let } \\sigma_1, \\sigma_2 \\text{ be even, and } \\sigma_1 \\cap \\sigma_2 = \\emptyset.
+              \\\\ \\text{Then } \\phi(\\sigma_1) \\phi(\\sigma_2) = 0 * 0 = 0
+              \\\\ \\text{and } \\sigma_1 \\sigma_2 \\text{ is an even permutation, }
+              \\\\ \\text{so } \\phi(\\sigma_1 \\sigma_2) = 0.
+              \\\\ \\text{Thus, } \\phi(\\sigma_1) \\phi(\\sigma_2) = \\phi(\\sigma_1 \\sigma_2),
+              \\\\ \\text{so } \\phi \\text{ is a homomorphism.}
+              \\\\ \\text{Can show similarly for other cases.} 
+      `
+    },
+    {
+      number: 27,
+      title: "The Alternating Group is a Normal Subgroup of the Symmetric Group",
+      statement: "A_n \\trianglelefteq S_n",
+      proof: `\\text{We have } A_n = \\ker(\\phi), 
+              \\\\ \\text{where } \\phi: S_n \\to \\Z_2 
+              \\\\ \\text{is the parity homomorphism from Theorem 26.}
+              \\\\ \\text{Hence, by FIT (Theorem 13), }
+              \\\\ A_n \\trianglelefteq S_n. \\ \\ \\blacksquare
       `
     }
   ];
