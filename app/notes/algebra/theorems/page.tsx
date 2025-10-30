@@ -770,7 +770,35 @@ export default function TheoremsPage() {
     {
       number: 32,
       title: "Direct Product of Groups is a Group",
-      statement: ""
+      statement: `\\text{The set } G = G_1 \\times G_2 \\text{ with operation }
+                  \\\\ \\text{ defined by } (g_1, g_2) \\cdot (h_1, h_2) = (g_1h_1, g_2h_2)
+                  \\\\ \\text{ for all } g_1, h_1 \\in G_1, g_2, h_2 \\in G_2 \\text{ is a group.}
+      `,
+      proof: `\\text{Let } x_1, y_1, z_1 \\in G_1 \\text{ and } x_2, y_2, z_2 \\in G_2.
+              \\\\ \\text{Then } ((x_1, x_2) \\cdot (y_1, y_2)) \\cdot (z_1, z_2) = (x_1y_1, x_2y_2) \\cdot (z_1, z_2)
+              \\\\ = ((x_1y_1)z_1, (x_2y_2)z_2) = (x_1(y_1z_1), x_2(y_2z_2))
+              \\\\ = (x_1, x_2) \\cdot (y_1z_1, y_2z_2) = (x_1, x_2) \\cdot ((y_1, y_2) \\cdot (z_1, z_2)).
+              \\\\ \\text{So the operation is associative.}
+              \\\\ \\text{Let } e_1 \\in G_1 \\text{ and } e_2 \\in G_2 \\text{ be the identity elements.}
+              \\\\ \\text{And let } e = (e_1, e_2) \\in G.
+              \\\\ \\text{Then } \\forall (x_1, x_2) \\in G, \\text{ we have}
+              \\\\ (x_1, x_2) \\cdot (e_1, e_2) = (x_1e_1, x_2e_2) = (x_1, x_2)
+              \\\\ \\text{and } (e_1, e_2) \\cdot (x_1, x_2) = (e_1x_1, e_2x_2) = (x_1, x_2).
+              \\\\ \\text{So } e \\text{ is the identity element in } G.
+              \\\\ \\text{Let } (x_1, x_2) \\in G.
+              \\\\ \\text{Since } G_1 \\text{ and } G_2 \\text{ are groups,}
+              \\\\ \\exists x_1^{-1} \\in G_1 \\text{ and } x_2^{-1} \\in G_2 \\text{ such that }
+              \\\\ x_1x_1^{-1} = e_1 \\text{ and } x_2x_2^{-1} = e_2.
+              \\\\ \\text{Let } (x_1^{-1}, x_2^{-1}) \\in G.
+              \\\\ \\text{Then } (x_1, x_2) \\cdot (x_1^{-1}, x_2^{-1}) = (x_1x_1^{-1}, x_2x_2^{-1}) = (e_1, e_2) = e
+              \\\\ \\text{and } (x_1^{-1}, x_2^{-1}) \\cdot (x_1, x_2) = (x_1^{-1}x_1, x_2^{-1}x_2) = (e_1, e_2) = e.
+              \\\\ \\text{So } (x_1^{-1}, x_2^{-1}) \\text{ is the inverse of } (x_1, x_2).
+              \\\\ \\text{Therefore, } (G, \\cdot) \\text{ is a group.}
+      `
+    },
+    {
+      number: 33,
+      title: "Cyclic Groups with Same Order are Isomorphic",
     }
     
   ];
