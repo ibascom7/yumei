@@ -733,9 +733,13 @@ export default function TheoremsPage() {
       title: "Pretty Much Lagrange's Theorem",
       statement: `\\text{Let } G \\text{ be a finite group, and } H \\leq G.
                   \\\\ \\text{Then } o(G) = o(H) [G:H].
-                  \\\\ (\\text{})
+                  \\\\ ([G:H] = |G:H| = \\text{ Number of distinct left cosets of H in G})
       `,
-      proof: `
+      proof: `\\text{This follows directly from Theorem 28.}
+              \\\\ \\text{Since } G \\text{ is finite,}
+              \\\\ G \\text{ is partitioned into [G:H] many distinct left cosets of } H.
+              \\\\ \\text{By Theorem 28, each left coset has } |H| \\text{ elements.}
+              \\\\ \\text{Thus, } |G| = |H| * [G:H]. \\ \\ \\blacksquare
       `
     },
     {
