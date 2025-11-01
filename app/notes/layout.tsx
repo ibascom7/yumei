@@ -13,7 +13,8 @@ export default function NotesLayout({
 
   const classes = [
     { name: "Abstract Algebra", href: "/notes/algebra", color: "red" },
-    { name: "Data Programming", href: "/notes/data-programming", color: "blue" },
+    { name: "Intermediate Analysis", href: "/notes/intermediate-analysis", color: "blue" },
+    { name: "Data Programming", href: "/notes/data-programming", color: "green" },
   ];
 
   return (
@@ -39,8 +40,8 @@ export default function NotesLayout({
           <div className="flex gap-1 sm:gap-4 ml-auto text-sm sm:text-base">
             {classes.map((cls) => {
               const isActive = pathname.startsWith(cls.href);
-              const underlineColor = cls.color === "red" ? "#dc2626" : "#2563eb";
-              const hoverBg = cls.color === "red" ? "hover:bg-red-100" : "hover:bg-blue-100";
+              const underlineColor = cls.color === "red" ? "#dc2626" : cls.color === "blue" ? "#2563eb" : "#22c55e";
+              const hoverBg = cls.color === "red" ? "hover:bg-red-100" : cls.color === "blue" ? "hover:bg-blue-100" : "hover:bg-green-100";
 
               return (
                 <Link

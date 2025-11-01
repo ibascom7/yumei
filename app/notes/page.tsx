@@ -8,10 +8,18 @@ export default function NotesPage() {
     {
       name: "Abstract Algebra",
       href: "/notes/algebra",
-      theorems: 22,
+      theorems: 34,
       definitions: 7,
       articles: 1,
       color: "#ef4444", // red-500
+    },
+    {
+      name: "Intermediate Analysis",
+      href: "/notes/intermediate-analysis",
+      theorems: 1,
+      definitions: 1,
+      articles: 1,
+      color: "#3b82f6", // blue-500
     },
     {
       name: "Data Programming",
@@ -19,7 +27,7 @@ export default function NotesPage() {
       theorems: 0,
       definitions: 0,
       articles: 0,
-      color: "#3b82f6", // blue-500
+      color: "#22c55e", // green-500
     },
   ];
 
