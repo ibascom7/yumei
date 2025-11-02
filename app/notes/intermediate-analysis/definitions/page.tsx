@@ -114,7 +114,7 @@ export default function DefinitionsPage() {
     },
     {
       number: 9,
-      term: "6.2.10 Complete Metric Space",
+      term: "6.2.10 Monotonicity of Functions",
       definition: `\\text{Let } f \\text{ be a function and } I \\text{ be an interval.} 
                    \\\\ \\
                    \\\\ \\text{a. } f \\text{ is increasing on } I \\text{ if } f(x_1) \\leq f(x_2)
@@ -145,6 +145,7 @@ export default function DefinitionsPage() {
           number={def.number}
           term={def.term}
           definition={def.definition}
+          id={`definition-${def.number}`}
         />
       ))}
     </div>

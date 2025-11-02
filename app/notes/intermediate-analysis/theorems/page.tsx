@@ -4,9 +4,21 @@ export default function TheoremsPage() {
   const theorems = [
     {
       number: 1,
-      title: "5.1.9",
-      statement: "\\text{Placeholder statement for Theorem 5.1.9}",
-      proof: `\\text{Proof...}`
+      title: "5.1.9 Sequential Criterion for Limits",
+      statement: `\\text{Let } f: D \\to \\R 
+                  \\\\ \\text{and let c be an accumulation point of D.}
+                  \\\\ \\text{Then } \\lim_{x \\to c} f(x) = L 
+                  \\\\ \\text{iff for every sequence } (s_n) \\in  D 
+                  \\\\ \\text{that converges to } c \\text{ with } s_n \\neq c \\ \\ \\forall n \\in \\N, 
+                  \\\\ \\text{the sequence } (f(s_n)) \\text{ converges to } L.           
+      `,
+      proof: `\\text{Suppose that } \\lim_{x \\to c} f(x) = L
+              \\\\ \\text{and let } (s_n) \\text{ be a sequence in } D \\text{ with } s_n \\to c \\text{ and } s_n \\neq c \\ \\ \\forall n.
+              \\\\ \\text{We must show that } \\lim_{n \\to \\infty} f(s_n) = L.
+              \\\\ \\text{Since } \\lim_{x \\to c} f(x) = L, 
+              \\\\ \\text{we have, } \\ \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - L| < \\varepsilon
+              \\\\ \\text{whenever } x \\in D \\text{ and } 0 < |x - c| < \\delta  \\ (\\text{By } [[definition 1]]).
+      `
     },
     {
       number: 2,
@@ -70,13 +82,13 @@ export default function TheoremsPage() {
     },
     {
       number: 12,
-      title: "5.4.8",
+      title: "★ 5.4.8",
       statement: "\\text{Placeholder statement for Theorem 5.4.8}",
       proof: `\\text{Proof...}`
     },
     {
       number: 13,
-      title: "6.1.6",
+      title: "★ 6.1.6",
       statement: "\\text{Placeholder statement for Theorem 6.1.6}",
       proof: `\\text{Proof...}`
     },
@@ -94,7 +106,7 @@ export default function TheoremsPage() {
     },
     {
       number: 16,
-      title: "6.2.2",
+      title: "★ 6.2.2",
       statement: "\\text{Placeholder statement for Theorem 6.2.2}",
       proof: `\\text{Proof...}`
     },
@@ -124,7 +136,7 @@ export default function TheoremsPage() {
     },
     {
       number: 21,
-      title: "6.2.11",
+      title: "★ 6.2.11",
       statement: "\\text{Placeholder statement for Theorem 6.2.11}",
       proof: `\\text{Proof...}`
     },
@@ -151,6 +163,7 @@ export default function TheoremsPage() {
           title={theorem.title}
           statement={theorem.statement}
           proof={theorem.proof}
+          id={`theorem-${theorem.number}`}
         />
       ))}
     </div>

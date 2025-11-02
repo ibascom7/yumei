@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { InlineMath, BlockMath } from "react-katex";
+import { processLatexLinks } from "./latexLinkHelper";
+import TrustedBlockMath from "./TrustedBlockMath";
 
 interface Example {
   problemStatement: string;
@@ -13,9 +14,10 @@ interface ProblemSolvingTechniqueCardProps {
   title: string;
   description?: string;
   examples?: Example[];
+  id?: string;
 }
 
-export default function ProblemSolvingTechniqueCard({ number, title, description, examples = [] }: ProblemSolvingTechniqueCardProps) {
+export default function ProblemSolvingTechniqueCard({ number, title, description, examples = [], id }: ProblemSolvingTechniqueCardProps) {
   const [openExamples, setOpenExamples] = useState<Set<number>>(new Set());
 
   const toggleExample = (index: number) => {
@@ -29,7 +31,7 @@ export default function ProblemSolvingTechniqueCard({ number, title, description
   };
 
   return (
-    <div className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm">
+    <div id={id} className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm scroll-mt-4">
       <div className="mb-2 sm:mb-3 text-sm sm:text-base">
         <span className="font-bold text-blue-600">Technique {number}. </span>
         <span className="font-semibold text-black">{title}</span>
@@ -59,7 +61,7 @@ export default function ProblemSolvingTechniqueCard({ number, title, description
                       Example {index + 1}:
                     </div>
                     <div className="text-black text-sm sm:text-base">
-                      <BlockMath math={example.problemStatement} />
+                      <TrustedBlockMath math={processLatexLinks(example.problemStatement)} />
                     </div>
                   </div>
                   <button
@@ -85,7 +87,7 @@ export default function ProblemSolvingTechniqueCard({ number, title, description
                       Solution:
                     </div>
                     <div className="text-black text-sm sm:text-base ml-0 sm:ml-[3.5em]" style={{ lineHeight: "2" }}>
-                      <BlockMath math={example.solution} />
+                      <TrustedBlockMath math={processLatexLinks(example.solution)} />
                     </div>
                   </div>
                 )}

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { InlineMath, BlockMath } from "react-katex";
+import { processLatexLinks } from "./latexLinkHelper";
+import TrustedBlockMath from "./TrustedBlockMath";
 
 interface Proof {
   title?: string;
@@ -14,13 +15,11 @@ interface TheoremCardProps {
   statement: string;
   description?: string;
   proof?: string | Proof[];
+  id?: string;
 }
 
-export default function TheoremCard({ number, title, statement, description, proof }: TheoremCardProps) {
+export default function TheoremCard({ number, title, statement, description, proof, id }: TheoremCardProps) {
   const [isProofOpen, setIsProofOpen] = useState(false);
-
-  // Calculate approximate width of "Theorem X. " for indentation
-  const labelWidth = number < 10 ? "6em" : "6.5em";
 
   // Normalize proof to array format
   const proofs: Proof[] = proof
@@ -30,7 +29,7 @@ export default function TheoremCard({ number, title, statement, description, pro
     : [];
 
   return (
-    <div className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm">
+    <div id={id} className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-3 sm:mb-4 bg-white shadow-sm scroll-mt-4">
       <div className="flex items-start justify-between gap-2 sm:gap-4">
         <div className="flex-1 min-w-0">
           <div
@@ -41,7 +40,7 @@ export default function TheoremCard({ number, title, statement, description, pro
             <span className="font-semibold text-black">{title}</span>
           </div>
           <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
-            <BlockMath math={statement} />
+            <TrustedBlockMath math={processLatexLinks(statement)} />
           </div>
           <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
             <p>{description}</p>
@@ -75,7 +74,7 @@ export default function TheoremCard({ number, title, statement, description, pro
                 {p.title ? `${p.title}:` : proofs.length > 1 ? `Proof ${index + 1}:` : "Proof:"}
               </div>
               <div className="text-black text-sm sm:text-base ml-0 sm:ml-[3.5em]" style={{ lineHeight: "2" }}>
-                <BlockMath math={p.content} />
+                <TrustedBlockMath math={processLatexLinks(p.content)} />
               </div>
             </div>
           ))}

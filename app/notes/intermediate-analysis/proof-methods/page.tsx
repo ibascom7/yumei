@@ -95,6 +95,7 @@ export default function ProofMethodsPage() {
           title={method.title}
           description={method.description}
           examples={method.examples}
+          id={`proof-method-${method.number}`}
         />
       ))}
     </div>

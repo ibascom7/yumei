@@ -51,6 +51,7 @@ export default function ProblemSolvingTechniquesPage() {
           title={technique.title}
           description={technique.description}
           examples={technique.examples}
+          id={`technique-${technique.number}`}
         />
       ))}
     </div>
