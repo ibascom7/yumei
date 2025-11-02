@@ -18,6 +18,22 @@ export default function TheoremsPage() {
               \\\\ \\text{Since } \\lim_{x \\to c} f(x) = L, 
               \\\\ \\text{we have, } \\ \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - L| < \\varepsilon
               \\\\ \\text{whenever } x \\in D \\text{ and } 0 < |x - c| < \\delta  \\ (\\text{By } [[definition 1]]).
+              \\\\ \\text{Furthermore, since } s_n \\to c, \\ \\exists N \\in \\N
+              \\\\ \\text{such that } n \\geq N \\text{ implies that } |s_n - c| < \\delta. 
+              \\\\ \\text{Thus for } n \\geq N \\text{ we have } 0 < |s_n - c| < \\delta.
+              \\\\ \\text{and } s_n \\in D, \\text{ so that } |f(s_n) - L < \\varepsilon.
+              \\\\ \\text{Hence } \\lim_{n \\to \\infty} f(s_n) = L.
+              \\\\ \\
+              \\\\ \\text{Conversely, suppose that } \\lim_{x \\to c} f(x) \\neq L.
+              \\\\ \\text{We must find a sequence } (s_n) \\text{ in } D 
+              \\\\ \\text{with } s_n \\to c \\text{ and } s_n \\neq c, \\text{ such that } (f(s_n)) \\not\\to L. 
+              \\\\ \\text{Since } \\lim_{x \\to c} f(x) \\neq L, \\ \\exists \\varepsilon > 0 \\text{ such that } \\ \\forall \\delta > 0
+              \\\\ \\exists x \\in D \\text{ with } 0 < |x - c| < \\delta \\text{ such that } |f(x) - L| \\geq \\varepsilon.
+              \\\\ \\text{In particular, } \\ \\forall n \\in \\N \\ \\ \\exists s_n \\in D
+              \\\\ \\text{with } 0 < |x-c| < \\delta \\text{ such that } |f(x) - L \\geq \\varepsilon.
+              \\\\ \\text{Now } (s_n) \\to c \\text{ with } s_n \\neq c \\ \\ \\forall n,
+              \\\\ \\text{but } (f(s_n)) \\not\\to L.
+
       `
     },
     {
