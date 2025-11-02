@@ -43,13 +43,13 @@ export default function ProofMethodCard({ number, title, description, examples =
 
       {examples.length > 0 && (
         <div className="mt-4 space-y-3">
-          <div className="font-semibold text-gray-700 text-sm sm:text-base ml-0 sm:ml-[9em]">
+          <div className="font-semibold text-gray-700 text-sm sm:text-base">
             Examples:
           </div>
           {examples.map((example, index) => {
             const isOpen = openExamples.has(index);
             return (
-              <div key={index} className="ml-0 sm:ml-[9em] border border-gray-200 rounded-lg p-3 sm:p-4 bg-gray-50">
+              <div key={index} className="border border-gray-200 rounded-lg p-3 sm:p-4">
                 <div
                   className="flex items-start justify-between gap-2 cursor-pointer hover:opacity-75 transition-opacity"
                   onClick={() => toggleExample(index)}
