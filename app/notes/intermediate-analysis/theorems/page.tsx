@@ -33,80 +33,188 @@ export default function TheoremsPage() {
               \\\\ \\text{with } 0 < |x-c| < \\delta \\text{ such that } |f(x) - L \\geq \\varepsilon.
               \\\\ \\text{Now } (s_n) \\to c \\text{ with } s_n \\neq c \\ \\ \\forall n,
               \\\\ \\text{but } (f(s_n)) \\not\\to L.
-
       `
     },
     {
       number: 2,
-      title: "5.1.14",
-      statement: "\\text{Placeholder statement for Theorem 5.1.14}",
-      proof: `\\text{Proof...}`
+      title: "5.1.14 Operations on Limits are Well-Defined",
+      statement: `\\text{Let } f: D \\to \\R, \\text{ and } c \\text{ be an accumulation point of } D.
+                  \\\\ \\text{If } \\lim_{x \\to c} f(x) = L, \\ \\lim_{x \\to c} g(x) = M,
+                  \\\\ \\text{and } k \\in \\R, \\text{ then the following hold:}
+                  \\\\ \\
+                  \\\\ \\text{a. } \\lim_{x \\to c} (f+g)(x) = L + M.
+                  \\\\ \\
+                  \\\\ \\text{b. } \\lim_{x \\to c} (fg)(x) = LM.
+                  \\\\ \\
+                  \\\\ \\text{c. } \\lim_{x \\to c} (kf)(x) = kL.
+                  \\\\ \\
+                  \\\\ \\text{d. If } g(x) \\neq 0 \\ \\ \\forall x \\in D \\text{ and } M \\neq 0,
+                  \\\\ \\ \\ \\ \\ \\text{then } \\lim_{x \\to c} \\left(\\frac{f}{g}\\right)(x) = \\frac{L}{M}
+      `,
+      proof: [
+        {
+          title: `Proof of (a)`,
+          content: `later.`
+        },
+        {
+          title: `Proof of (b)`,
+          content: `atode`
+        },
+        {
+          title: `Proof of (c)`,
+          content: `mata kondo`
+        },
+        {
+          title: `Proof of (d)`,
+          content: `ashita`
+        }
+      ]
     },
     {
       number: 3,
-      title: "5.1.19",
-      statement: "\\text{Placeholder statement for Corollary 5.1.19}",
-      proof: `\\text{Proof...}`
+      title: "5.1.19 Sides of a Limit Must Match",
+      statement: `\\text{Let } f \\text{ be a function defined on a deleted neighborhood}
+                  \\\\ \\text{of a point } c. \\text{ Then } \\lim_{x \\to c} f(x) = L
+                  \\\\ \\text{iff } \\lim_{x \\to c^+} f(x) = \\lim_{x \\to c^-} f(x)
+      `,
+      proof: `\\text{Later...}`
     },
     {
       number: 4,
-      title: "5.2.3(a,b)",
-      statement: "\\text{Placeholder statement for Theorem 5.2.3(a,b)}",
+      title: "5.2.3(a,b) Sequential Criterion for Continuity",
+      statement: `\\text{Let} f: D \\to \\R \\text{ and let } c \\in D.
+                  \\\\ \\text{Then the following conditions are equivalent:}
+                  \\\\ \\
+                  \\\\ \\text{a. } f \\text{ is continuous at c.}
+                  \\\\ \\
+                  \\\\ \\text{b. If } (x_n) \\text{ is any sequence in } D \\text{ such that } (x_n) \\to c,
+                  \\\\ \\ \\ \\ \\ \\text{then } \\lim_{n \\to \\infty} f(x_n) = f(c).
+                  `,
       proof: `\\text{Proof...}`
     },
     {
       number: 5,
-      title: "5.2.7",
-      statement: "\\text{Placeholder statement for Theorem 5.2.7}",
+      title: "5.2.7 Sequential Method for Discontinuity",
+      statement: `\\text{Let } f: D \\to \\R \\text{ and let } c \\in D. 
+                  \\\\ \\text{Then } f \\text{ is discontinuous at } c \\text{ iff}
+                  \\\\ \\text{there exists a sequence } (x_n) \\text{ in } D 
+                  \\\\ \\text{such that } (x_n) \\to c
+                  \\\\ \\text{but the sequence } (f(x_n)) \\not\\to f(c).
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 6,
-      title: "5.2.11",
-      statement: "\\text{Placeholder statement for Theorem 5.2.11}",
+      title: "5.2.11 Operations on Functions Preserve Continuity",
+      statement: `
+                  \\text{Let } f: D \\to \\R \\text{ and } g: D \\to \\R \\text{ and let } c \\in D. 
+                  \\\\ \\text{Suppose that } f \\text{ and } g \\text{ are continuous at } c. 
+                  \\\\ \\text{Then: }
+                  \\\\ \\
+                  \\\\ \\text{a. } f + g \\text{ is continuous at } c,
+                  \\\\ \\
+                  \\\\ \\text{b. } fg \\text{ is continuous at } c,
+                  \\\\ \\
+                  \\\\ \\text{c. } \\frac{f}{g} \\text{ continuous at } c \\text{ if } g(c) \\neq 0.
+      `,          
       proof: `\\text{Proof...}`
     },
     {
       number: 7,
-      title: "5.2.13",
-      statement: "\\text{Placeholder statement for Theorem 5.2.13}",
+      title: "5.2.13 Composition Preserves Continuity",
+      statement: `\\text{Let } f: D \\to \\R \\text{ and } g: E \\to \\R 
+                  \\\\ \\text{be functions such that} f(D) \\subseteq E. 
+                  \\\\ \\text{If } f \\text{ is continuous at a point } c \\in D 
+                  \\\\ \\text{and } g \\text{ is continuous at } f(c),
+                  \\\\ \\text{then the composition } g \\circ f: D \\to \\R 
+                  \\\\ \\text{is continuous at } c.  
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 8,
-      title: "5.3.3",
-      statement: "\\text{Placeholder statement for Theorem 5.3.3}",
+      title: "5.3.3 Image of Compact Subsets are Compact Subsets",
+      statement: `\\text{Let } D \\text{ be a compact subset of } \\R
+                  \\\\ \\text{and suppose that } f: D \\to \\R \\text{ is continuous.}
+                  \\\\ \\text{Then } f(D) \\text{ is compact.}
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 9,
-      title: "5.3.4 (Extreme Value Theorem)",
-      statement: "\\text{Placeholder statement for Extreme Value Theorem}",
+      title: "5.3.4 Extreme Value Theorem",
+      statement: `\\text{Let } D \\text{ be a compact subset of } \\R
+                  \\\\ \\text{and suppose that } f: D \\to \\R \\text{ is continuous.}
+                  \\\\ \\text{Then } f \\text{ assumes minimum and maximum values on } D.
+                  \\\\ \\text{That is, } \\ \\exists x_1, x_2 \\in D
+                  \\\\ \\text{such that } f(x_1) \\leq f(x) \\leq f(x_2) \\ \\ \\forall x \\in D.
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 10,
-      title: "5.3.7 (Intermediate Value Theorem)",
-      statement: "\\text{Placeholder statement for Intermediate Value Theorem}",
+      title: "5.3.7 Intermediate Value Theorem",
+      statement: `\\text{Suppose that } f: [a,b] \\to \\R \\text{ is continuous.}
+                  \\\\ \\text{Then } f \\text{ has the intermediate value property on [a,b].}
+                  \\\\ \\text{That is, if } k \\text{ is any value between } f(a) \\text{ and } f(b)
+                  \\\\ (f(a) < k < f(b) \\text{ or } f(b) < k < f(a)),
+                  \\\\ \\text{then } \\ \\exists c \\in (a,b) \\text{ such that } f(c) = k.
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 11,
       title: "5.4.6",
-      statement: "\\text{Placeholder statement for Theorem 5.4.6}",
+      statement: `\\text{Suppose } f: D \\to \\R \\text{ is continuous on a compact set } D.
+                  \\\\ \\text{Then } f \\text{ is uniformly continuous on } D.
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 12,
-      title: "★ 5.4.8",
-      statement: "\\text{Placeholder statement for Theorem 5.4.8}",
-      proof: `\\text{Proof...}`
+      title: "★ 5.4.8 UC Image of a Cauchy Sequence is Cauchy",
+      statement: `\\text{Let } f: D \\to \\R \\text{ be uniformly continuous on } D
+                  \\\\ \\text{and suppose that } (x_n) \\text{ is a Cauchy sequence in } D.
+                  \\\\ \\text{Then } (f(x_n)) \\text{ is a Cauchy sequence}. 
+      `,
+      proof: [
+        {
+          title: "Textbook Proof",
+          content: `\\text{Given any } \\varepsilon > 0, 
+                    \\\\ \\text{since } f \\text{ is uniformly continuous on } D 
+                    \\\\ \\text{there exists a } \\delta > 0 \\text{ such that}
+                    \\\\ \\
+                    \\\\ |f(x) - f(y)| < \\varepsilon \\text{ whenever } |x-y| < \\delta \\text{ and } x, y \\in D.
+                    \\\\ \\
+                    \\\\ \\text{Since } (x_n) \\text{ is Cauchy,}
+                    \\\\ \\exists N \\in \\Z \\text{ such that } 
+                    \\\\ \\ 
+                    \\\\ |x_n - x_m| < \\delta \\text{ whenever } m, n \\geq N.
+                    \\\\ \\
+                    \\\\ \\text{Thus for } m, n \\geq N \\text{ we have } |f(x_n) - f(x_m)| < \\varepsilon,
+                    \\\\ \\text{so } (f(x_n)) \\text{ is a Cauchy sequence.}
+          `
+        }
+      ]
     },
     {
       number: 13,
       title: "★ 6.1.6",
-      statement: "\\text{Placeholder statement for Theorem 6.1.6}",
-      proof: `\\text{Proof...}`
+      statement: `\\text{If } f: I \\to \\R \\text{ is differentiable at } c \\in I,
+                  \\\\ \\text{then } f \\text{ is continuous at } c.
+      `,
+      proof: `\\text{For every } x \\in I \\text{ with } x \\neq c, \\text{ we have}
+              \\\\ \\
+              \\\\ f(x) = (x-c) \\frac{f(x)-f(c)}{x-c} + f(c).
+              \\\\ \\
+              \\\\ \\text{Since } f'(c) \\text{ exists, we know that }
+              \\\\ \\
+              \\\\ \\lim_{x \\to c} \\frac{f(x)-f(c)}{x-c} = f'(c) \\in \\R.
+              \\\\ \\
+              \\\\ \\text{Thus, by } [[theorem 2]], \\text{ we get}
+              \\\\ \\
+              \\\\ \\lim_{x \\to c} f(x) = 
+      `
     },
     {
       number: 14,
