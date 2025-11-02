@@ -13,7 +13,8 @@ export default function IntermediateAnalysisLayout({
   const tabs = [
     { name: "Theorems", href: "/notes/intermediate-analysis/theorems" },
     { name: "Definitions", href: "/notes/intermediate-analysis/definitions" },
-    { name: "Articles", href: "/notes/intermediate-analysis/articles" },
+    { name: "Proof Methods", href: "/notes/intermediate-analysis/proof-methods" },
+    { name: "Problem Solving Techniques", href: "/notes/intermediate-analysis/problem-solving-techniques" },
   ];
 
   return (

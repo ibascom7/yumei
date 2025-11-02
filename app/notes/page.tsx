@@ -8,32 +8,39 @@ export default function NotesPage() {
     {
       name: "Abstract Algebra",
       href: "/notes/algebra",
-      theorems: 34,
-      definitions: 7,
-      articles: 1,
+      content: [
+        { label: "theorems", count: 34 },
+        { label: "definitions", count: 7 },
+        { label: "articles", count: 1 },
+      ],
       color: "#ef4444", // red-500
     },
     {
       name: "Intermediate Analysis",
       href: "/notes/intermediate-analysis",
-      theorems: 1,
-      definitions: 1,
-      articles: 1,
+      content: [
+        { label: "theorems", count: 1 },
+        { label: "definitions", count: 1 },
+        { label: "methods", count: 1 },
+        { label: "techniques", count: 1 },
+      ],
       color: "#3b82f6", // blue-500
     },
     {
       name: "Data Programming",
       href: "/notes/data-programming",
-      theorems: 0,
-      definitions: 0,
-      articles: 0,
+      content: [
+        { label: "theorems", count: 0 },
+        { label: "definitions", count: 0 },
+        { label: "articles", count: 0 },
+      ],
       color: "#22c55e", // green-500
     },
   ];
 
   // Calculate radius based on total content (sqrt of total items)
   const getRadius = (cls: typeof classes[0]) => {
-    const total = cls.theorems + cls.definitions + cls.articles;
+    const total = cls.content.reduce((sum, item) => sum + item.count, 0);
     return total > 0 ? Math.sqrt(total) : 1;
   };
 
@@ -73,11 +80,11 @@ export default function NotesPage() {
                 </span>
               </div>
               <div className="text-center text-sm text-gray-600">
-                {cls.theorems + cls.definitions + cls.articles > 0 ? (
+                {cls.content.reduce((sum, item) => sum + item.count, 0) > 0 ? (
                   <div>
-                    <div>{cls.theorems} theorems</div>
-                    <div>{cls.definitions} definitions</div>
-                    <div>{cls.articles} articles</div>
+                    {cls.content.map((item, idx) => (
+                      <div key={idx}>{item.count} {item.label}</div>
+                    ))}
                   </div>
                 ) : (
                   <div className="text-gray-400">No content yet</div>
