@@ -18,7 +18,7 @@ export default function DefinitionCard({ number, term, definition }: DefinitionC
         <span className="font-bold text-blue-600">Definition {number}. </span>
         <span className="font-semibold text-black">{term}</span>
       </div>
-      <div className="text-black text-sm sm:text-base ml-0 sm:ml-[7.5em]">
+      <div className="text-black text-sm sm:text-base ml-0 sm:ml-[6em]">
         <BlockMath math={definition} />
       </div>
     </div>

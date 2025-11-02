@@ -19,10 +19,10 @@ export default function NotesPage() {
       name: "Intermediate Analysis",
       href: "/notes/intermediate-analysis",
       content: [
-        { label: "theorems", count: 1 },
-        { label: "definitions", count: 1 },
-        { label: "methods", count: 1 },
-        { label: "techniques", count: 1 },
+        { label: "theorems", count: 22 },
+        { label: "definitions", count: 9 },
+        { label: "methods", count: 7 },
+        { label: "techniques", count: 3 },
       ],
       color: "#3b82f6", // blue-500
     },

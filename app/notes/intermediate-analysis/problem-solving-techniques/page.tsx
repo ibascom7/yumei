@@ -4,16 +4,34 @@ export default function ProblemSolvingTechniquesPage() {
   const techniques = [
     {
       number: 1,
-      title: "Example Technique",
-      description: "This is a placeholder for a problem solving technique description.",
+      title: "Intermediate Value Theorem",
+      description: "Use the intermediate value theorem to solve problems.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement 1}",
-          solution: `\\text{Solution to example 1...}`
-        },
+          problemStatement: "\\text{Example problem statement}",
+          solution: `\\text{Solution...}`
+        }
+      ]
+    },
+    {
+      number: 2,
+      title: "Extreme Value Theorem",
+      description: "Use the extreme value theorem to solve problems.",
+      examples: [
         {
-          problemStatement: "\\text{Example problem statement 2}",
-          solution: `\\text{Solution to example 2...}`
+          problemStatement: "\\text{Example problem statement}",
+          solution: `\\text{Solution...}`
+        }
+      ]
+    },
+    {
+      number: 3,
+      title: "Mean Value Theorem",
+      description: "Use the mean value theorem to solve problems.",
+      examples: [
+        {
+          problemStatement: "\\text{Example problem statement}",
+          solution: `\\text{Solution...}`
         }
       ]
     }

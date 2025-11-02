@@ -4,9 +4,135 @@ export default function TheoremsPage() {
   const theorems = [
     {
       number: 1,
-      title: "Example Theorem",
-      statement: "\\text{This is a placeholder theorem statement.}",
-      proof: `\\text{Proof coming soon...}`
+      title: "5.1.9",
+      statement: "\\text{Placeholder statement for Theorem 5.1.9}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 2,
+      title: "5.1.14",
+      statement: "\\text{Placeholder statement for Theorem 5.1.14}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 3,
+      title: "5.1.19",
+      statement: "\\text{Placeholder statement for Corollary 5.1.19}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 4,
+      title: "5.2.3(a,b)",
+      statement: "\\text{Placeholder statement for Theorem 5.2.3(a,b)}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 5,
+      title: "5.2.7",
+      statement: "\\text{Placeholder statement for Theorem 5.2.7}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 6,
+      title: "5.2.11",
+      statement: "\\text{Placeholder statement for Theorem 5.2.11}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 7,
+      title: "5.2.13",
+      statement: "\\text{Placeholder statement for Theorem 5.2.13}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 8,
+      title: "5.3.3",
+      statement: "\\text{Placeholder statement for Theorem 5.3.3}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 9,
+      title: "5.3.4 (Extreme Value Theorem)",
+      statement: "\\text{Placeholder statement for Extreme Value Theorem}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 10,
+      title: "5.3.7 (Intermediate Value Theorem)",
+      statement: "\\text{Placeholder statement for Intermediate Value Theorem}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 11,
+      title: "5.4.6",
+      statement: "\\text{Placeholder statement for Theorem 5.4.6}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 12,
+      title: "5.4.8",
+      statement: "\\text{Placeholder statement for Theorem 5.4.8}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 13,
+      title: "6.1.6",
+      statement: "\\text{Placeholder statement for Theorem 6.1.6}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 14,
+      title: "6.1.7",
+      statement: "\\text{Placeholder statement for Theorem 6.1.7}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 15,
+      title: "6.1.10 (Chain Rule)",
+      statement: "\\text{Placeholder statement for Chain Rule}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 16,
+      title: "6.2.2",
+      statement: "\\text{Placeholder statement for Theorem 6.2.2}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 17,
+      title: "6.2.4 (Rolle's Theorem)",
+      statement: "\\text{Placeholder statement for Rolle's Theorem}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 18,
+      title: "6.2.5 (Mean Value Theorem)",
+      statement: "\\text{Placeholder statement for Mean Value Theorem}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 19,
+      title: "6.2.8",
+      statement: "\\text{Placeholder statement for Theorem 6.2.8}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 20,
+      title: "6.2.9",
+      statement: "\\text{Placeholder statement for Corollary 6.2.9}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 21,
+      title: "6.2.11",
+      statement: "\\text{Placeholder statement for Theorem 6.2.11}",
+      proof: `\\text{Proof...}`
+    },
+    {
+      number: 22,
+      title: "6.2.13 (Inverse Function Theorem)",
+      statement: "\\text{Placeholder statement for Inverse Function Theorem}",
+      proof: `\\text{Proof...}`
     }
   ];
 
