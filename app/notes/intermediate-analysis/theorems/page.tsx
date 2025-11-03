@@ -81,7 +81,7 @@ export default function TheoremsPage() {
     },
     {
       number: 4,
-      title: "5.2.3(a,b) Sequential Criterion for Continuity",
+      title: "5.2.3(a,b,d) Sequential Criterion for Continuity",
       statement: `\\text{Let} f: D \\to \\R \\text{ and let } c \\in D.
                   \\\\ \\text{Then the following conditions are equivalent:}
                   \\\\ \\
@@ -89,6 +89,11 @@ export default function TheoremsPage() {
                   \\\\ \\
                   \\\\ \\text{b. If } (x_n) \\text{ is any sequence in } D \\text{ such that } (x_n) \\to c,
                   \\\\ \\ \\ \\ \\ \\text{then } \\lim_{n \\to \\infty} f(x_n) = f(c).
+                  \\\\ \\
+                  \\\\ \\text{Furthermore, if } c \\text{ is an accumulation point of } D,
+                  \\\\ \\text{then the above are equivalent to:}
+                  \\\\ \\
+                  \\\\ \\text{d. } f \\text{ has a limit at } c \\text{ and } \\lim_{x \\to c} f(x) = f(c).
                   `,
       proof: `\\text{Proof...}`
     },
@@ -213,19 +218,47 @@ export default function TheoremsPage() {
               \\\\ \\
               \\\\ \\text{Thus, by } [[theorem 2]], \\text{ we get}
               \\\\ \\
-              \\\\ \\lim_{x \\to c} f(x) = 
+              \\\\ \\lim_{x \\to c} f(x) = \\left(\\lim_{x \\to c}(x-c)\\right) \\left(\\lim_{x \\to c}\\frac{f(x)-f(c)}{x-c}\\right) + \\lim_{x \\to c}f(c)
+              \\\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ = 0 \\cdot f'(c) + f(c) = f(c)
+              \\\\ \\
+              \\\\ \\text{Hence [[theorem 4]] implies that } f \\text{ is continuous at } c.
       `
     },
     {
       number: 14,
-      title: "6.1.7",
-      statement: "\\text{Placeholder statement for Theorem 6.1.7}",
+      title: "6.1.7 Derivative Rules",
+      statement: `\\text{Suppose that } f: I \\to \\R \\text{ and } g: I \\to \\R 
+                  \\\\ \\text{are differentiable at } c \\in I. Then
+                  \\\\ \\
+                  \\\\ \\text{a. If } k \\in \\R, \\text{ then } kf \\text{ is differentiable at } c \\text{ and}
+                  \\\\ \\
+                  \\\\ \\ \\ \\ \\ (kf)'(c) = k \\cdot f'(c).
+                  \\\\ \\ 
+                  \\\\ \\text{b. The function } f + g \\text{ is diffterentiable at } c \\text{ and}
+                  \\\\ \\
+                  \\\\ \\ \\ \\ \\ (f + g)'(c) = f'(c) + g'(c).
+                  \\\\ \\
+                  \\\\ \\text{c. (Product Rule) The function } fg \\text{ is differentiable at } c \\text{ and}
+                  \\\\ \\
+                  \\\\ \\ \\ \\ \\ (fg)'(c) = f(c)g'(c) + g(c)f'(c).
+                  \\\\ \\
+                  \\\\ \\text{d. (Quotient Rule) If } g(c) \\neq 0, \\text{ then } \\frac{f}{g} \\text{ is differentiable at } c \\text{ and}
+                  \\\\ \\
+                  \\\\ \\ \\ \\ \\ \\left(\\frac{f}{g}\\right)'(c) = \\frac{g(c)f'(c)-f(c)g'(c)}{[g(c)]^2}
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 15,
-      title: "6.1.10 (Chain Rule)",
-      statement: "\\text{Placeholder statement for Chain Rule}",
+      title: "6.1.10 Chain Rule",
+      statement: `\\text{Let } I, J \\text{ be intervals in } \\R, \\text{ let } f: I \\to \\R \\text{ and } g: J \\to \\R,
+                  \\\\ \\text{where } f(I) \\subseteq J, \\text{ and let } c \\in I.
+                  \\\\ \\
+                  \\\\ \\text{If } f \\text{ is differentiable at } c \\text{ and } g \\text{ is differentiable at } f(c),
+                  \\\\ \\text{then } g \\circ f \\text{ is differentiable at } c \\text{ and}
+                  \\\\ \\
+                  \\\\ (g \\circ f)'(c) = g'(f(c)) \\cdot f'(c).
+      `,
       proof: `\\text{Proof...}`
     },
     {
