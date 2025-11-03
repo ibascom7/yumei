@@ -119,8 +119,9 @@ export default function ProofMethodsPage() {
       description: "Use sequences (Theorem 5.2.3(b)) to prove that a given function is continuous at a given point.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement}",
-          solution: `\\text{Solution...}`
+          problemStatement: "\\text{Let } f(x) = x^2. \\text{ Show that } f \\text{ is continuous at 2}.",
+          solution: `\\text{Let } (x_n) \\text{ be a sequence}
+          `
         }
       ]
     },
