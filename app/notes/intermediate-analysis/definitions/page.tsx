@@ -56,7 +56,7 @@ export default function DefinitionsPage() {
                    \\\\ \\
                    \\\\ \\quad \\text{a. We say that } f \\text{ is continuous at } c \\text{ if} 
                    \\\\ \\
-                   \\\\ \\quad \\ \\ \\ \\ \\ \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - L| < \\varepsilon
+                   \\\\ \\quad \\ \\ \\ \\ \\ \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - f(c)| < \\varepsilon
                    \\\\ \\quad \\ \\ \\ \\ \\ \\text{whenever } x \\in D \\text{ and } |x-c| < \\delta.
                    \\\\ \\
                    \\\\ \\quad \\text{b. If } f \\text{ is continuous at each point of a subset } S \\subseteq D,
