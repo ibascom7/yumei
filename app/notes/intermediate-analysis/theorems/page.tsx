@@ -204,7 +204,22 @@ export default function TheoremsPage() {
     },
     {
       number: 13,
-      title: "★ 6.1.6",
+      title: "6.1.3 Sequential Condition for Derivatives",
+      statement: `\\text{Let } I \\text{ be an interval with } c \\in I, \\text{ and } f: I \\to \\R. 
+                  \\\\ \\
+                  \\\\ \\text{Then } f \\text{ is differentiable at } c \\text{ iff},
+                  \\\\ \\text{for every sequence } (x_n) \\in I \\text{ such that } (x_n) \\to c \\text{ and } x_n \\neq c \\ \\ \\forall n,
+                  \\\\ \\
+                  \\\\ \\text{the sequence } \\left(\\frac{f(x_n)-f(c)}{x_n-c}\\right) \\text{ converges.}
+                  \\\\ \\
+                  \\\\ \\text{Furthermore, if } f \\text{ is differentiable at } c,
+                  \\\\ \\text{then the sequence of quotients will converge to } f'(c).
+      `,
+      proof: `\\text{you thought}`
+    },
+    {
+      number: 14,
+      title: "★ 6.1.6 Differentiability Implies Continuity",
       statement: `\\text{If } f: I \\to \\R \\text{ is differentiable at } c \\in I,
                   \\\\ \\text{then } f \\text{ is continuous at } c.
       `,
@@ -225,7 +240,7 @@ export default function TheoremsPage() {
       `
     },
     {
-      number: 14,
+      number: 15,
       title: "6.1.7 Derivative Rules",
       statement: `\\text{Suppose that } f: I \\to \\R \\text{ and } g: I \\to \\R 
                   \\\\ \\text{are differentiable at } c \\in I. Then
@@ -249,7 +264,7 @@ export default function TheoremsPage() {
       proof: `\\text{Proof...}`
     },
     {
-      number: 15,
+      number: 16,
       title: "6.1.10 Chain Rule",
       statement: `\\text{Let } I, J \\text{ be intervals in } \\R, \\text{ let } f: I \\to \\R \\text{ and } g: J \\to \\R,
                   \\\\ \\text{where } f(I) \\subseteq J, \\text{ and let } c \\in I.
@@ -262,45 +277,128 @@ export default function TheoremsPage() {
       proof: `\\text{Proof...}`
     },
     {
-      number: 16,
-      title: "★ 6.2.2",
-      statement: "\\text{Placeholder statement for Theorem 6.2.2}",
-      proof: `\\text{Proof...}`
-    },
-    {
       number: 17,
-      title: "6.2.4 (Rolle's Theorem)",
-      statement: "\\text{Placeholder statement for Rolle's Theorem}",
-      proof: `\\text{Proof...}`
+      title: "★ 6.2.2 Peaks and Troughs",
+      statement: `\\text{If } f \\text{ is differentiable on an open interval } (a,b) 
+                  \\\\ \\text{and if } f \\text{ achieves its absolute max or min} \\text{ at } c \\in (a,b), 
+                  \\\\ \\text{then } f'(c) = 0.
+      `,
+      proof: `\\text{Suppose that } f \\text{ achieves its absolute max at c.}
+              \\\\ \\text{That is, } f(x) \\leq f(c) \\ \\ \\forall x \\in (a, b).
+              \\\\ \\
+              \\\\ \\text{Let } (x_n) \\to c \\text{ such that } a < x_n < c \\ \\ \\forall n \\in \\N.
+              \\\\ \\
+              \\\\ \\text{Then, since } f \\text{ is differentiable at } c, 
+              \\\\ \\text{[[theorem 13]] implies that the sequence}
+              \\\\ \\
+              \\\\ \\left(\\frac{f(x_n)-f(c)}{x_n-c}\\right) \\text{ converges to } f'(c).
+              \\\\ \\
+              \\\\ \\text{But each term in this sequence of quotients is positive,}
+              \\\\ \\text{since } f(x_n) \\leq f(c) \\text{ and } x_n < c. \\text{ Thus } f'(c) \\geq 0.
+              \\\\ \\
+              \\\\ \\text{Similarly, let } (y_n) \\text{ be a sequence converging to } c \\text{ such that } 
+              \\\\ c < y_n < b \\ \\ \\forall n. \\text{ Then the terms of the sequence}
+              \\\\ \\
+              \\\\ \\left(\\frac{f(y_n)-f(c)}{y_n-c}\\right)
+              \\\\ \\
+              \\\\ \\text{are all negative, since } f(y_n) \\leq f(c) \\text{ and } y_n > c.
+              \\\\ \\text{Since the sequence of quotients again converges to } f'(c),
+              \\\\ \\text{we must have } f'(c) \\leq 0. 
+              \\\\ \\text{Therefore, we conclude that } f'(c) = 0.
+              \\\\ \\
+              \\\\ \\text{The absolute minimum case can be obtained}
+              \\\\ \\text{by applying the above result to } -f.
+      `
     },
     {
       number: 18,
-      title: "6.2.5 (Mean Value Theorem)",
-      statement: "\\text{Placeholder statement for Mean Value Theorem}",
+      title: "6.2.4 Rolle's Theorem",
+      statement: `\\text{Let } f \\text{ be a continuous function on } [a,b]
+                  \\\\ \\text{that is differentiable on } (a, b) 
+                  \\\\ \\text{and such that } f(a) = f(b). 
+                  \\\\ \\text{Then } \\exists c \\in (a,b) \\text{ such that } f'(c) = 0.
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 19,
-      title: "6.2.8",
-      statement: "\\text{Placeholder statement for Theorem 6.2.8}",
+      title: "6.2.5 Mean Value Theorem",
+      statement: `\\text{Let } f \\text{ be a continuous function on } [a,b]
+                  \\\\ \\text{that is differentiable on } (a,b).
+                  \\\\ \\
+                  \\\\ \\text{Then } \\exists c \\in (a,b) \\text{ such that }
+                  \\\\ \\
+                  \\\\ f'(c) = \\frac{f(b)-f(a)}{b-a}.
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 20,
-      title: "6.2.9",
-      statement: "\\text{Placeholder statement for Corollary 6.2.9}",
+      title: "6.2.8 Constant Functions",
+      statement: `\\text{Let } f \\text{ be continuous on } [a,b] \\text{ and differentiable on } (a,b).
+                  \\\\ \\text{If } f'(x) = 0 \\ \\ \\forall x \\in (a,b),
+                  \\\\ \\text{then } f \\text{ is constant on } [a,b].
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 21,
-      title: "★ 6.2.11",
-      statement: "\\text{Placeholder statement for Theorem 6.2.11}",
+      title: "6.2.9 Same Derivative Implies Antiderivatives Offset by a Constant",
+      statement: `\\text{Let } f \\text{ and } g \\text{ be continuous on } [a,b] \\text{ and differentiable on } (a,b).
+                  \\\\ \\text{Suppose that } f'(x) = g'(x) \\ \\ \\forall x \\in (a,b),
+                  \\\\ \\text{then } \\exists \\text{ a constant } C \\text{ such that } f = g + C \\text{ on } [a,b].
+      `,
       proof: `\\text{Proof...}`
     },
     {
       number: 22,
-      title: "6.2.13 (Inverse Function Theorem)",
-      statement: "\\text{Placeholder statement for Inverse Function Theorem}",
+      title: "★ 6.2.11 Strict Parity Implies Monotonicity",
+      statement: `\\text{Let } f \\text{ be differentiable on an interval } I. \\text{ Then}
+                  \\\\ \\
+                  \\\\ \\text{a. If } f'(x) > 0 \\ \\ \\forall x \\in I, 
+                  \\\\ \\ \\ \\ \\ \\text{then } f \\text{ is strictly increasing on } I.
+                  \\\\ \\
+                  \\\\ \\text{b. If } f'(x) < 0 \\ \\ \\forall x \\in I, 
+                  \\\\ \\ \\ \\ \\ \\text{then } f \\text{ is strictly decreasing on } I.
+
+      `,
+      proof: `\\text{Suppose that } f'(x) > 0 \\ \\ \\forall x \\in I,
+              \\\\ \\text{and let } x_1, x_2 \\in I \\text{ with } x_1 < x_2.
+              \\\\ \\
+              \\\\ \\text{Since } f \\text{ is continuous on } [x_1, x_2] \\text{ and differentiable on } (x_1, x_2),
+              \\\\ \\text{[[theorem 19]](MVT) implies that } \\ \\exists c \\in (x_1, x_2) \\text{ such that}
+              \\\\ \\
+              \\\\ f(x_2) - f(x_1) = f'(c)(x_2 - x_1).
+              \\\\ \\
+              \\\\ \\text{Since } f'(c) > 0 \\text{ and } x_2 - x_1 > 0,
+              \\\\ \\text{we must have } f(x_2) > f(x_1). \\text{ Thus } f \\text{ is strictly increasing on } I.
+              \\\\ \\
+              \\\\ \\text{Now, suppose that } f'(x) < 0 \\ \\ \\forall x \\in I,
+              \\\\ \\text{and let } x_1, x_2 \\in I \\text{ with } x_1 > x_2.
+              \\\\ \\
+              \\\\ \\text{Since } f \\text{ is continuous on } [x_1, x_2] \\text{ and differentiable on } (x_1, x_2),
+              \\\\ \\text{[[theorem 19]](MVT) implies that } \\ \\exists c \\in (x_1, x_2) \\text{ such that}
+              \\\\ \\
+              \\\\ f(x_2) - f(x_1) = f'(c)(x_2 - x_1).
+              \\\\ \\
+              \\\\ \\text{Since } f'(c) < 0 \\text{ and } x_2 - x_1 < 0, 
+              \\\\ \\text{we must have } f(x_2) < f(x_1). \\text{ Thus } f \\text{ is strictly decreasing on } I.
+
+      `
+    },
+    {
+      number: 23,
+      title: "6.2.13 Inverse Function Theorem",
+      statement: `\\text{Suppose that } f \\text{ is differentiable on an interval } I
+                  \\\\ \\text{and } f'(x) \\neq 0 \\ \\ \\forall x \\in I.
+                  \\\\ \\
+                  \\\\ \\text{Then } f \\text{ is injective, } 
+                  \\\\ f^{-1} \\text{ is differentiable on } f(I), \\text{ and }
+                  \\\\ \\
+                  \\\\ (f^{-1})'(y) = \\frac{1}{f'(x)},
+                  \\\\ \\
+                  \\\\ \\text{where } y = f(x).
+      `,
       proof: `\\text{Proof...}`
     }
   ];

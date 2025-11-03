@@ -87,7 +87,7 @@ export default function DefinitionsPage() {
     },
     {
       number: 7,
-      term: "6.1.1 Series Convergence",
+      term: "6.1.1 Differentiable",
       definition: `\\text{Let } f \\text{ be a real-valued function defined on an interval } I
                    \\\\ \\text{containing the point c. We say that } f \\text{ is differentiable at } c
                    \\\\ \\text{if the limit }
