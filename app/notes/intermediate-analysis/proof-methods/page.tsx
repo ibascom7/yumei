@@ -120,7 +120,14 @@ export default function ProofMethodsPage() {
       examples: [
         {
           problemStatement: "\\text{Let } f(x) = x^2. \\text{ Show that } f \\text{ is continuous at 2}.",
-          solution: `\\text{Let } (x_n) \\text{ be a sequence}
+          solution: `\\text{Let } (x_n) \\text{ be a sequence in } \\R \\text{ such that } x_n \\to 2. 
+                     \\\\ \\text{We proceed to show } \\lim_{n \\to \\infty} f(x_n) = f(2).
+                     \\\\ \\
+                     \\\\ \\text{Since } x_n \\to 2, \\text{ we have that } \\lim_{n \\to \\infty} x_n = 2.
+                     \\\\ \\
+                     \\\\ \\text{So } \\lim_{n \\to \\infty} f(x_n) = \\lim_{n \\to \\infty} x_n^2 = \\lim_{n \\to \\infty} x_n \\cdot \\lim_{n \\to \\infty} x_n = 4 = 2^2 = f(2).
+                     \\\\ \\
+                     \\\\ \\text{Thus, } f \\text{ is continuous at 2.}
           `
         }
       ]
@@ -134,7 +141,7 @@ export default function ProofMethodsPage() {
           problemStatement: `\\text{Let } D = (-\\infty, 0) \\cup (0, \\infty) \\text{ and let } f(x) = \\frac{1}{x} \\ \\ \\forall x \\in D.
                              \\\\ \\text{Show that } f \\text{ is continuous on } D, \\text{ but not on } \\R.  
           `,
-          solution: `\\text{Since } \\lim_{x \\to c} \\frac{1}{x} = \\frac{1}{c} \\ \\ \\forall c \\in D, f \\text{ is continuous on } D.
+          solution: `\\text{Since } \\lim_{x \\to c} \\frac{1}{x} = \\frac{1}{c} \\ \\ \\forall c \\in D, f \\text{ is continuous on } D \\ ([[theorem 4]] \\text{.d}).
                      \\\\ \\
                      \\\\ \\text{But } f \\text{ is not defined at } 0 \\text{ so it can't be continuous there.}
                      \\\\ \\
@@ -144,8 +151,8 @@ export default function ProofMethodsPage() {
                      \\\\ \\text{Since } \\frac{1}{n} \\to 0 \\text{ and } \\lim_{n\\to\\infty}f\\left(\\frac{1}{n}\\right) = + \\infty,
                      \\\\ \\text{the sequence } \\left(f\\left(\\frac{1}{n}\\right)\\right) \\text{ is not convergent.}
                      \\\\ \\
-                     \\\\ \\text{Thus there is no way to define } 
-                     \\\\ f \\text{ at 0 to make it continuous there.}
+                     \\\\ \\text{Thus there is no way to define } f \\text{ at 0}
+                     \\\\ \\text{to make it continuous there.}
                      `
         }
       ]
@@ -156,8 +163,65 @@ export default function ProofMethodsPage() {
       description: "Use the ε-δ definition of uniform continuity to prove that a given function is uniformly continuous on a given domain.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement}",
-          solution: `\\text{Solution...}`
+          problemStatement: "\\text{Prove that } f(x) = x^3 \\text{ is UC on } [0,2]",
+                             
+          solution: `\\text{Scratch:}
+                     \\\\ \\quad x, y \\in [0,2] \\text{ means}
+                     \\\\ \\quad |x^2| \\leq 4, \\ |y| \\leq 2, \\text{ and } |x + y| \\leq 4.
+                     \\\\ \\
+                     \\\\ \\text{Proof:}
+                     \\\\ \\quad \\text{Let } \\varepsilon > 0. \\text{ Set } \\delta = \\frac{\\varepsilon}{12}.
+                     \\\\ \\
+                     \\\\ \\quad \\text{If } x, y \\in [0, 2] \\text{ and } |x-y| < \\delta,
+                     \\\\ \\
+                     \\\\ \\quad \\text{then } |f(x) - f(y)|  = |x^3 -y^3| = |x^3 - x^2y + x^2y - y^3|
+                     \\\\ \\quad \\leq |x^2| \\cdot |x-y| + |y| \\cdot |x^2 - y^2| 
+                     \\\\ \\quad = |x^2| \\cdot |x-y| + |y| \\cdot |x-y| \\cdot |x+y|
+                     \\\\ \\quad \\leq (4) \\cdot |x-y| + (2) |x - y| \\cdot (4)  
+                     \\\\ \\quad < 4\\left(\\frac{\\varepsilon}{12}\\right) + 2\\left(\\frac{\\varepsilon}{12}\\right)(4) = 12\\left(\\frac{\\varepsilon}{12}\\right) = \\varepsilon.
+                     \\\\ \\
+                     \\\\ \\quad \\text{Therefore } f(x) = x^3 \\text{ is UC on } [0, 2].
+          `
+        },
+        {
+          problemStatement: "\\text{Prove that } f(x) = \\frac{1}{x} \\text{ is UC on } [2,\\infty)",
+          solution: `\\text{Scratch:}
+                     \\\\ \\quad x, y \\in [2,\\infty) \\text{ means}
+                     \\\\ \\quad \\frac{1}{xy} \\leq \\frac{1}{2 \\cdot 2} = \\frac{1}{4}.
+                     \\\\ \\
+                     \\\\ \\text{Proof:}
+                     \\\\ \\quad \\text{Let } \\varepsilon > 0. \\text{ Set } \\delta = 4 \\varepsilon.
+                     \\\\ \\
+                     \\\\ \\quad \\text{If } x, y \\in [2, \\infty) \\text{ and } |x - y| < \\delta,
+                     \\\\ \\
+                     \\\\ \\quad \\text{then } |f(x) - f(y)| = \\left|\\frac{1}{x} - \\frac{1}{y}\\right| = \\left|\\frac{y-x}{xy}\\right|
+                     \\\\ \\
+                     \\\\ \\quad = \\frac{|x-y|}{xy} \\leq \\frac{|x-y|}{4} < \\frac{4\\varepsilon}{4} = \\varepsilon.
+                     \\\\ \\
+                     \\\\ \\quad \\text{Thus } f \\text{ is UC on } [2, \\infty).
+          `
+        },
+        {
+          problemStatement: "\\text{Prove that } f(x) = \\sqrt{x} \\text{ is UC on } [0,\\infty)",
+          solution:`\\text{Scratch:}
+                    \\\\ \\quad x, y \\in [1, \\infty),
+                    \\\\ \\quad \\sqrt{x} \\geq 1, \\sqrt{y} \\geq 1
+                    \\\\ \\quad \\text{so } \\sqrt{x}+\\sqrt{y} \\geq 2
+                    \\\\ \\quad \\text{so } \\frac{|x-y|}{\\sqrt{x}+\\sqrt{y}} \\leq \\frac{|x-y|}{2}
+                    \\\\ \\
+                    \\\\ \\text{Proof:}
+                    \\\\ \\quad \\text{Since } f \\text{ is continuous on } [0, 2] \\text{ which is compact},
+                    \\\\ \\quad \\text{[[theorem 11]] tells us that } f \\text{ is uniform continuous on } [0, 2].
+                    \\\\ \\
+                    \\\\ \\quad \\text{We now claim that } f \\text{ is UC on } [1, \\infty).
+                    \\\\ \\quad \\text{Let } \\varepsilon > 0. \\text{ Set } \\delta = 2\\varepsilon.
+                    \\\\ \\quad \\text{If } x, y \\in [1,\\infty) \\text{ and } |x - y| < \\delta,
+                    \\\\ \\quad \\text{then } |f(x) - f(y)| \\cdot |\\sqrt{x} - \\sqrt{y}| = \\left|\\frac{(\\sqrt{x}-\\sqrt{y})(\\sqrt{x}+\\sqrt{y})}{\\sqrt{x}+\\sqrt{y}}\\right|
+                    \\\\ \\quad \\leq \\frac{|x-y|}{2} < \\frac{\\delta}{2} = \\frac{2\\varepsilon}{2} = \\varepsilon.
+                    \\\\ \\
+                    \\\\ \\quad \\text{Since } f \\text{ is uniformly continuous on } [0,2] \\text{ and } [1, \\infty),
+                    \\\\ \\quad \\text{We conclude that } f \\text{ is UC on } [0, \\infty).
+          `
         }
       ]
     },
