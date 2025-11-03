@@ -1,4 +1,4 @@
-##This is my personal website for notes and projects
+### This is my personal website for notes and projects
 
 Hosted at [isaiahbas.com](https://isaiahbas.com/)
 
