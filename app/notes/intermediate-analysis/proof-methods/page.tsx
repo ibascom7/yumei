@@ -8,16 +8,37 @@ export default function ProofMethodsPage() {
       description: "Use the ε-δ definition of continuity at a point to prove that a given function is continuous at a given point.",
       examples: [
         {
-          problemStatement: `\\text{Define } f: \\R \\to \\R \\text{ by } f(x) = x^2 + 3x - 5
+          problemStatement: `\\text{Define } f: \\R \\to \\R \\text{ by } f(x) = x^2 + 3x - 5.
                              \\\\ \\text{Use [[definition 4]] to prove that } f \\text{ is continuous at } 3. 
           `,
           solution: `\\text{Trying to show this is true:}
-                     \\\\ \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - L| < \\varepsilon
-                     \\\\ \\text{whenever } x \\in D \\text{ and } |x-c| < \\delta.
+                     \\\\ \\quad \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that } |f(x) - f(c)| < \\varepsilon
+                     \\\\ \\quad \\text{whenever } x \\in D \\text{ and } |x-c| < \\delta.
                      \\\\ \\
                      \\\\ \\text{Scratch:}
                      \\\\ \\quad f(c) = f(3) = 13
-                     \\\\ \\quad |f(x) - f(c)| = |
+                     \\\\ \\quad |f(x) - f(c)| = |(x^2 + 3x - 5) - (13)| 
+                     \\\\ \\quad = |x^2 + 3x -18| = |(x-3)(x+6)| = |x-3|\\cdot|x+6|
+                     \\\\ \\
+                     \\\\ \\quad \\text{to get bounds take } \\delta \\leq 1,
+                     \\\\ \\quad \\text{then } |x-3| < 1 \\implies  -1 < x-3 < 1 \\implies 8 < x+6 < 10.
+                     \\\\ \\quad \\text{So, } |x+6| < 10.
+                     \\\\ \\quad \\text{Then, for } |x-3|<1,
+                     \\\\ \\quad |f(x)-f(3)| \\leq 10|x-3| < \\varepsilon \\implies |x-3| < \\frac{\\varepsilon}{10}.
+                     \\\\ \\quad \\text{So } \\delta \\leq \\frac{\\varepsilon}{10} \\text{ and } \\delta \\leq 1 \\text{ are good options for our } \\delta.
+                     \\\\ \\
+                     \\\\ \\text{Proof:}
+                     \\\\ \\quad \\text{Let } \\varepsilon > 0. \\text{ Choose } \\delta \\leq \\min\\left(1, \\frac{\\varepsilon}{10}\\right).
+                     \\\\ \\quad \\text{Suppose } x \\in \\R \\text{ satisfies } |x - 3| < \\delta.
+                     \\\\ \\quad \\text{Since } \\delta \\leq 1, \\ |x-3|<1.
+                     \\\\ \\quad \\text{Which implies } |x+6|<10. 
+                     \\\\ \\quad \\text{So } |f(x) - f(3)| = |x-3|\\cdot|x+6| < |x-3|\\cdot10.
+                     \\\\ \\quad \\text{Since } |x-3|<\\delta\\leq\\frac{\\varepsilon}{10},
+                     \\\\ \\quad \\text{we get } |f(x) - f(3)| < 10 \\cdot \\frac{\\varepsilon}{10} = \\varepsilon.
+                     \\\\ \\quad \\text{Thus, for every } \\varepsilon > 0 
+                     \\\\ \\quad \\text{we have produced a } \\delta > 0 \\text{ such that } |x-3|<\\delta
+                     \\\\ \\quad \\text{implies } |f(x)-f(3)|<\\varepsilon.
+                     \\\\ \\quad \\text{Therefore } f \\text{ is continuous at } 3.
           `
         }
       ]
