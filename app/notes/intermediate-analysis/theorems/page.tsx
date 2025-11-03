@@ -169,7 +169,7 @@ export default function TheoremsPage() {
     },
     {
       number: 11,
-      title: "5.4.6",
+      title: "5.4.6 Continuity on a Compact Set Implies UC",
       statement: `\\text{Suppose } f: D \\to \\R \\text{ is continuous on a compact set } D.
                   \\\\ \\text{Then } f \\text{ is uniformly continuous on } D.
       `,
