@@ -8,6 +8,20 @@ export default function ProofMethodsPage() {
       description: "Use the ε-δ definition of continuity at a point to prove that a given function is continuous at a given point.",
       examples: [
         {
+          problemStatement: `\\text{Let } f: D \\to \\R \\text{ and let } c \\text{ be an isolated point in } D.
+                             \\\\ \\text{Show that } f \\text{ is continuous at } c.
+          `,
+          solution: `\\text{Since } c \\text{ is isolated, } \\ \\exists \\delta > 0 \\text{ such that }
+                     \\\\ \\text{if } |x-c| < \\delta \\text{ and } x \\in D, \\text{ then } x = c.
+                     \\\\ \\
+                     \\\\ \\text{Thus whenever } |x-c| < \\delta \\text{ and } x \\in D, \\text{ we have}
+                     \\\\ \\
+                     \\\\ |f(x)-f(c)| = |f(c) - f(c)| = 0 < \\varepsilon \\ \\ \\forall \\varepsilon > 0.
+                     \\\\ \\
+                     \\\\ \\text{Hence } f \\text{ is continuous at } c.
+          ` 
+        },
+        {
           problemStatement: `\\text{Define } f: \\R \\to \\R \\text{ by } f(x) = x^2 + 3x - 5.
                              \\\\ \\text{Use [[definition 4]] to prove that } f \\text{ is continuous at } 3. 
           `,
@@ -39,6 +53,23 @@ export default function ProofMethodsPage() {
                      \\\\ \\quad \\text{we have produced a } \\delta > 0 \\text{ such that } |x-3|<\\delta
                      \\\\ \\quad \\text{implies } |f(x)-f(3)|<\\varepsilon.
                      \\\\ \\quad \\text{Therefore } f \\text{ is continuous at } 3.
+          `
+        },
+        {
+          problemStatement: `\\text{Define } f: \\R \\to \\R \\text{ via}
+                             \\\\ f(x) = \\begin{cases}
+                             x \\sin \\frac{1}{x} & x \\neq 0 
+                             \\\\ 0 & x = 0.
+                             \\end{cases}
+                             \\\\ \\text{Show that } f \\text{ is continuous at } x = 0.
+          `,
+          solution: `\\text{Let } \\varepsilon > 0. \\text{ Since}
+                     \\\\ |f(x)-f(0)| = |x \\sin \\frac{1}{x}| \\leq |x| \\ \\ \\forall x,
+                     \\\\ \\text{we may let } \\delta = \\varepsilon.
+                     \\\\ \\text{Then when } |x-0| < \\delta \\text{ we have}
+                     \\\\ |f(x) - f(0)| \\leq |x| < \\delta = \\varepsilon.
+                     \\\\ \\text{Hence } f \\text{ is continuous at } x = 0.
+
           `
         }
       ]
