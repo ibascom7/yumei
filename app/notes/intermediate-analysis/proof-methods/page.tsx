@@ -69,7 +69,6 @@ export default function ProofMethodsPage() {
                      \\\\ \\text{Then when } |x-0| < \\delta \\text{ we have}
                      \\\\ |f(x) - f(0)| \\leq |x| < \\delta = \\varepsilon.
                      \\\\ \\text{Hence } f \\text{ is continuous at } x = 0.
-
           `
         }
       ]
@@ -80,8 +79,37 @@ export default function ProofMethodsPage() {
       description: "Use the ε-δ definition of continuity at a point to prove that a given function is discontinuous at a given point.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement}",
-          solution: `\\text{Solution...}`
+          problemStatement: `\\text{Define } f: \\R \\to \\R \\text{ by } f(x) = \\begin{cases} 5x & x \\in \\mathbb{Q} \\\\ x^2 + 6 & x \\in \\R \\setminus \\mathbb{Q}. \\end{cases}
+                             \\\\ \\text{Prove that } f \\text{ is discontinuous at } 1.
+          `,
+          solution: `\\text{At } x = 1, f(x) = 5 \\text{ because } 1 \\in \\mathbb{Q}.
+                     \\\\ \\text{To show } f \\text{ is discontinuous at 1, let } \\varepsilon = 1.
+                     \\\\ \\text{For any } \\delta > 0, (1 - \\delta, 1 + \\delta)
+                     \\\\ \\text{contains both rational and irrational numbers.}
+                     \\\\ \\text{so choose } r \\in \\mathbb{Q} \\text{ such that } r \\in (1 - \\delta, 1 + \\delta),
+                     \\\\ \\text{then } f(r) = 5r, \\text{ so } |f(r) - f(1)| = |5r - 5| = 5|r - 1|.
+                     \\\\ \\text{Choose } i \\in \\R \\setminus \\mathbb{Q} \\text{ such that } i \\in (1-\\delta, 1+\\delta).
+                     \\\\ \\text{Then } f(i) = i^2 + 6, 
+                     \\\\ \\text{so } |f(i) - f(1)| = |i^2 + 6 - 5| = |i^2 + 1| \\geq 1 = \\varepsilon.
+                     \\\\ \\text{Therefore, no matter which } \\delta \\text{ we choose},
+                     \\\\ \\exists x \\in \\R \\text{ with } |x-1| < \\delta \\text{ but } |f(x) - f(1)| \\geq \\varepsilon.
+                     \\\\ \\text{Thus, } f \\text{ is discontinuous at 1.}
+          `
+        },
+        {
+          problemStatement: `f(x) = \\begin{cases} 0 & \\text{if } x < 0 \\\\ 1 & \\text{if } x \\geq 0 \\end{cases} \\text{ is discontinuous at } x = 0.
+          `,
+          solution: `\\text{Let } \\varepsilon = \\frac{1}{2}.
+                     \\\\ \\text{Let } \\delta > 0.
+                     \\\\ \\text{Choose } x = \\frac{-\\delta}{2}.
+                     \\\\ \\
+                     \\\\ \\text{Then } |x-0| = \\frac{\\delta}{2} < \\delta,
+                     \\\\ \\text{but } |f(x) - f(0)| = |0 - 1| = 1 \\geq \\frac{1}{2} = \\varepsilon.
+                     \\\\ \\
+                     \\\\ \\text{Thus } \\ \\exists \\varepsilon > 0 \\text{ such that } \\ \\forall \\delta > 0,
+                     \\\\ \\exists x \\in \\R \\text{ such that } |x - 1| < \\delta \\text{ yet } |f(x) - f(1)| \\geq \\varepsilon.
+                     \\\\ \\text{Therefore, } f \\text{ is discontinuous at 0}.
+          `
         }
       ]
     },
@@ -102,8 +130,22 @@ export default function ProofMethodsPage() {
       description: "Use sequences (Theorem 5.2.7) to prove that a given function is discontinuous at a given point.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement}",
-          solution: `\\text{Solution...}`
+          problemStatement: `\\text{Let } D = (-\\infty, 0) \\cup (0, \\infty) \\text{ and let } f(x) = \\frac{1}{x} \\ \\ \\forall x \\in D.
+                             \\\\ \\text{Show that } f \\text{ is continuous on } D, \\text{ but not on } \\R.  
+          `,
+          solution: `\\text{Since } \\lim_{x \\to c} \\frac{1}{x} = \\frac{1}{c} \\ \\ \\forall c \\in D, f \\text{ is continuous on } D.
+                     \\\\ \\
+                     \\\\ \\text{But } f \\text{ is not defined at } 0 \\text{ so it can't be continuous there.}
+                     \\\\ \\
+                     \\\\ \\text{Additionally, even if we defined } f(0) = k \\text{ for some } k \\in \\R,
+                     \\\\ \\text{then } f \\text{ would still not be continuous at 0.} 
+                     \\\\ \\
+                     \\\\ \\text{Since } \\frac{1}{n} \\to 0 \\text{ and } \\lim_{n\\to\\infty}f\\left(\\frac{1}{n}\\right) = + \\infty,
+                     \\\\ \\text{the sequence } \\left(f\\left(\\frac{1}{n}\\right)\\right) \\text{ is not convergent.}
+                     \\\\ \\
+                     \\\\ \\text{Thus there is no way to define } 
+                     \\\\ f \\text{ at 0 to make it continuous there.}
+                     `
         }
       ]
     },
