@@ -219,8 +219,18 @@ export default function ProofMethodsPage() {
                     \\\\ \\quad \\text{then } |f(x) - f(y)| \\cdot |\\sqrt{x} - \\sqrt{y}| = \\left|\\frac{(\\sqrt{x}-\\sqrt{y})(\\sqrt{x}+\\sqrt{y})}{\\sqrt{x}+\\sqrt{y}}\\right|
                     \\\\ \\quad \\leq \\frac{|x-y|}{2} < \\frac{\\delta}{2} = \\frac{2\\varepsilon}{2} = \\varepsilon.
                     \\\\ \\
-                    \\\\ \\quad \\text{Since } f \\text{ is uniformly continuous on } [0,2] \\text{ and } [1, \\infty),
-                    \\\\ \\quad \\text{We conclude that } f \\text{ is UC on } [0, \\infty).
+                    \\\\ \\quad \\text{So } f \\text{ is uniformly continuous on } [0,2] \\text{ and } [1, \\infty),
+                    \\\\ \\quad \\text{We finish by showing that } f \\text{ is UC on } [0, \\infty).
+                    \\\\ \\
+                    \\\\ \\quad \\text{Let } \\varepsilon > 0. \\ \\ \\exists \\delta_1 > 0 \\text{ such that if } x, y \\in [0, 2]
+                    \\\\ \\quad \\text{and } |x-y| < \\delta_1, \\text{ then } |\\sqrt{x} - \\sqrt{y}| < \\varepsilon. 
+                    \\\\ \\quad \\text{Additionally, } \\ \\exists \\delta_2 > 0
+                    \\\\ \\quad \\text{such that if } x, y \\in [1, \\infty) \\text{ and } |x - y| < \\delta_2,
+                    \\\\ \\quad \\text{then } |\\sqrt{x} - \\sqrt{x}| < \\varepsilon.
+                    \\\\ \\quad \\text{Set } \\delta = \\min(\\delta_1, \\delta_2, 1). 
+                    \\\\ \\quad \\text{If } x,y \\in [0, \\infty) \\text{ and } |x-y| < \\delta,
+                    \\\\ \\quad \\text{then either } x, y \\in [1, \\infty), \\text{ or } x, y \\in [0, 2), 
+                    \\\\ \\quad \\text{so } |\\sqrt{x} - \\sqrt{x}| < \\varepsilon \\text{ either way.}
           `
         }
       ]
@@ -231,8 +241,16 @@ export default function ProofMethodsPage() {
       description: "Use the ε-δ definition of uniform continuity to prove that a given function is not uniformly continuous on a given domain.",
       examples: [
         {
-          problemStatement: "\\text{Example problem statement}",
-          solution: `\\text{Solution...}`
+          problemStatement: "\\text{Show that } f(x) = x^2 \\text{ is not } UC.",
+          solution: `\\text{Let } \\varepsilon = 1. \\text{ Then, given any } \\delta > 0,
+                     \\\\ \\text{let } x = \\frac{1}{\\delta} \\text{ and } y = \\frac{1}{\\delta} + \\frac{\\delta}{2}. 
+                     \\\\ \\text{Then } |x-y| = \\frac{\\delta}{2} < \\delta, \\text{ but}
+                     \\\\ \\
+                     \\\\ |f(x) - f(y)| = |x+y| \\cdot |x-y| 
+                     \\\\ = \\left|\\frac{1}{\\delta} + \\frac{1}{\\delta} + \\frac{\\delta}{2}\\right| \\cdot \\frac{\\delta}{2} > \\frac{2}{\\delta} \\cdot \\frac{\\delta}{2} = 1.
+                     \\\\ \\
+                     \\\\ \\text{Thus } f \\text{ is not uniformly continuous on } \\R.
+           `
         }
       ]
     },
