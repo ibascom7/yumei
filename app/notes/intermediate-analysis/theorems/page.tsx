@@ -374,14 +374,14 @@ export default function TheoremsPage() {
               \\\\ \\text{we must have } f(x_2) > f(x_1). \\text{ Thus } f \\text{ is strictly increasing on } I.
               \\\\ \\
               \\\\ \\text{Now, suppose that } f'(x) < 0 \\ \\ \\forall x \\in I,
-              \\\\ \\text{and let } x_1, x_2 \\in I \\text{ with } x_1 > x_2.
+              \\\\ \\text{and let } x_1, x_2 \\in I \\text{ with } x_1 < x_2.
               \\\\ \\
               \\\\ \\text{Since } f \\text{ is continuous on } [x_1, x_2] \\text{ and differentiable on } (x_1, x_2),
               \\\\ \\text{[[theorem 19]](MVT) implies that } \\ \\exists c \\in (x_1, x_2) \\text{ such that}
               \\\\ \\
               \\\\ f(x_2) - f(x_1) = f'(c)(x_2 - x_1).
               \\\\ \\
-              \\\\ \\text{Since } f'(c) < 0 \\text{ and } x_2 - x_1 < 0, 
+              \\\\ \\text{Since } f'(c) < 0 \\text{ and } x_2 - x_1 > 0, 
               \\\\ \\text{we must have } f(x_2) < f(x_1). \\text{ Thus } f \\text{ is strictly decreasing on } I.
 
       `
