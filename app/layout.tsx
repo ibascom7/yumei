@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Isaiah Bascom",
-  description: "Isaiah Bascom god emperor of the universe the absolute goat of goats",
+  description: "Isaiah Bascom fun fun notes good",
 };
 
 export default function RootLayout({
