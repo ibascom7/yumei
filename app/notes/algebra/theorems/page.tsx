@@ -809,6 +809,14 @@ export default function TheoremsPage() {
                   \\\\ \\text{Then we have } G \\cong K \\iff |G| = |K|. 
       `,
       proof: ""
+    },
+    {
+      number: 100,
+      title:"Maximal Ideal iff Quotient Ring is a Field",
+      statement: `
+      `,
+      proof: `
+      `
     }
     
   ];

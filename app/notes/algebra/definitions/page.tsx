@@ -54,6 +54,43 @@ export default function DefinitionsPage() {
                   \\\\ \\forall g \\in G, \\forall h \\in H, ghg^{-1} \\in H.
                   \\\\ H \\triangleleft G \\text{ if } H \\subset G.
                   `,
+    },
+    {
+      number: 100,
+      term: "Ring",
+      definition: `\\text{A ring is a set } R \\text{equipped with two associative binary operations}
+                   \\\\ +: R \\times R \\to R, \\ \\cdot: R \\times R \\to R
+                   \\\\ \\text{satisfying:}
+                   \\\\ \\ 1) \\ (R, +) \\text{ is an abelian group}
+                   \\\\ \\ 2) \\ \\ \\forall a, b, c \\in R, 
+                   \\\\ \\ \\ \\ \\ \\ \\ (a + b) \\cdot c = (a \\cdot c) + (b \\cdot c)
+                   \\\\ \\ \\ \\ \\ \\ \\ a \\cdot (b + c) = (a \\cdot b) + (a \\cdot c).
+      `
+    },
+    {
+      number:101,
+      term: "Subring",
+      definition: `\\text{Let } (R, +, \\cdot) \\text{ be a ring}
+                   \\\\ \\text{A subset } S \\subseteq R \\text{ is called a subring if:}
+                   \\\\ 1) \\ (S, +) \\text{ is a subgroup of } (R, +)
+                   \\\\ 2) \\ \\ \\forall x, y \\in S, \\text{ we have } x \\cdot y \\in S.
+      `
+    },
+    {
+      number: 102,
+      term: "Division Ring",
+      definition: `\\text{Let } R \\text{ be a unital ring.}
+                   \\\\ \\text{We say } R \\text{ is a division ring if}
+                   \\\\ (R-{0}, \\cdot) \\text{ is a group.}
+                   \\\\ \\text{This is if every non-zero element}
+                   \\\\ \\text{has a multiplicative inverse for this operation}
+      `
+    },
+    {
+      number: 103,
+      term: "Field",
+      definition: `\\text{A commutative division ring is called a field.}
+      `
     }
   ];
   return (
