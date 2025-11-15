@@ -27,4 +27,5 @@ What have we covered?
     - Linear Differential Operators
     - Boundary Conditions
     - The Spectral Method
-    - Laplace Transform
+    - Laplace Transform 
+    
