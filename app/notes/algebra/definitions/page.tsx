@@ -91,6 +91,25 @@ export default function DefinitionsPage() {
       term: "Field",
       definition: `\\text{A commutative division ring is called a field.}
       `
+    },
+    {
+      number: 1000,
+      term: "Euclid's Lemma",
+      definition: `\\text{Let } R \\text{ be a commutative ring.}
+                   \\\\ \\text{An element } p \\in R \\text{ is said to be prime if}
+                   \\\\ \\text{it is not the zero element or a unit (one)}
+                   \\\\ \\text{and whenever } p | ab \\ \\forall a, b \\in R, \\text{ then } p | a \\text{ or } p | b.
+      `
+    },
+    {
+      number: 1001,
+      term: "Prime Ideal",
+      definition: `\\text{Let R be an ID.}
+                   \\\\ \\text{A non-zero and non-invertible (not one) element } x \\in R 
+                   \\\\ \\text{ is called prime iffwhenever } a, b \\in R \\text{ and } x = ab,
+                   \\\\ \\text{then either }
+
+      `
     }
   ];
   return (

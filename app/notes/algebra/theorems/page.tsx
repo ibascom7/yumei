@@ -817,8 +817,154 @@ export default function TheoremsPage() {
       `,
       proof: `
       `
+    },
+    {
+      number: 1000,
+      title: "Generated Sets are Equivalent when their Generators are divisible of each other.",
+      statement: `\\text{Let } a, b \\in R. 
+                  \\\\ \\text{Then } \\langle a \\rangle = \\langle b \\rangle \\text{ iff } b = au,
+                  \\\\ \\text{for some invertible } u \\in R.
+      `,
+      proof: `\\text{Assume } \\langle a \\rangle = \\langle b \\rangle. 
+              \\\\ \\text{Then } \\exists u, x \\in R \\text{ such that } b = au \\text{ and } a = bx.
+              \\\\ \\text{So by substitution, } a = aux.
+              \\\\ \\text{Since } R \\text{ is an integral domain,}
+              \\\\ \\text{it follows that } 1 = ux, \\text{ hence } u \\text{ is invertible. }
+              \\\\ \\text{Conversely,} \\text{ assume } b = au \\text{ for some invertible } u \\in R.
+              \\\\ \\text{Then } \\langle b \\rangle \\subseteq \\langle a \\rangle.
+              \\\\ \\text{Since } u \\text{ is invertible, we have } bu^{-1} = a.
+              \\\\ \\text{Which implies, } \\langle a \\rangle \\subseteq \\langle b \\rangle.
+              \\\\ \\text{Thus, } \\langle a \\rangle = \\langle b \\rangle.
+      `
+    },
+    {
+      number: 1001,
+      title: "Generators are only Irreducible when the Generating Set is Prime",
+      statement: `a \\in R \\text{ is irreducible iff } \\langle a \\rangle \\text{ is prime.}`,
+      proof: `\\text{Assume } a \\text{ is irreducible.}
+              \\\\ \\text{If } x, y \\in R \\text{ and } xy \\in \\langle a \\rangle, \\text{ then } a | xy.
+              \\\\ \\text{So either } a | x \\text{ or } a | y.
+              \\\\ \\text{In other words, either } x \\in \\langle a \\rangle \\text{ or } y \\in \\langle a \\rangle.
+              \\\\ \\text{So } \\langle a \\rangle \\text{ is prime.} 
+              \\\\ \\text{Conversely, assume } \\langle a \\rangle \\text{ is prime}.
+              \\\\ \\text{Let } x, y \\in R \\text{ such that } a | xy.
+              \\\\ \\text{Then } x, y \\in \\langle a \\rangle. 
+              \\\\ \\text{So either } x \\in \\langle a \\rangle \\text{ or } y \\in \\langle a \\rangle.
+              \\\\ \\text{So either } a | x \\text{ or } a | y,
+              \\\\ \\text{so } a \\text{ is irreducble.}
+      `
+    },
+    {
+      number: 1002,
+      title: "An ideal of Z is only maximal when its generator is prime",
+      statement: `\\text{Let } n \\in \\N.
+                  \\\\ \\text{Then } n \\text{ is prime iff } n \\Z \\trianglelefteq \\Z \\text{ is maximal}.
+      `,
+      proof: `\\text{Assume } n \\text{ is prime.}
+              \\\\ \\text{Let } J \\trianglelefteq \\Z \\text{ such that } n \\Z \\subseteq J \\subseteq \\Z. 
+              \\\\ \\text{Since every ideal in } \\Z \\text{ is principal, } 
+              \\\\ \\exists m \\in \\Z \\text{ such that } J = m \\Z.
+              \\\\ \\text{So } n \\Z \\subseteq m \\Z, \\text{ which implies } 
+              \\\\ \\exists u \\in \\Z \\text{ such that } n = mu.
+              \\\\ \\text{Since } n \\text{ is prime, its only divisors are 1 and n.}
+              \\\\ \\text{So either } m = 1 \\text{ or } m = n. 
+              \\\\ \\text{If } m = 1, \\text{ then } m \\Z = \\Z.
+              \\\\ \\text{If } m = n, \\text{ then } m \\Z = n \\Z.
+              \\\\ \\text{Thus, by definition } n \\Z \\text{ is maximal.} 
+              \\\\ \\text{Conversely, assume } n \\Z \\trianglelefteq \\Z \\text{ is maximal.}
+              \\\\ \\text{Let } J \\text{ be an ideal such that } n \\Z \\trianglelefteq J \\trianglelefteq \\Z.
+              \\\\ \\text{Since every ideal in } \\Z \\text{ is principal, } 
+              \\\\ \\exists m \\in \\Z \\text{ such that } J = m \\Z.
+              \\\\ \\text{Since } n \\Z \\text{ is maximal, }
+              \\\\ \\text{either } m \\Z = n \\Z \\text{ or } m \\Z = \\Z.
+              \\\\ \\text{Which implies } m | n, \\text{ and that } m = n \\text{ or } m = 1. 
+              \\\\ \\text{Which implies that } n \\text{ is prime.} \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 1003,
+      title: "Generalization of Previous Theorem",
+      statement: "\\text{In any Principal Integral Domain (PID), every non-zero prime ideal is maximal.}",
+      proof: `\\text{Let } R \\text{ be a PID, and let } I \\trianglelefteq R \\text{ be a non-zero prime.} 
+              \\\\ \\text{Let } I \\trianglelefteq J \\trianglelefteq R. \\text{ Since R is PID,}
+              \\\\ \\exists a, b \\in R \\text{ such that } I = \\langle a \\rangle \\text{ and } J = \\langle b \\rangle.
+              \\\\ \\text{Since } I \\subseteq J, a \\in \\langle b \\rangle, \\text{ so } \\exists r \\in R
+              \\\\ \\text{such that } a = br. 
+              \\\\ \\text{Then } br \\in \\langle a \\rangle \\text{ and equivalently } br \\in I,
+              \\\\ \\text{and since } I \\text{ is prime, either } b \\in I \\text{ or } r \\in I.
+              \\\\ \\text{If } b \\in I, \\text{ then } \\langle b \\rangle \\subseteq I, \\text{ that is} 
+              \\\\ J \\subseteq I. \\text{ Hence } J = I.
+              \\\\ \\text{If } r \\in I, \\text{ then } \\exists x \\in R \\text{ such that } r = ax.
+              \\\\ \\text{Then } r = bxr. 
+              \\\\ \\text{Since } I \\not= \\{0\\}, \\text{ we have } a \\not = 0, \\text{ thus } r \\not = 0.
+              \\\\ \\text{Since } R \\text{ is an ID, the cancellation law holds.}
+              \\\\ \\text{So we get } 1 = bx. \\text{ Which implies } 1 \\in \\langle b \\rangle,
+              \\\\ \\text{and so } J = \\langle b \\rangle = R.
+              \\\\ \\text{Hence, we conclude that } I \\text{ is maximal.}
+      `
+    },
+    {
+      number: 1004,
+      title: "Ott's 2nd Theorem",
+      statement: `\\text{Let } R \\text{ be an ID and } I \\trianglelefteq R.
+                  \\\\ \\text{Then } I \\text{ is prime iff } R/I \\text{ is an ID.}
+      `,
+      proof: `\\text{First, similarly as seen in Ott's 1st Theorem,}
+              \\\\ R/I \\text{ is commutative and unital.}
+              \\\\ \\text{Now assume } I \\text{ is prime.}
+              \\\\ \\text{Assume } (a+I) \\cdot (b+I) = 0 \\text{ for some } a, b \\in R.
+              \\\\ \\text{Then } ab + I = 0 + I, \\text{ so } ab \\in I.
+              \\\\ \\text{Since } I \\text{ is prime, either } a \\in I \\text{ or } b \\in I.
+              \\\\ \\text{Therefore, either } a+I = 0 + I \\text{ or } b+I = 0+I.
+              \\\\ \\text{This shows } R/I \\text{ is an ID.} 
+              \\\\ \\text{Conversely, assume } R/I \\text{ is an ID.}
+              \\\\ \\text{Let } x, y \\in R \\text{ such that } xy \\in I. 
+              \\\\ \\text{Then } xy+I = 0+I, \\text{ so } (x+I) \\cdot (y+I) = 0+I,
+              \\\\ \\text{and since } R/I \\text{ is an ID, either } x \\in I \\text{ or } y \\in I.
+              \\\\ \\text{This shows that } I \\text{ is prime.} 
+      `
+    },
+    {
+      number: 1005,
+      title: "Sort of Fundamental Theorem of Algebra",
+      statement: `\\text{Let } p(x) \\in \\R[x] \\text{ be a non-constant polynomial.}
+                  \\\\ \\text{Then } \\exists \\text{ a field } \\mathbb{F} \\text{ containing an isomorphic copy of } \\R
+                  \\\\ \\text{and } \\alpha \\in \\mathbb{F} \\text{ such that } p(\\alpha) = 0.
+      `,
+      proof: `\\text{WLOG we may assume } p(x) \\text{ is irreducible,}
+              \\\\ \\text{thus } \\langle p(x) \\rangle \\text{ is prime. Since } \\R[x] \\text{ is a PID,}
+              \\\\ \\text{by Theorem 1003, } \\langle p(x) \\rangle \\text{ is maximal.}
+              \\\\ \\text{By Ott's 1st, } \\R[x]/\\langle p(x) \\rangle \\text{ is a field.}
+              \\\\ \\text{We denote it by } \\mathbb{F}.
+              \\\\ \\text{We show there exists an injective ring homomorphism}
+              \\\\ \\phi: \\R \\to \\mathbb{F} \\text{ defined by } \\phi(r) = r + \\langle p(x) \\rangle,
+              \\\\ \\text{where we consider } r \\text{ as a constant polynomial.}
+              \\\\ \\text{To show } \\phi \\text{ is a ring homomorphism,}
+              \\\\ \\text{let } a, b \\in \\R.
+              \\\\ \\text{Then we have } \\phi(a+b) = (a + b) + \\langle p(x) \\rangle,
+              \\\\ \\text{and by coset addition, } 
+              \\\\ = a + \\langle p(x) \\rangle + b + \\langle p(x) \\rangle = \\phi(a) + \\phi(b).
+              \\\\ \\text{Similarly, } \\phi(ab) = ab + \\langle p(x) \\rangle
+              \\\\ = (a + \\langle p(x) \\rangle) \\cdot (b + \\langle p(x) \\rangle) = \\phi(a) \\cdot \\phi(b).
+              \\\\ \\text{This shows } \\phi \\text{ is a ring homomorphism.}
+              \\\\ \\text{Let } r \\in \\R \\text{ such that } \\phi(r) = 0.
+              \\\\ \\text{This implies the constant polynomial } r \\text{ belongs to } \\langle p(x) \\rangle.
+              \\\\ \\text{So } \\exists q(x) \\in \\R[x] \\text{ such that } p(x)q(x) 
+              \\\\ \\text{is the constant polynomial } r.
+              \\\\ \\text{The only possibility is } q(x) = 0 \\text{ and } r = 0.
+              \\\\ \\text{So } ker(\\phi) = \\{0\\}. \\text{Thus, } \\phi \\text{ is injective.}
+              \\\\ \\text{Hence } \\R \\cong \\phi(\\R) \\leq \\mathbb{F}.
+              \\\\ \\text{Let } p(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0
+              \\\\ \\text{where } a_n, a_{n-1}, ..., a_1, a_0 \\in \\R.
+              \\\\ \\text{Let } \\alpha = x + \\langle p(x) \\rangle.
+              \\\\ \\text{Then } p(\\alpha) = a_n \\alpha^n + a_{n-1} \\alpha^{n-1} + ... + a_1 \\alpha + a_0
+              \\\\ = a_n (x^n + \\langle p(x) \\rangle) + a_{n-1} (x^{n-1} + \\langle p(x) \\rangle) + ... + a_1 (x + \\langle p(x) \\rangle) + a_0
+              \\\\ = (a_n x^n + \\langle p(x) \\rangle) + (a_{n-1} x^{n-1} + \\langle p(x) \\rangle) + ... + (a_1 x + \\langle p(x) \\rangle) + a_0
+              \\\\ = (a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0) + \\langle p(x) \\rangle
+              \\\\ = p(x) + \\langle p(x) \\rangle = 0 + \\langle p(x) \\rangle.
+              \\\\ \\text{Which is the 0 of the field } \\mathbb{F}. \\ \\ \\blacksquare
+      `
     }
-    
   ];
 
   return (
