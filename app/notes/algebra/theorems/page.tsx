@@ -884,7 +884,8 @@ export default function TheoremsPage() {
     {
       number: 1003,
       title: "Generalization of Previous Theorem",
-      statement: "\\text{In any Principal Integral Domain (PID), every non-zero prime ideal is maximal.}",
+      statement: `\\text{In any Principal Integral Domain (PID),} 
+                  \\\\ \\text{every non-zero prime ideal is maximal.}`,
       proof: `\\text{Let } R \\text{ be a PID, and let } I \\trianglelefteq R \\text{ be a non-zero prime.} 
               \\\\ \\text{Let } I \\trianglelefteq J \\trianglelefteq R. \\text{ Since R is PID,}
               \\\\ \\exists a, b \\in R \\text{ such that } I = \\langle a \\rangle \\text{ and } J = \\langle b \\rangle.
@@ -956,12 +957,12 @@ export default function TheoremsPage() {
               \\\\ \\text{Hence } \\R \\cong \\phi(\\R) \\leq \\mathbb{F}.
               \\\\ \\text{Let } p(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0
               \\\\ \\text{where } a_n, a_{n-1}, ..., a_1, a_0 \\in \\R.
-              \\\\ \\text{Let } \\alpha = x + \\langle p(x) \\rangle.
+              \\\\ \\text{Let } \\alpha = x + \\langle p(x) \\rangle and I = \\langle p(x) \\rangle.
               \\\\ \\text{Then } p(\\alpha) = a_n \\alpha^n + a_{n-1} \\alpha^{n-1} + ... + a_1 \\alpha + a_0
-              \\\\ = a_n (x^n + \\langle p(x) \\rangle) + a_{n-1} (x^{n-1} + \\langle p(x) \\rangle) + ... + a_1 (x + \\langle p(x) \\rangle) + a_0
-              \\\\ = (a_n x^n + \\langle p(x) \\rangle) + (a_{n-1} x^{n-1} + \\langle p(x) \\rangle) + ... + (a_1 x + \\langle p(x) \\rangle) + a_0
-              \\\\ = (a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0) + \\langle p(x) \\rangle
-              \\\\ = p(x) + \\langle p(x) \\rangle = 0 + \\langle p(x) \\rangle.
+              \\\\ = a_n (x^n + I) + a_{n-1} (x^{n-1} + I) + ... + a_1 (x + I) + a_0
+              \\\\ = (a_n x^n + I) + (a_{n-1} x^{n-1} + I) + ... + (a_1 x + I) + a_0
+              \\\\ = (a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0) + I
+              \\\\ = p(x) + I = 0 + I.
               \\\\ \\text{Which is the 0 of the field } \\mathbb{F}. \\ \\ \\blacksquare
       `
     }
