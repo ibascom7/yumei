@@ -400,6 +400,118 @@ export default function TheoremsPage() {
                   \\\\ \\text{where } y = f(x).
       `,
       proof: `\\text{Proof...}`
+    },
+    {
+      number: 24,
+      title: "7.1.5 Refinements of Partitions have More Accurate Darboux Sums",
+      statement: `\\text{Let } f \\text{ be a bounded function on [a, b].} 
+                \\\\ \\text{If } P \\text{ and } Q \\text{ are partiitions of } [a,b]
+                \\\\ \\text{and } Q \\text{ is a refinement of } P, then
+                \\\\ L(f, P) \\leq L(f, Q) \\leq U(f, Q) \\leq U(f, P). 
+      `,
+      proof: "\\text{Proof left as an exercise :)}"
+    },
+    {
+      number: 25,
+      title: "7.1.7",
+      statement: "",
+      proof: "Proof..."
+    },
+    {
+      number: 26,
+      title: "7.1.10",
+      statement: "",
+      proof: "Proof..."
+    },
+    {
+      number: 27,
+      title: "★ 7.2.1 Monotone Implies Integrable",
+      statement: `\\text{Let f be a monotone function on } [a,b]. \\text{ Then } f \\text{ is integrable.}
+      `,
+      proof: `\\text{Suppose that f is increasing on } [a,b]. 
+              \\\\ \\text{We have } f(a) \\leq f(x) \\leq f(b) \\ \\ \\forall x \\in [a,b],
+              \\\\ \\text{so } f \\text{ is bounded on } [a,b]. \\text{ Let } \\varepsilon > 0.
+              \\\\ \\text{There exists } k > 0 \\text{ such that } k[f(b)-f(a)] < \\varepsilon.
+              \\\\ \\text{Let } P = \\{x_0, x_1, ..., x_n \\} \\text{ be a partition of } [a,b] 
+              \\\\ \\text{such that } \\Delta x_i \\leq k \\ \\ \\forall i \\in \\{1, ..., n \\}.
+              \\\\ \\text{We have } U(f, P) - L(f, P) = \\sum_{i=1}^{n}(M_i - m_i) \\Delta x_i
+              \\\\ = \\sum_{i=1}^{n}[f(x_i) - f(x_{i-1})] \\Delta x_i \\leq k \\sum_{i=1}^{n}[f(x_i) - f(x_{i-1})]
+              \\\\ = k[f(b) - f(a)] < \\varepsilon.
+              \\\\ \\text{So f is integrable on } [a,b] \\text{ by Theorem 26}.
+              \\\\ \\
+              \\\\ \\text{Suppose that f is decreasing on } [a,b].
+              \\\\ \\text{We have } f(b) \\leq f(x) \\leq f(a) \\ \\ \\forall x \\in [a,b],
+              \\\\ \\text{so } f \\text{ is bounded on } [a,b]. \\text{ Let } \\varepsilon > 0.
+              \\\\ \\text{There exists } k > 0 \\text{ such that } k[f(a)-f(b)] < \\varepsilon.
+              \\\\ \\text{Let } P = \\{x_0, x_1, ..., x_n \\} \\text{ be a partition of } [a,b]
+              \\\\ \\text{such that } \\Delta x_i \\leq k \\ \\ \\forall i \\in \\{1, ..., n \\}.
+              \\\\ \\text{We have } U(f, P) - L(f, P) = \\sum_{i=1}^{n} (M_i - m_i) \\Delta x_i
+              \\\\ = \\sum_{i=1}^{n} [f(x_{i-1}) - f(x_i))] \\Delta x_i \\leq k \\sum_{i=1}^{n}[f(x_{i-1}) - f(x_i)]
+              \\\\ = k[f(a) - f(b)] < \\varepsilon.
+              \\\\ \\text{So } f \\text{ is integrable on } [a,b].
+      ` 
+    },
+    {
+      number: 28,
+      title: "★ 7.2.2 Continuous Implies Integrable",
+      statement: "\\text{Let } f \\text{ be a continuous function on } [a,b]. \\text{ Then } f \\text{ is integrable on } [a, b].",
+      proof: `\\text{Since } f \\text{ is continuous on the compact set } [a,b], 
+              \\\\ \\text{it is uniformly continuous on } [a,b].
+              \\\\ \\text{Thus, } \\forall \\varepsilon > 0 \\ \\ \\exists \\delta > 0 \\text{ such that}
+              \\\\ |f(x) - f(y)| < \\frac{\\varepsilon}{b-a} \\text{ whenever } x, y \\in [a,b] \\text{ and } |x-y| < \\delta.
+              \\\\ \\text{Let } P = \\{x_0, ..., x_n \\} \\text{ be a partition of } [a,b] 
+              \\\\ \\text{such that } \\Delta x_i < \\delta \\ \\ \\forall i \\in \\{1, ..., n \\}.
+              \\\\ \\text{By the extreme value theorem, for each } i \\in \\{1, ..., n \\} 
+              \\\\ \\exists s_i, t_i \\in [x_{i-1}, x_i] \\text{ such that }
+              \\\\ m_i = f(s_i) \\text{ and } M_i = f(t_i).
+              \\\\ \\text{We therefore have }
+              \\\\ U(f, P) - L(f, P) = \\sum_{i=1}^{n}(M_i - m_i) \\Delta x_i
+              \\\\ = \\sum_{i=1}^{n} [f(t_i) - f(s_i))] \\Delta x_i < \\sum_{i=1}^{n} \\frac{\\varepsilon}{b-a} \\Delta x_i
+              \\\\ = \\frac{\\varepsilon}{b-a} \\sum_{i=1}^{n} \\Delta x_i = \\left( \\frac{\\varepsilon}{b-a} \\right)(b-a) = \\varepsilon.
+              \\\\ \\text{Hence, } f \\text{ is integrable on } [a,b].
+      `
+    },
+    {
+      number: 29,
+      title: "7.2.4 Linearity of The Integral",
+      statement: "",
+      proof: "Proof..."
+    },
+    {
+      number: 30,
+      title: "7.2.6",
+      statement: "",
+      proof: "Proof..."
+    },
+    {
+      number: 31,
+      title: "7.2.8 A Triangle Inequality for The Integral",
+      statement: "",
+      proof: "Proof..."
+    },
+    {
+      number: 32,
+      title: "★ 7.3.1 Fundamental Theorem of Calculus 1",
+      statement: `\\text{Let } f \\text{ be integrable on } [a,b]. \\ \\ \\forall x \\in [a,b], \\text{ let } F(x) = \\int_{a}^{x} f(t) dt.
+                  \\\\ \\text{Then } F \\text{ is uniformly continuous on } [a,b].
+                  \\\\ \\text{Furthermore, if } f \\text{ is continuous at } c \\in [a,b],
+                  \\\\ \\text{then } F \\text{ is differentiable at } c \\text{ and } F'(c) = f(c). 
+      `,
+      proof: "Proof..."
+    },
+    {
+      number: 32,
+      title: "7.3.3 Chain Rule for FTC 1",
+      statement: `
+      `,
+      proof: `
+      `
+    },
+    {
+      number: 32,
+      title: "★ 7.3.5 Fundamental Theorem of Calculus 2",
+      statement: "",
+      proof: "Proof..."
     }
   ];
 
