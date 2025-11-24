@@ -264,6 +264,17 @@ export default function ProofMethodsPage() {
           solution: `\\text{Solution...}`
         }
       ]
+    },
+    {
+      number: 8,
+      title: "Prove Integrability",
+      description: "Use the definition of integrable function to prove that a given function is integrable.",
+      examples: [
+        {
+          problemStatement: "\\text{Prove it}",
+          solution: "\\text{Silly}"
+        }
+      ]
     }
   ];
 

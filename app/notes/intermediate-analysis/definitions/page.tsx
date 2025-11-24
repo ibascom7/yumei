@@ -1,4 +1,5 @@
 import DefinitionCard from "../components/DefinitionCard";
+import Image from "next/image";
 
 export default function DefinitionsPage() {
   const definitions = [
@@ -129,6 +130,60 @@ export default function DefinitionsPage() {
                    \\\\ \\text{d. } f \\text{ is strictly decreasing on } I \\text{ if } f(x_1) > f(x_2)
                    \\\\ \\ \\ \\ \\ \\text{for all } x_1, x_2 \\in I \\text{ with } x_1 < x_2.
       `,             
+    },
+    {
+      number: 10,
+      term: "7.1.1 Partition and Refinement", 
+      definition: `\\text{Let } [a,b] \\text{ be an interval in } \\R. 
+                   \\\\ \\text{A partition } P \\text{ of } [a,b] \\text{ is a finite set of points}
+                   \\\\ \\{ x_0, x_1, ..., x_n \\} \\text{ in } [a,b] \\text{ such that } a = x_0 < x_1 < ... < x_n = b.  
+                   \\\\ \\
+                   \\\\ \\text{If } P \\text{ and } Q \\text{ are two partitions of } [a,b] \\text{ with } P \\subseteq Q, 
+                   \\\\ \\text{then } Q \\text{ is called a refinement of } P.
+      `
+    },
+    {
+      number: 11,
+      term: "7.1.2 Upper and Lower Sums",
+      definition: `\\text{Suppose that } f \\text{ is a bounded function defined on } [a,b] 
+                   \\\\ \\text{and that } P = \\{ x_0, x_1, ..., x_n \\} \\text{ is a partition of } [a,b].
+                   \\\\ \\
+                   \\\\ \\text{a. For each } i \\in \\{1, ..., n \\}, \\text{ we define}
+                   \\\\ \\ \\ \\ \\ M_i(f) = \\sup \\{f(x): x \\in [x_{i-1}, x_i] \\},
+                   \\\\ \\ \\ \\ \\ m_i(f) = \\inf \\{f(x): x \\in [x_{i-1}, x_i] \\},
+                   \\\\ \\ \\ \\ \\ \\text{and } \\Delta x_i = x_i - x_{i-1}
+                   \\\\ \\
+                   \\\\ \\text{b. The upper sum of } f \\text{ with respect to } P \\text{ is}
+                   \\\\ \\ \\ \\ \\ U(f,P) = \\sum_{i=1}^{n}M_i \\Delta x_i.
+                   \\\\ \\
+                   \\\\ \\text{c. The lower sum of } f \\text{ with respect to } P \\text{ is}
+                   \\\\ \\ \\ \\ \\ L(f,P) = \\sum_{i=1}^{n}m_i \\Delta x_i.
+      `
+    },
+    {
+      number: 12,
+      term: "7.1.3 Upper and Lower Integrals",
+      definition: `\\text{Let } f \\text{ be a bounded function defined on } [a,b]. \\text{ Then}
+                   \\\\ \\
+                   \\\\ \\text{a. The upper integral of } f \\text{ on } [a,b] \\text{ is}
+                   \\\\ \\ \\ \\ \\ U(f) = \\inf \\{U(f, P): P \\text{ is a partition of } [a,b] \\}.
+                   \\\\ \\
+                   \\\\ \\text{b. The lower integral of } f \\text{ on } [a,b] \\text{ is}
+                   \\\\ \\ \\ \\ \\ L(f) = \\sup \\{L(f, P): P \\text{ is a partition of } [a,b] \\}.
+      `
+    },
+    {
+      number: 13,
+      term: "7.1.4 Riemann Integral",
+      definition: `\\text{Let } f \\text{ be a bounded function defined on } [a,b]. 
+                   \\\\ \\
+                   \\\\ \\text{Then if } L(f) = U(f), 
+                   \\\\ \\text{we say that } f \\text{ is Riemann integrable on } [a,b] \\text{ and that}
+                   \\\\ \\
+                   \\\\ \\int_a^b f = \\int_a^b f(x) dx = L(f) = U(f)
+                   \\\\ \\
+                   \\\\ \\text{is the Riemann integral of } f \\text{ on } [a,b].
+      `
     }
   ];
 
@@ -148,6 +203,15 @@ export default function DefinitionsPage() {
           id={`definition-${def.number}`}
         />
       ))}
+      <div className="mt-8 flex justify-center">
+        <Image
+          src="/baby_girls.png"
+          alt="I miss my lovers"
+          width={1280}
+          height={960}
+          className="rounded-lg"
+        />
+      </div>
     </div>
   );
 }

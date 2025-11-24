@@ -1,4 +1,5 @@
 import TheoremCard from "../components/TheoremCard";
+import Image from "next/image";
 
 export default function TheoremsPage() {
   const theorems = [
@@ -406,21 +407,25 @@ export default function TheoremsPage() {
       title: "7.1.5 Refinements of Partitions have More Accurate Darboux Sums",
       statement: `\\text{Let } f \\text{ be a bounded function on [a, b].} 
                 \\\\ \\text{If } P \\text{ and } Q \\text{ are partiitions of } [a,b]
-                \\\\ \\text{and } Q \\text{ is a refinement of } P, then
+                \\\\ \\text{and } Q \\text{ is a refinement of } P, \\text{ then}
                 \\\\ L(f, P) \\leq L(f, Q) \\leq U(f, Q) \\leq U(f, P). 
       `,
       proof: "\\text{Proof left as an exercise :)}"
     },
     {
       number: 25,
-      title: "7.1.7",
-      statement: "",
+      title: "7.1.7 Lower Sum Below Upper Sum",
+      statement: "\\text{Let } f \\text{ be a bounded function on } [a,b]. \\text{ Then } L(f) \\leq U(f).",
       proof: "Proof..."
     },
     {
       number: 26,
-      title: "7.1.10",
-      statement: "",
+      title: "7.1.10 Criterion for Integrability",
+      statement: `\\text{Let } f \\text{ be a bounded function on } [a,b]. 
+                  \\\\ \\text{Then } f \\text{ is integrable iff for each } \\varepsilon > 0 
+                  \\\\ \\exists \\text{ a partition } P \\text{ of } [a,b] \\text{ such that}
+                  \\\\ U(f, P_1) - L(f, P) < \\varepsilon.
+      `,
       proof: "Proof..."
     },
     {
@@ -474,44 +479,102 @@ export default function TheoremsPage() {
     {
       number: 29,
       title: "7.2.4 Linearity of The Integral",
-      statement: "",
+      statement: `\\text{Let } f \\text{ and } g \\text{ be integrable functions on } [a,b] \\text{ and let } k \\in \\R. \\text{ Then}
+                  \\\\ \\
+                  \\\\ \\text{a. } kf \\text{ is integrable and } \\int_a^b kf = k \\int_a^b f, \\text{ and}
+                  \\\\ \\
+                  \\\\ \\text{b. } f+g \\text{ is integrable and } \\int_a^b (f+g) = \\int_a^b f + \\int_a^b g.
+    
+      `,
       proof: "Proof..."
     },
     {
       number: 30,
-      title: "7.2.6",
-      statement: "",
+      title: "7.2.6 Split Bounds of Integral",
+      statement: `\\text{Suppose that } f \\text{ is integrable on both } [a,c] \\text{ and } [c, b].
+                  \\\\ \\
+                  \\\\ \\text{Then } f \\text{ is integrable on } [a,b].
+                  \\\\ \\
+                  \\\\ \\text{Furthermore, } \\int_a^b f = \\int_a^c f + \\int_c^b f.
+      `,
       proof: "Proof..."
     },
     {
       number: 31,
       title: "7.2.8 A Triangle Inequality for The Integral",
-      statement: "",
+      statement: `\\text{Let } f \\text{ be integrable on } [a,b]. 
+                  \\\\ \\text{ Then } |f| \\text{ is integrable on } [a,b] \\text{ and}
+                  \\\\ \\left| \\int_a^b f \\right| \\leq \\int_a^b |f|. 
+      `,
       proof: "Proof..."
     },
     {
       number: 32,
       title: "★ 7.3.1 Fundamental Theorem of Calculus 1",
       statement: `\\text{Let } f \\text{ be integrable on } [a,b]. \\ \\ \\forall x \\in [a,b], \\text{ let } F(x) = \\int_{a}^{x} f(t) dt.
+                  \\\\ \\
                   \\\\ \\text{Then } F \\text{ is uniformly continuous on } [a,b].
+                  \\\\ \\
                   \\\\ \\text{Furthermore, if } f \\text{ is continuous at } c \\in [a,b],
                   \\\\ \\text{then } F \\text{ is differentiable at } c \\text{ and } F'(c) = f(c). 
       `,
-      proof: "Proof..."
-    },
-    {
-      number: 32,
-      title: "7.3.3 Chain Rule for FTC 1",
-      statement: `
-      `,
-      proof: `
+      proof: `\\text{Since } f \\text{ is integrable on } [a,b], \\text{ it is bounded there,}
+              \\\\ \\text{so } \\ \\exists B > 0 \\text{ such that } |f(x)| \\leq B \\ \\ \\forall x \\in [a,b].
+              \\\\ \\
+              \\\\ \\text{Let } \\varepsilon > 0. \\text{ Set } \\delta = \\frac{\\varepsilon}{B}.
+              \\\\ \\
+              \\\\ \\text{Then if } x, y \\in [a,b] \\text{ with } x < y \\text{ and } |x-y| < \\delta, 
+              \\\\ \\
+              \\\\ \\text{we have } |F(y) - F(x)| = \\left| \\int_a^y f(t)dt - \\int_a^x f(t)dt \\right|
+              \\\\ \\
+              \\\\ = \\left| \\int_x^y f(t)dt \\right| \\leq \\int_x^y |f(t)| dt \\leq \\int_x^y B dt
+              \\\\ \\
+              \\\\ = B(y-x) < B \\left( \\frac{\\varepsilon}{B} \\right) = \\varepsilon.
+              \\\\ \\
+              \\\\ \\text{Hence, } F \\text{ is uniformly continuous on [a,b].}
       `
     },
     {
-      number: 32,
+      number: 33,
+      title: "7.3.3 Chain Rule for FTC 1",
+      statement: `\\text{Let } f \\text{ be continuous on } [a,b] 
+                  \\\\ \\text{and let } g \\text{ be differentiable on } [c,d], \\text{where } g([c,d]) \\subseteq [a,b].
+                  \\\\ \\
+                  \\\\ \\text{Define } F(x) = \\int_a^{g(x)} f, \\text{ for all } x \\in [a,b] 
+                  \\\\ \\
+                  \\\\ \\text{Then } F \\text{ is differentiable on } [c,d] \\text{ and } F'(x) = [f \\circ g(x)]\\cdot g'(x)
+      `,
+      proof: `\\text{This is it}
+      `
+    },
+    {
+      number: 34,
       title: "★ 7.3.5 Fundamental Theorem of Calculus 2",
-      statement: "",
-      proof: "Proof..."
+      statement: `\\text{If } f \\text{ is differentiable on } [a,b] \\text{ and } f' \\text{ is integrable on [a,b],}
+                  \\\\ \\
+                  \\\\ \\text{then } \\int_a^b f' = f(b) - f(a)
+      `,
+      proof: `\\text{Let } P = \\{x_0, x_1, ..., x_n \\} \\text{ be any partition of [a,b].}
+              \\\\ \\
+              \\\\ \\text{By applying the mean value theorem to each subinterval } [x_{i-1}, x_i],
+              \\\\ \\text{there exist points } t_i \\in (x_{i-1}, x_i) \\text{ such that}
+              \\\\ f(x_i) - f(x_{i-1}) = f'(t_i)(x_i - x_{i-1}).
+              \\\\ \\
+              \\\\ \\text{So } f(b) - f(a) = \\sum_{i=1}^n [f(x_i) - f(x_{i-1})]
+              \\\\ = \\sum_{i=1}^n f'(t_i) (x_i - x_{i-1}).
+              \\\\ \\
+              \\\\ \\text{Since } m_i(f') \\leq f'(t_i) \\leq M_i(f') \\ \\ \\forall i \\in \\{1, ..., n \\}, 
+              \\\\ \\text{we have }L(f',P) \\leq f(b)-f(a) \\leq  U(f', P).
+              \\\\ \\
+              \\\\ \\text{Since this holds for every partition } P,
+              \\\\ \\text{we have }L(f') \\leq f(b) - f(a) \\leq U(f').
+              \\\\ \\
+              \\\\ \\text{But } f' \\text{ is integrable on } [a,b] \\text{ by assumption, so }
+              \\\\ \\
+              \\\\ L(f') = U(f') = \\int_a^b f'.
+              \\\\ \\
+              \\\\ \\text{We conclude that } f(b) - f(a) = \\int_a^b f'. \\ \\ \\blacksquare
+      `
     }
   ];
 
@@ -533,6 +596,15 @@ export default function TheoremsPage() {
           id={`theorem-${theorem.number}`}
         />
       ))}
+      <div className="mt-8 flex justify-center">
+        <Image
+          src="/lulu_lubbie.jpg"
+          alt="I miss my baby"
+          width={450}
+          height={600}
+          className="rounded-lg"
+        />
+      </div>
     </div>
   );
 }
