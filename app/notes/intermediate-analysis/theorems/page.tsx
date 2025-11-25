@@ -424,7 +424,7 @@ export default function TheoremsPage() {
       statement: `\\text{Let } f \\text{ be a bounded function on } [a,b]. 
                   \\\\ \\text{Then } f \\text{ is integrable iff for each } \\varepsilon > 0 
                   \\\\ \\exists \\text{ a partition } P \\text{ of } [a,b] \\text{ such that}
-                  \\\\ U(f, P_1) - L(f, P) < \\varepsilon.
+                  \\\\ U(f, P) - L(f, P) < \\varepsilon.
       `,
       proof: "Proof..."
     },
