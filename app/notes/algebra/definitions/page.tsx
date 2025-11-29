@@ -24,6 +24,12 @@ export default function DefinitionsPage() {
       definition: `\\text{Let } G \\text{ and } K \\text{ be two groups.}
                   \\\\ \\text{A map } \\phi: G \\to K \\text{ is called a homomorphism}
                   \\\\ \\text{if } \\forall a, b \\in G, \\phi(ab) = \\phi(a)\\phi(b)
+                  \\\\ \\
+                  \\\\ \\text{To be homomorphic haiku:}
+                  \\\\ \\
+                  \\\\ \\text{operate then map}
+                  \\\\ \\text{must give the same result as}
+                  \\\\ \\text{map then operate}
       `,
     },
     {
@@ -185,45 +191,201 @@ export default function DefinitionsPage() {
     },
     {
       number: 20,
-      term: "",
-      definition: `
+      term: "Permutation",
+      definition: `\\text{A permutation is a bijective mapping from a set onto itself}
       `
     },
     {
-      number: 100,
+      number: 21,
+      term: "Transposition",
+      definition: `\\text{Let } n \\geq 2.
+                   \\\\ \\text{A transposition is a permutation } \\tau \\in S_n
+                   \\\\ \\text{of the form } (i \\ j) \\text{ for } 1 \\leq i \\neq j \\leq n.
+
+      `
+    },
+    {
+      number: 22,
+      term: "Even or Odd Permutation",
+      definition: `\\text{A permutation is called even if}
+                   \\\\ \\text{it is a product of an even number of transpositions.}
+                   \\\\ \\
+                   \\\\ \\text{A permutation is called odd if}
+                   \\\\ \\text{it is a product of an odd number of transpositions.}
+      `
+    },
+    {
+      number: 23,
+      term: "Index",
+      definition: `\\text{Let } H \\leq G. 
+                   \\\\ \\text{The index of H in G is} 
+                   \\\\ \\text{the cardinality of the coset space } |G/H|.
+                   \\\\ \\text{Denoted by } [G:H].
+      `
+    },
+    {
+      number: 24,
+      term: "Direct Product of Groups",
+      definition: `\\text{Let } G_1, G_2 \\text{ be groups with } g_1 \\in G_1 \\text{ and } g_2 \\in G_2.
+                   \\\\ \\text{The direct product } G_1 \\times G_2
+                   \\\\ \\text{is the group of ordered pairs } (g_1, g_2)
+                   \\\\ \\text{with the binary operation }
+                   \\\\ (g_1, g_2) \\cdot (h_1, h_2) = (g_1h_1, g_2h_2)
+                   \\\\ \\text{called the cartesian product}
+                   \\\\ \\
+                   \\\\ \\text{For example the point } (1, 2)
+                   \\\\ \\text{is an element in } \\R^2 
+                   \\\\ \\text{and } \\R^2 = \\R \\times \\R.
+      `
+    },
+    {
+      number: 25,
       term: "Ring",
-      definition: `\\text{A ring is a set } R \\text{equipped with two associative binary operations}
-                   \\\\ +: R \\times R \\to R, \\ \\cdot: R \\times R \\to R
-                   \\\\ \\text{satisfying:}
+      definition: `\\text{A ring is a set } R 
+                   \\\\ \\text{equipped with two associative binary operations}
+                   \\\\ +: R \\times R \\to R, 
+                   \\\\ \\cdot: R \\times R \\to R 
+                   \\\\ \\text{ satisfying:}
+                   \\\\ \\
                    \\\\ \\ 1) \\ (R, +) \\text{ is an abelian group}
+                   \\\\ \\
                    \\\\ \\ 2) \\ \\ \\forall a, b, c \\in R, 
                    \\\\ \\ \\ \\ \\ \\ \\ (a + b) \\cdot c = (a \\cdot c) + (b \\cdot c)
                    \\\\ \\ \\ \\ \\ \\ \\ a \\cdot (b + c) = (a \\cdot b) + (a \\cdot c).
       `
     },
     {
-      number:101,
-      term: "Subring",
-      definition: `\\text{Let } (R, +, \\cdot) \\text{ be a ring}
-                   \\\\ \\text{A subset } S \\subseteq R \\text{ is called a subring if:}
-                   \\\\ 1) \\ (S, +) \\text{ is a subgroup of } (R, +)
-                   \\\\ 2) \\ \\ \\forall x, y \\in S, \\text{ we have } x \\cdot y \\in S.
+      number: 26,
+      term: `Commutative Ring`,
+      definition: `\\text{A ring } R \\text{ is commutative if}
+                   \\\\ x y = y x \\ \\ \\forall x,y \\in \\R.
       `
     },
     {
-      number: 102,
+      number: 27,
+      term: "Unital Ring",
+      definition: `\\text{Put simply, a ring is unital if it has both neutral elements.}
+                   \\\\ \\
+                   \\\\ \\text{Let } (R,+,\\cdot) \\text{ be a ring.}
+                   \\\\ \\text{We say } R \\text{ is unital if it has}
+                   \\\\ \\text{a neutral element for the operation } \\cdot.
+                   \\\\ \\
+                   \\\\ \\text{We denote the neutral element of } (R, +) \\text{ with } 0
+                   \\\\ \\text{and the neutral element of } (R, \\cdot) \\text{ with } 1
+      `
+    },
+    {
+      number: 28,
+      term: "Zero Divisor",
+      definition: `\\text{A non-zero element } x \\in R \\text{ is a zero divisor if}
+                   \\\\ \\text{there exists another non-zero element } y \\in R
+                   \\\\ \\text{such that } xy = 0.
+                   \\\\ \\
+                   \\\\ \\text{In non-commutative rings this is called the left zero-divisor.}
+                   \\\\ \\text{In commutative rings left and right zero-divisors are the same.}
+      `
+    },
+    {
+      number: 29,
+      term: "Integral Domain",
+      definition: `\\text{A Ring } R \\text{ is an integral domain if}
+                   \\\\ R \\text{ is a untial commutative ring and}
+                   \\\\ R \\text{ has no zero divisors}.
+      `
+    },
+    {
+      number: 30,
       term: "Division Ring",
-      definition: `\\text{Let } R \\text{ be a unital ring.}
-                   \\\\ \\text{We say } R \\text{ is a division ring if}
-                   \\\\ (R-{0}, \\cdot) \\text{ is a group.}
+      definition: `R \\text{ is a division ring if}
+                   \\\\ R \\text{ is a unital ring and}
+                   \\\\ (R-\\{0\\}, \\cdot) \\text{ is a group.}
+                   \\\\ \\
                    \\\\ \\text{This is if every non-zero element}
                    \\\\ \\text{has a multiplicative inverse for this operation}
       `
     },
     {
-      number: 103,
+      number: 31,
       term: "Field",
       definition: `\\text{A commutative division ring is called a field.}
+      `
+    },
+    {
+      number: 32,
+      term: "Subring",
+      definition: `\\text{Let } (R, +, \\cdot) \\text{ be a ring}
+                   \\\\ \\text{A subset } S \\subseteq R \\text{ is called a subring if:}
+                   \\\\ 1) \\ \\ (S, +) \\text{ is a subgroup of } (R, +)
+                   \\\\ 2) \\ \\ \\forall x, y \\in S, \\text{ we have } x \\cdot y \\in S.
+      `
+    },
+    {
+      number: 33,
+      term: "Ring Homomorphism",
+      definition: `\\text{Let } R \\text{ and } S \\text{ be rings}
+                   \\\\ \\text{and } \\phi: R \\to S \\text{ be a map}.
+                   \\\\ \\text{We say } \\phi \\text{ is a ring homomorphism}
+                   \\\\ \\text{if } \\forall a, b \\in R.
+                   \\\\ \\quad 1) \\ \\ \\phi (a+b) = \\phi(a) + \\phi(b)
+                   \\\\ \\quad 2) \\ \\ \\phi(ab) = \\phi(a)\\phi(b)
+      `
+    },
+    {
+      number: 34,
+      term: "Kernel of Ring Homomorphism",
+      definition: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism}.
+                   \\\\ \\text{The kernel of } \\phi \\text{ is } \\ker(\\phi) = \\{ r \\in R \\ | \\ \\phi(r) = 0 \\}.
+      `
+    },
+    {
+      number: 35,
+      term: "Ideal",
+      definition: `\\text{Let } I \\leq R.
+                   \\\\ I \\text{ is an ideal in } R
+                   \\\\ \\text{if } \\forall a \\in R \\text{ and } x \\in I,
+                   \\\\ \\text{we have } ax \\in I \\text{ and } xa \\in I.
+                   \\\\ \\text{In this case we write } I \\trianglelefteq R.
+                   \\\\ \\
+                   \\\\ \\text{An ideal } I \\triangleleft R \\text{ is proper if } I \\neq R.
+      `
+    },
+    {
+      number: 36,
+      term: "Maximal Ideal",
+      definition: `I \\triangleleft R \\text{ is maximal if } I \\neq R,
+                   \\\\ \\text{and if } J \\triangleleft R \\text{ s.t. } I \\subseteq J \\subseteq R,
+                   \\\\ \\text{then either } J = I \\text{ or } J = R.
+      `
+    },
+    {
+      number: 37,
+      term: "Polynomial Ring",
+      definition: `\\text{The polynomial ring } \\R[x] 
+                   \\\\ \\text{has polynomial elements of the form}
+                   \\\\ p(x) = a_nx^n + a_{n-1}x^{n-1} + ... + a_1 x + a_0
+                   \\\\ \\text{with } a_0, a_1, ..., a_n \\in \\R \\text{ and } a_n \\neq 0.
+      `
+    },
+    {
+      number: 38,
+      term: "Division Algorithm",
+      definition:`\\text{Given polynomials, } p(x) \\text{ and } q(x)
+                  \\\\ \\text{there are polynomials } a(x), r(x) 
+                  \\\\ \\text{s.t. } q(x) = p(x) a(x) + r(x).
+                  \\\\ \\text{Where either } r(x) = 0 \\text{ or } \\deg(r(x)) \\leq \\deg(p(x)). 
+      `
+    },
+    {
+      number: 39,
+      term: "Principal Ideal",
+      definition: `\\text{FUN}
+      `
+    },
+    {
+      number:40,
+      term: "Principal Ideal Domain (PID)",
+      definition: `\\text{A PID is an integral domain } R
+                   \\\\ \\text{s.t. every ideal of } R \\text{ is principal }
       `
     },
     {
@@ -240,7 +402,7 @@ export default function DefinitionsPage() {
       term: "Prime Ideal",
       definition: `\\text{Let R be an ID.}
                    \\\\ \\text{A non-zero and non-invertible (not one) element } x \\in R 
-                   \\\\ \\text{ is called prime iffwhenever } a, b \\in R \\text{ and } x = ab,
+                   \\\\ \\text{is called prime iff whenever } a, b \\in R \\text{ and } x = ab,
                    \\\\ \\text{then either }
 
       `
