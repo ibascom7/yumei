@@ -10,7 +10,7 @@ export default function NotesPage() {
       href: "/notes/algebra",
       content: [
         { label: "theorems", count: 34 },
-        { label: "definitions", count: 7 },
+        { label: "definitions", count: 54 },
         { label: "articles", count: 1 },
       ],
       color: "#ef4444", // red-500
