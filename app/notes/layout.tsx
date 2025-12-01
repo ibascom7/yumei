@@ -64,7 +64,7 @@ export default function NotesLayout({
       </nav>
 
       {/* Main content */}
-      <main className="flex-1 p-3 sm:p-8">{children}</main>
+      <main className="flex-1 p-3 sm:p-8 overflow-x-hidden">{children}</main>
     </div>
   );
 }

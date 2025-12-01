@@ -7,48 +7,50 @@ export default function DefinitionsPage() {
     {
       number: 1,
       term: "Group",
-      definition: `\\text{A group is a set } G \\text{ together with a binary operation } * \\text{ such that:} 
-                  \\\\ \\quad 1. \\text{ (Closure) } \\forall a, b \\in G, a * b \\in G 
-                  \\\\ \\quad 2. \\text{ (Associativity) } \\forall a, b, c \\in G, (a * b) * c = a * (b * c) 
-                  \\\\ \\quad 3. \\text{ (Identity) } \\exists e \\in G \\text{ such that } \\forall a \\in G, e * a = a * e = a 
-                  \\\\ \\quad 4. \\text{ (Inverse) } \\forall a \\in G, \\exists a^{-1} \\in G \\text{ such that } a * a^{-1} = a^{-1} * a = e,`,
+      definition: `\\text{A group is a set } G 
+                   \\\\ \\text{along with a binary operation } * \\text{ such that:} 
+                   \\\\ \\quad 1. \\text{ (Closure) } \\forall a, b \\in G, a * b \\in G 
+                   \\\\ \\quad 2. \\text{ (Associativity) } \\forall a, b, c \\in G, (a * b) * c = a * (b * c) 
+                   \\\\ \\quad 3. \\text{ (Identity) } \\exists e \\in G \\text{ such that } \\forall a \\in G, e * a = a * e = a 
+                   \\\\ \\quad 4. \\text{ (Inverse) } \\forall a \\in G, \\exists a^{-1} \\in G 
+                   \\\\ \\quad \\quad \\text{ such that } a * a^{-1} = a^{-1} * a = e,`,
     },
     {
       number: 2,
       term: "Subgroup",
       definition: "\\text{Let } G \\text{ be a group. A subset } H \\subseteq G \\text{ is a subgroup if:} \\\\ \\quad 1. \\text{ The identity } e \\in H \\\\ \\quad 2. \\text{ If } a, b \\in H, \\text{ then } ab \\in H \\\\ \\quad 3. \\text{ If } a \\in H, \\text{ then } a^{-1} \\in H",
     },
-
     {
-      number: 4,
+      number: 3,
       term: "Homomorphism",
       definition: `\\text{Let } G \\text{ and } K \\text{ be two groups.}
-                  \\\\ \\text{A map } \\phi: G \\to K \\text{ is called a homomorphism}
-                  \\\\ \\text{if } \\forall a, b \\in G, \\phi(ab) = \\phi(a)\\phi(b)
-                  \\\\ \\
-                  \\\\ \\text{To be homomorphic haiku:}
-                  \\\\ \\
-                  \\\\ \\text{operate then map}
-                  \\\\ \\text{must give the same result as}
-                  \\\\ \\text{map then operate}
+                   \\\\ \\text{A map } \\phi: G \\to K \\text{ is called a homomorphism}
+                   \\\\ \\text{if } \\forall a, b \\in G, \\phi(ab) = \\phi(a)\\phi(b)
+                   \\\\ \\
+                   \\\\ \\text{To be homomorphic haiku:}
+                   \\\\ \\
+                   \\\\ \\text{operate then map}
+                   \\\\ \\text{must give the same result as}
+                   \\\\ \\text{map then operate}
       `,
     },
     {
-      number: 5,
+      number: 4,
       term: "Isomorphism",
       definition: `\\text{An isomorphism is a bijective homomorphism.}
                    \\\\ \\text{Written as } G \\cong K, \\text{ where } G \\text{ and } K \\text{ are groups}.
       `
     },
     {
-      number: 6,
+      number: 5,
       term: "Kernel of a Homomorphism",
-      definition: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism between groups } G \\text{ and } K.
-                  \\\\ \\text{The kernel of } \\phi \\text{ is the set:}
-                  \\\\ \\ker(\\phi) = \\{ x \\in G \\ | \\ \\phi(x) = e_K \\}`,
+      definition: `\\text{Let } \\phi: G \\to K \\text{ be a homomorphism} 
+                   \\\\ \\text{between groups } G \\text{ and } K.
+                   \\\\ \\text{The kernel of } \\phi \\text{ is the set:}
+                   \\\\ \\ker(\\phi) = \\{ x \\in G \\ | \\ \\phi(x) = e_K \\}`,
     },
     {
-      number: 7,
+      number: 6,
       term: "Normal Subgroup",
       definition: `\\text{A subgroup } H \\text{ of a group } G \\text{ is called normal }( H \\trianglelefteq G )
                    \\\\ \\text{if } \\forall g \\in G, \\forall h \\in H, ghg^{-1} \\in H.
@@ -58,21 +60,22 @@ export default function DefinitionsPage() {
                   `,
     },
     {
-      number: 8,
+      number: 7,
       term: "Generating Set",
       definition: `\\text{Let } G \\text{ be a group and let } S \\subseteq G \\text{ be nonempty.}
                    \\\\ \\text{Denote } S^{-1} = \\{ a^{-1} | a \\in S \\}.
                    \\\\ \\text{Then } \\langle S \\rangle = \\{x_1x_2 ... x_n \\ | \\ n \\in \\N, x_i \\in S \\cup S^{-1} \\cup \\{e\\}\\}.
                    \\\\ \\
                    \\\\ \\langle S \\rangle \\text{ is created by choosing different } n \\text{'s} 
-                   \\\\ \\text{and finding the product of 1 through n elements of } S \\cup S^{-1} \\cup \\{e\\}.
+                   \\\\ \\text{and finding the product of 1 through n elements of } 
+                   \\\\ S \\cup S^{-1} \\cup \\{e\\}.
                    \\\\ \\
                    \\\\ \\text{For a single element:}
                    \\\\ \\langle g \\rangle = \\{g^n \\ | \\ n \\in \\Z \\}
       `
     },
     {
-      number: 9,
+      number: 8,
       term: "Finitely Generated Group",
       definition: `\\text{A group is finitely generated if}
                    \\\\ \\text{there exists a finite nonempty subset of } S 
@@ -81,7 +84,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 10,
+      number: 9,
       term: "Cyclic Group",
       definition: `\\text{A group } G \\text{ is cyclic if }
                    \\\\ \\text{the group is generated by a single element. }
@@ -89,7 +92,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 11,
+      number: 10,
       term: "Relation",
       definition: `\\text{Let } X \\text{ be a set.}
                    \\\\ \\text{A relation on X is a subset of } X \\times X.
@@ -101,7 +104,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 12,
+      number: 11,
       term: "Properties of Relations",
       definition: `\\def\\circled#1{\\raisebox{.5pt}{\\textcircled{\\raisebox{-.9pt} {#1}}}}
 
@@ -115,7 +118,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 13,
+      number: 12,
       term: "Order Relation",
       definition: `\\text{An order relation (or partial order) on } X
                    \\\\ \\text{is a relation that is reflexive, antisymmetric, and transitive.}
@@ -125,7 +128,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 14,
+      number: 13,
       term: "Equivalence Relation",
       definition: `\\text{An equivalence relation on } X
                    \\\\ \\text{is a relation that is reflexive, symmetric, and transitive.}
@@ -138,7 +141,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 15,
+      number: 14,
       term: "Equivalence Class",
       definition: `\\text{Given an equivalence relation } \\sim \\text{ on a set } X, 
                   \\\\ \\text{the equivalence class of } x \\in X \\text{ is the set:}
@@ -152,7 +155,7 @@ export default function DefinitionsPage() {
                   `
     },
     {
-      number: 16,
+      number: 15,
       term: "Left Coset",
       definition: `\\text{Let } H \\leq G \\text{ and } x \\in G.
                    \\\\ \\text{The set } \\{ xh \\ | \\ h \\in H \\} \\text{ is called the left coset by } x.
@@ -160,24 +163,25 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 17,
+      number: 16,
       term: "Automorphism",
       definition: `\\text{An automorphism is an isomorphism that maps from } G \\text{ to } G.
                    \\\\ \\text{Aut}(G) \\text{ is the set of all automorphisms of G.}
       `
     },
     {
-      number: 18,
+      number: 17,
       term: "Inner Automorphism",
       definition: `\\text{An inner automorphism is an automorphism } 
-                   \\\\ \\text{of the form } \\phi_g: G \\to G, \\text{ defined by } \\phi_g(x) = gxg^{-1} \\ \\text{ for } x, g \\in G.
+                   \\\\ \\text{of the form } \\phi_g: G \\to G, 
+                   \\\\ \\text{defined by } \\phi_g(x) = gxg^{-1} \\ \\text{ for } x, g \\in G.
                    \\\\ \\
                    \\\\ \\text{We denote }\\text{Inn}(G) = \\{\\phi_g \\ | \\ g \\in G \\} 
                    \\\\ \\text{as the set of all inner automorphisms of } G.
       `
     },
     {
-      number: 19,
+      number: 18,
       term: "Symmetric Group",
       definition: `\\text{Let } X \\text{ be a set. Let } S_X = \\{f: X \\to X \\ | \\ f \\text{ is bijective} \\}.
                    \\\\ S_X \\text{ with composition is called the symmetric group.} 
@@ -197,13 +201,13 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 20,
+      number: 19,
       term: "Permutation",
       definition: `\\text{A permutation is a bijective mapping from a set onto itself}
       `
     },
     {
-      number: 21,
+      number: 20,
       term: "Cycles",
       definition: `\\text{A cycle is a simple way to represent a permutation.}
                    \\\\ \\
@@ -230,7 +234,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 22,
+      number: 21,
       term: "Cycle Multiplication",
       definition: `\\text{To multiply cycles you compose the two permutations}
                    \\\\ \\sigma \\tau \\text{ can be read as apply } \\sigma \\text{ and then apply } \\tau.
@@ -260,7 +264,7 @@ export default function DefinitionsPage() {
       imageAlt: "Cycle multiplication diagram"
     },
     {
-      number: 212,
+      number: 22,
       term: "Transposition",
       definition: `\\text{Let } n \\geq 2.
                    \\\\ \\text{A transposition is a permutation } \\tau \\in S_n
@@ -269,7 +273,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 222,
+      number: 23,
       term: "Even or Odd Permutation",
       definition: `\\text{A permutation is called even if}
                    \\\\ \\text{it is a product of an even number of transpositions.}
@@ -279,7 +283,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 23,
+      number: 24,
       term: "Index",
       definition: `\\text{Let } H \\leq G. 
                    \\\\ \\text{The index of H in G is} 
@@ -288,7 +292,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 24,
+      number: 25,
       term: "Direct Product of Groups",
       definition: `\\text{Let } G_1, G_2 \\text{ be groups with } g_1 \\in G_1 \\text{ and } g_2 \\in G_2.
                    \\\\ \\text{The direct product } G_1 \\times G_2
@@ -303,7 +307,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 25,
+      number: 26,
       term: "Ring",
       definition: `\\text{A ring is a set } R 
                    \\\\ \\text{equipped with two associative binary operations}
@@ -319,14 +323,14 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 26,
+      number: 27,
       term: `Commutative Ring`,
       definition: `\\text{A ring } R \\text{ is commutative if}
                    \\\\ x y = y x \\ \\ \\forall x,y \\in \\R.
       `
     },
     {
-      number: 27,
+      number: 28,
       term: "Unital Ring",
       definition: `\\text{Put simply, a ring is unital if it has both neutral elements.}
                    \\\\ \\
@@ -339,7 +343,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 28,
+      number: 29,
       term: "Zero Divisor",
       definition: `\\text{A non-zero element } x \\in R \\text{ is a zero divisor if}
                    \\\\ \\text{there exists another non-zero element } y \\in R
@@ -350,7 +354,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 29,
+      number: 30,
       term: "Integral Domain",
       definition: `\\text{A Ring } R \\text{ is an integral domain if}
                    \\\\ R \\text{ is a untial commutative ring and}
@@ -358,7 +362,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 30,
+      number: 31,
       term: "Division Ring",
       definition: `R \\text{ is a division ring if}
                    \\\\ R \\text{ is a unital ring and}
@@ -369,13 +373,13 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 31,
+      number: 32,
       term: "Field",
       definition: `\\text{A commutative division ring is called a field.}
       `
     },
     {
-      number: 32,
+      number: 33,
       term: "Subring",
       definition: `\\text{Let } (R, +, \\cdot) \\text{ be a ring}
                    \\\\ \\text{A subset } S \\subseteq R \\text{ is called a subring if:}
@@ -384,7 +388,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 33,
+      number: 34,
       term: "Ring Homomorphism",
       definition: `\\text{Let } R \\text{ and } S \\text{ be rings}
                    \\\\ \\text{and } \\phi: R \\to S \\text{ be a map}.
@@ -395,14 +399,14 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 34,
+      number: 35,
       term: "Kernel of Ring Homomorphism",
       definition: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism}.
                    \\\\ \\text{The kernel of } \\phi \\text{ is } \\ker(\\phi) = \\{ r \\in R \\ | \\ \\phi(r) = 0 \\}.
       `
     },
     {
-      number: 35,
+      number: 36,
       term: "Ideal",
       definition: `\\text{Let } I \\leq R.
                    \\\\ I \\text{ is an ideal in } R
@@ -414,7 +418,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 36,
+      number: 37,
       term: "Maximal Ideal",
       definition: `I \\triangleleft R \\text{ is maximal if } I \\neq R,
                    \\\\ \\text{and if } J \\triangleleft R \\text{ s.t. } I \\subseteq J \\subseteq R,
@@ -422,7 +426,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 37,
+      number: 38,
       term: "Polynomial Ring",
       definition: `\\text{The polynomial ring } \\R[x] 
                    \\\\ \\text{has polynomial elements of the form}
@@ -431,7 +435,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 38,
+      number: 39,
       term: "Division Algorithm",
       definition:`\\text{Given polynomials, } p(x) \\text{ and } q(x)
                   \\\\ \\text{there are polynomials } a(x), r(x) 
@@ -440,7 +444,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 39,
+      number: 40,
       term: "Principal Ideal",
       definition: `\\text{A principal ideal } \\langle x \\rangle \\text{ is an ideal in } 
                    \\\\ \\text{a commutative ring } R \\text{ generated by } x \\in R
@@ -451,14 +455,14 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number:40,
+      number: 41,
       term: "Principal Ideal Domain (PID)",
       definition: `\\text{A PID is an integral domain } R
                    \\\\ \\text{s.t. every ideal of } R \\text{ is principal}.
       `
     },
     {
-      number: 41,
+      number: 42,
       term: "Divides Notation",
       definition: `\\text{Let } R \\text{ be a ring and } 0 \\neq a, x \\in R.
                    \\\\ \\text{We write } a | x 
@@ -468,7 +472,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 42,
+      number: 43,
       term: "Invertible Element",
       definition: `\\text{An element } a \\in R \\text{ is invertible}
                    \\\\ \\text{if there exists an element } b \\in R 
@@ -489,7 +493,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 43,
+      number: 44,
       term: "Prime Element",
       definition: `\\text{Let } R \\text{ be a commutative ring.}
                    \\\\ \\text{An element } p \\in R \\text{ is said to be prime if}
@@ -498,7 +502,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 44,
+      number: 45,
       term: "Irreducible/Prime Element",
       definition: `\\text{Let R be an ID.}
                    \\\\ \\text{A non-zero and non-invertible (not one) element } x \\in R 
@@ -515,7 +519,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 45,
+      number: 46,
       term: "Prime Ideal",
       definition: `\\text{Let } R \\text{ be an ID.}
                    \\\\ \\text{A proper ideal } I \\triangleleft R \\text{ is called prime}
@@ -532,7 +536,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 46,
+      number: 47,
       term: "Group Action",
       definition: `\\text{Let } G \\text{ be a group and let } X \\text{ be a set.}
                    \\\\ \\text{An action of } G \\text{ on } X \\text{ is}
@@ -545,7 +549,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 47,
+      number: 48,
       term: "Kernel of Action",
       definition: `\\text{The kernel of the action is } 
                    \\\\ \\ker(\\alpha) = \\{g \\in G \\ | \\ gx = x \\ \\ \\forall x \\in X \\}
@@ -566,7 +570,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 48,
+      number: 49,
       term: "Faithful Action",
       definition: `\\text{An action is faithful if the kernel is trivial.}
                    \\\\ \\
@@ -591,7 +595,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 49,
+      number: 50,
       term: "Free Action",
       definition: `\\text{An action is free if}
                    \\\\ \\forall g \\in G \\text{ where } g \\neq e, \\text{ every } x \\in X \\text{ satisfies } gx \\neq x.
@@ -609,14 +613,14 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 50,
+      number: 51,
       term: "G-set",
       definition: `\\text{A G-set is a set} X 
                    \\\\ \\text{alongside a group action of a group } G \\text{ on } X. 
       `
     },
     {
-      number: 51,
+      number: 52,
       term: "G-orbits",
       definition: `\\text{The G-orbits of } x \\text{ is the set}
                    \\\\ Gx = \\{ gx \\ | \\ g \\in G \\}.
