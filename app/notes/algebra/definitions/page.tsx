@@ -386,8 +386,8 @@ export default function DefinitionsPage() {
       term: "Subring",
       definition: `\\text{Let } (R, +, \\cdot) \\text{ be a ring}
                    \\\\ \\text{A subset } S \\subseteq R \\text{ is called a subring if:}
-                   \\\\ 1) \\ \\ (S, +) \\text{ is a subgroup of } (R, +)
-                   \\\\ 2) \\ \\ \\forall x, y \\in S, \\text{ we have } x \\cdot y \\in S.
+                   \\\\ \\quad 1) \\ \\ (S, +) \\text{ is a subgroup of } (R, +)
+                   \\\\ \\quad 2) \\ \\ \\forall x, y \\in S, \\text{ we have } x \\cdot y \\in S.
       `
     },
     {
@@ -629,6 +629,37 @@ export default function DefinitionsPage() {
       term: "G-orbits",
       definition: `\\text{The G-orbits of } x \\text{ is the set}
                    \\\\ Gx = \\{ gx \\ | \\ g \\in G \\}.
+                   \\\\ \\
+                   \\\\ \\text{Can be thought of as the set of positions}
+                   \\\\ \\text{you can move } x \\text{ to by applying group elements.} 
+      `
+    },
+    {
+      number: 53,
+      term: "Stabilizer",
+      definition: `\\text{The stabilizer of } x \\text{ is the set}
+                   \\\\ G_x = \\{ g \\in G \\ | \\ gx = x \\}
+                   \\\\ \\
+                   \\\\ \\text{The set of elements of G}
+                   \\\\ \\text{that don't move our given } x.
+                   \\\\ \\
+                   \\\\ \\text{The kernel is the set of elements of } G
+                   \\\\ \\text{that don't move any } x.
+                   \\\\ \\text{So } \\ker \\subseteq G_x.
+      `
+    },
+    {
+      number: 54,
+      term: "Fixed Points",
+      definition: `\\text{Given a G-set } X, \\text{ the set of fixed points is}
+                   \\\\ \\text{denoted as } X^G = \\{x \\in X \\ | \\ gx = x \\ \\ \\forall g \\in G \\}.
+                   \\\\ \\
+                   \\\\ \\text{For example, let}
+                   \\\\ G = S_3 \\text{ and } X = \\R[x_1, x_2, x_3].
+                   \\\\ \\text{For } \\sigma \\in S_3 \\text{ and } p(x_1, x_2, x_3) \\in \\R[x_1, x_2, x_3]
+                   \\\\ \\text{Define } \\sigma p \\coloneqq p(x_{\\sigma(1)}, x_{\\sigma(2)}, x_{\\sigma(3)})
+                   \\\\ \\text{In other words the action is plugging the subscript of each variable into}
+                   \\\\ \\text{our bijective function / permutation and giving us another one of the subscripts.}
       `
     }
 
