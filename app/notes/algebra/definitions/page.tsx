@@ -657,9 +657,11 @@ export default function DefinitionsPage() {
                    \\\\ \\text{For example, let}
                    \\\\ G = S_3 \\text{ and } X = \\R[x_1, x_2, x_3].
                    \\\\ \\text{For } \\sigma \\in S_3 \\text{ and } p(x_1, x_2, x_3) \\in \\R[x_1, x_2, x_3]
-                   \\\\ \\text{Define } \\sigma p \\coloneqq p(x_{\\sigma(1)}, x_{\\sigma(2)}, x_{\\sigma(3)})
-                   \\\\ \\text{In other words the action is plugging the subscript of each variable into}
-                   \\\\ \\text{our bijective function / permutation and giving us another one of the subscripts.}
+                   \\\\ \\text{Define } \\sigma p \\coloneqq p(x_{\\sigma(1)}, x_{\\sigma(2)}, x_{\\sigma(3)}).
+                   \\\\ \\text{So } X^{S_3} = \\{p \\in \\R[x_1, x_2, x_3] \\ | \\ \\sigma p = p \\ \\ \\forall \\sigma \\in S_3 \\}.
+                   \\\\ X^{S_3} = \\R[e_1, e_2, e_3].
+                   \\\\ \\R[e_1, e_2, e_3] \\text{ is the set of symmetric polynomials.}
+                   \\\\ \\text{Look up the fundamental theorem of symmetric polynomials.}
       `
     }
 
