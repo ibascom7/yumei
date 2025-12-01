@@ -199,7 +199,7 @@ export default function DefinitionsPage() {
                    \\\\ \\text{is stay in place or swap places.}
                    \\\\ \\
                    \\\\ \\text{Even more generally,} 
-                   \\\\ S_2 \\text{ is the set of permutations on any two elements.}
+                   \\\\ S_n \\text{ has } n! \\text{ permutations.}
       `
     },
     {
@@ -352,7 +352,8 @@ export default function DefinitionsPage() {
                    \\\\ \\text{such that } xy = 0.
                    \\\\ \\
                    \\\\ \\text{In non-commutative rings this is called the left zero-divisor.}
-                   \\\\ \\text{In commutative rings left and right zero-divisors are the same.}
+                   \\\\ \\text{In commutative rings}
+                   \\\\ \\text{left and right zero-divisors are the same.}
       `
     },
     {
@@ -511,10 +512,12 @@ export default function DefinitionsPage() {
                    \\\\ \\text{is called irreducible iff whenever } a, b \\in R \\text{ and } x = ab,
                    \\\\ \\text{then either } a \\text{ is invertible or } b \\text{ is invertible.}
                    \\\\ \\
-                   \\\\ \\text{This is saying that an irreducible element cannot be factored}
+                   \\\\ \\text{This is saying that} 
+                   \\\\ \\text{an irreducible element cannot be factored}
                    \\\\ \\text{as two non-invertible elements.}
                    \\\\ \\
-                   \\\\ \\text{In Unique Factor Domains irreducable and prime is the same.}
+                   \\\\ \\text{In Unique Factor Domains (UFDs)}
+                   \\\\ \\text{irreducable and prime is the same.}
                    \\\\ \\text{So for our purposes treat them as having both properties.}
                    
 
