@@ -1,4 +1,5 @@
 import DefinitionCard from "../components/DefinitionCard";
+import Image from "next/image";
 
 export default function DefinitionsPage() {
   // Example definitions - replace with your actual definitions
@@ -184,9 +185,15 @@ export default function DefinitionsPage() {
                    \\\\ \\text{For } n \\in \\N \\text{ and } X = \\{ 1, 2, ..., n \\},  
                    \\\\ \\text{We denote } S_n \\text{ for } S_X.
                    \\\\ \\
-                   \\\\ \\text{For example } S_2 \\text{ is the group of bijective functions over }
-                   \\\\ X = \\{ 1, 2 \\}, \\text{and only has two elements: the identity function and a single transposition}.
-                   \\\\ \\text{In other words the only actions you can do in } S_2 \\text{ is stay in place or swap places.}
+                   \\\\ \\text{For example, } 
+                   \\\\ S_2 \\text{ is the group of bijective functions over }
+                   \\\\ X = \\{ 1, 2 \\}, \\text{and only has two elements:}
+                   \\\\ \\text{the identity function and a single transposition}.
+                   \\\\ \\text{In other words the only actions you can do in } S_2 
+                   \\\\ \\text{is stay in place or swap places.}
+                   \\\\ \\
+                   \\\\ \\text{Even more generally,} 
+                   \\\\ S_2 \\text{ is the set of permutations on any two elements.}
       `
     },
     {
@@ -197,6 +204,63 @@ export default function DefinitionsPage() {
     },
     {
       number: 21,
+      term: "Cycles",
+      definition: `\\text{A cycle is a simple way to represent a permutation.}
+                   \\\\ \\
+                   \\\\ \\text{Given a permutation } \\sigma \\in S_4,
+                   \\\\ \\text{Define } \\sigma = (1 \\ 2 \\ 3 \\ 4)
+                   \\\\ \\text{This notation means } 
+                   \\\\ 1 \\to 2
+                   \\\\ 2 \\to 3
+                   \\\\ 3 \\to 4
+                   \\\\ 4 \\to 1
+                   \\\\ \\
+                   \\\\ \\sigma = (1 \\ 2) (3 \\ 4) \\text{ means}
+                   \\\\ 1 \\to 2
+                   \\\\ 2 \\to 1
+                   \\\\ 3 \\to 4 
+                   \\\\ 4 \\to 3
+                   \\\\ \\
+                   \\\\ \\sigma = (1 \\ 2) \\text{ means}
+                   \\\\ 1 \\to 2
+                   \\\\ 2 \\to 1
+                   \\\\ 3 \\to 3 
+                   \\\\ 4 \\to 4
+                
+      `
+    },
+    {
+      number: 22,
+      term: "Cycle Multiplication",
+      definition: `\\text{To multiply cycles you compose the two permutations}
+                   \\\\ \\sigma \\tau \\text{ can be read as apply } \\sigma \\text{ and then apply } \\tau.
+                   \\\\ \\
+                   \\\\ \\text{Let } \\sigma, \\tau \\in S_4 \\text{ with}
+                   \\\\ \\sigma = (a \\ b \\ c \\ d) \\text{ and } \\tau = (a \\ d)(b \\ c).
+                   
+                   \\\\ \\
+                   \\\\ \\text{To find } \\sigma \\tau,
+                   \\\\ \\text{we evaluate } \\tau \\circ \\sigma \\text{ or } \\tau(\\sigma).
+                   \\\\ \\text{Can be written as } ((a \\ d)(b \\ c))(a \\ b \\ c \\ d).
+                   \\\\ \\
+                   \\\\ \\text{Starting with } a \\text{ the first element in } \\sigma,
+                   \\\\ a \\xrightarrow{\\sigma} b \\text{ then } b \\xrightarrow{\\tau} c
+                   \\\\ c \\xrightarrow{\\sigma} d \\text{ then } d \\xrightarrow{\\tau} a
+                   \\\\ \\text{This means } a \\text{ and } c \\text{ forms a cycle } (a \\ c).
+                   \\\\ \\text{Now we go to the next element we haven't evaluated.}
+                   \\\\ b \\xrightarrow{\\sigma} c \\text{ then } c \\xrightarrow{\\tau} b.
+                   \\\\ \\text{So } b \\text{ is in a 1-cycle, because it maps to itself.}
+                   \\\\ \\text{Finally we evaluate } d,
+                   \\\\ d \\xrightarrow{\\sigma} a \\text{ then } a \\xrightarrow{\\tau} d.
+                   \\\\ \\text{Therefore, our final product is } 
+                   \\\\ (a \\ c).
+
+      `,
+      image: "/cycle-multiplication.svg",
+      imageAlt: "Cycle multiplication diagram"
+    },
+    {
+      number: 212,
       term: "Transposition",
       definition: `\\text{Let } n \\geq 2.
                    \\\\ \\text{A transposition is a permutation } \\tau \\in S_n
@@ -205,7 +269,7 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 22,
+      number: 222,
       term: "Even or Odd Permutation",
       definition: `\\text{A permutation is called even if}
                    \\\\ \\text{it is a product of an even number of transpositions.}
@@ -381,6 +445,9 @@ export default function DefinitionsPage() {
       definition: `\\text{A principal ideal } \\langle x \\rangle \\text{ is an ideal in } 
                    \\\\ \\text{a commutative ring } R \\text{ generated by } x \\in R
                    \\\\ \\text{with } \\langle x \\rangle = \\{rx \\ | \\ r \\in R \\}.
+                   \\\\ \\
+                   \\\\ \\text{For example, } \\langle 6 \\rangle \\text{ is a principal ideal.}
+                   \\\\ \\text{Because } \\langle 6 \\rangle = \\{n \\cdot 6 \\ | \\ n \\in \\Z \\} 
       `
     },
     {
@@ -396,10 +463,33 @@ export default function DefinitionsPage() {
       definition: `\\text{Let } R \\text{ be a ring and } 0 \\neq a, x \\in R.
                    \\\\ \\text{We write } a | x 
                    \\\\ \\text{iff } \\ \\exists b \\in R \\text{ s.t. } x = ab.
+                   \\\\ \\
+                   \\\\ 3 | 6 \\text{ becase } 3 \\cdot 2 = 6.
       `
     },
     {
       number: 42,
+      term: "Invertible Element",
+      definition: `\\text{An element } a \\in R \\text{ is invertible}
+                   \\\\ \\text{if there exists an element } b \\in R 
+                   \\\\ \\text{s.t. } ab = 1.
+                   \\\\ \\
+                   \\\\ \\text{An element } a \\in \\Z_n \\text{ is invertible iff}
+                   \\\\ \\text{} \\gcd(a, n) = 1.
+                   \\\\ \\
+                   \\\\ \\text{If } n \\text{ is prime}
+                   \\\\ \\text{then every element in } \\Z_n \\text{ is invertible}
+                   \\\\ \\
+                   \\\\ \\text{For example,}
+                   \\\\ \\text{in } \\Z_6 \\text{ both } 1 \\text{ and } 5 \\text{ are invertible.}
+                   \\\\ 1 \\cdot 1 \\equiv 1 \\pmod{6} 
+                   \\\\ 5 \\cdot 5 = 25 \\equiv 1 \\pmod{6}
+                   \\\\ \\text{inverse of 1 is 1 and inverse of 5 is 5.}
+
+      `
+    },
+    {
+      number: 43,
       term: "Prime Element",
       definition: `\\text{Let } R \\text{ be a commutative ring.}
                    \\\\ \\text{An element } p \\in R \\text{ is said to be prime if}
@@ -408,27 +498,130 @@ export default function DefinitionsPage() {
       `
     },
     {
-      number: 43,
+      number: 44,
       term: "Irreducible/Prime Element",
       definition: `\\text{Let R be an ID.}
                    \\\\ \\text{A non-zero and non-invertible (not one) element } x \\in R 
-                   \\\\ \\text{is called prime iff whenever } a, b \\in R \\text{ and } x = ab,
+                   \\\\ \\text{is called irreducible iff whenever } a, b \\in R \\text{ and } x = ab,
                    \\\\ \\text{then either } a \\text{ is invertible or } b \\text{ is invertible.}
+                   \\\\ \\
+                   \\\\ \\text{This is saying that an irreducible element cannot be factored}
+                   \\\\ \\text{as two non-invertible elements.}
                    \\\\ \\
                    \\\\ \\text{In Unique Factor Domains irreducable and prime is the same.}
                    \\\\ \\text{So for our purposes treat them as having both properties.}
+                   
 
       `
     },
     {
-      number: 44,
+      number: 45,
       term: "Prime Ideal",
       definition: `\\text{Let } R \\text{ be an ID.}
                    \\\\ \\text{A proper ideal } I \\triangleleft R \\text{ is called prime}
                    \\\\ \\text{iff whenever } ab \\in R \\text{ and } ab \\in I 
                    \\\\ \\text{then } \\text{either } a \\in I \\text{ or } b \\in I.
+                   \\\\ \\
+                   \\\\ \\text{For example,}
+                   \\\\ 6 \\Z \\trianglelefteq \\Z \\text{ is not a prime ideal.}
+                   \\\\ \\text{By choosing } 2, 3 \\in \\Z, \\text{ we have } 2 \\cdot 3 \\in \\Z \\text{ and } 2 \\cdot 3 \\in 6 \\Z.
+                   \\\\ \\text{However, neither } 2 \\text{ or } 3 \\text{ are in } 6\\Z.
+                   \\\\ \\
+                   \\\\ 7 \\Z \\text{ is an example of a prime ideal.}
+                   \\\\ \\text{Because 7 is a prime integer and so its only factors are 1 and 7.}
       `
     },
+    {
+      number: 46,
+      term: "Group Action",
+      definition: `\\text{Let } G \\text{ be a group and let } X \\text{ be a set.}
+                   \\\\ \\text{An action of } G \\text{ on } X \\text{ is}
+                   \\\\ \\text{a group homomorphism } \\alpha: G \\to S_X.
+                   \\\\ \\
+                   \\\\ \\text{For each } g \\in G \\text{ and } x \\in X 
+                   \\\\ \\text{we denote } gx = \\alpha(g)(x).
+                   \\\\ \\
+                   \\\\ \\text{An example is rotations of a snowflake.}
+      `
+    },
+    {
+      number: 47,
+      term: "Kernel of Action",
+      definition: `\\text{The kernel of the action is } 
+                   \\\\ \\ker(\\alpha) = \\{g \\in G \\ | \\ gx = x \\ \\ \\forall x \\in X \\}
+                   \\\\ \\
+                   \\\\ \\text{In other words, the kernel is the set of} 
+                   \\\\ \\text{elements of G that when acted upon x dont change x.}
+                   \\\\ \\
+                   \\\\ \\text{For example, taking the group } \\Z_6.
+                   \\\\ \\text{and the set } \\Z_3. \\text{ Let } n \\in \\Z_6 \\text{ and } x \\in \\Z_3.
+                   \\\\ \\text{Define the action } gx \\coloneqq (n+x) \\pmod{3}.
+                   \\\\ \\ker(\\alpha) = \\{ 0, 3 \\}.
+                   \\\\ \\
+                   \\\\ \\text{If } n = 0, \\text{ then } 0 \\cdot x = (0+x) \\pmod{3} = x.
+                   \\\\ \\text{So 0 is in the kernel.}
+                   \\\\ \\
+                   \\\\ \\text{If } n = 1, \\text{ then } 1 \\cdot 0 = (1+0) \\pmod{3} = 1.
+                   \\\\ \\text{So 1 is not in the kernel.}
+      `
+    },
+    {
+      number: 48,
+      term: "Faithful Action",
+      definition: `\\text{An action is faithful if the kernel is trivial.}
+                   \\\\ \\
+                   \\\\ \\text{If } \\forall g \\in G \\text{ where } g \\neq e, \\ \\exists x \\in X \\text{ s.t. } gx \\neq x,
+                   \\\\ \\text{then the action is faithful.}
+                   \\\\ \\
+                   \\\\ \\text{Or in other words, whenever } \\ker = \\{e\\}.
+                   \\\\ \\
+                   \\\\ \\text{So when an action is faithful,}
+                   \\\\ \\text{we can tell different elements of } G \\text{ apart.}
+                   \\\\ \\
+                   \\\\ \\text{In the previous example of } G = \\Z_6 \\text{ and } X = \\Z_3
+                   \\\\ \\text{the action of mod 3 addition is not faithful.}
+                   \\\\ \\text{Because } \\ker(\\alpha) = \\{ 0, 3 \\} \\neq \\{0\\}.
+                   \\\\ \\
+                   \\\\ \\text{An example of a faithful action would be}
+                   \\\\ gx \\coloneqq (g+x) \\pmod{3} 
+                   \\\\ \\text{with } G = Z_3 \\text{ and } X = \\{1 \\}.
+                   \\\\ 0 \\cdot 1 = (0+1) \\pmod{3} = 1
+                   \\\\ 1 \\cdot 1 = (1+1) \\pmod{3} = 2
+                   \\\\ 2 \\cdot 1 = (2+1) \\pmod{3} = 3
+      `
+    },
+    {
+      number: 49,
+      term: "Free Action",
+      definition: `\\text{An action is free if}
+                   \\\\ \\forall g \\in G \\text{ where } g \\neq e, \\text{ every } x \\in X \\text{ satisfies } gx \\neq x.
+                   \\\\ \\
+                   \\\\ \\text{For example, choose}
+                   \\\\ G = GL_n(\\R) \\text{ and } X = \\R^n.
+                   \\\\ \\text{Let } A \\in G \\text{ and } v \\in X. 
+                   \\\\ \\text{Define } Av \\coloneqq Av \\text{ (matrix multiplication)}.
+                   \\\\ \\
+                   \\\\ \\text{This is faithful since every matrix} 
+                   \\\\ \\text{is a unique linear transformation.}
+                   \\\\ \\
+                   \\\\ \\text{However, the action is not free because}
+                   \\\\ \\text{any matrix multiplied by the zero vector is the zero vector}.
+      `
+    },
+    {
+      number: 50,
+      term: "G-set",
+      definition: `\\text{A G-set is a set} X 
+                   \\\\ \\text{alongside a group action of a group } G \\text{ on } X. 
+      `
+    },
+    {
+      number: 51,
+      term: "G-orbits",
+      definition: `\\text{The G-orbits of } x \\text{ is the set}
+                   \\\\ Gx = \\{ gx \\ | \\ g \\in G \\}.
+      `
+    }
 
   ];
   return (
@@ -444,8 +637,21 @@ export default function DefinitionsPage() {
           number={def.number}
           term={def.term}
           definition={def.definition}
+          image={def.image}
+          imageAlt={def.imageAlt}
         />
       ))}
+      <div className="mt-8 flex flex-col items-center">
+        <Image
+          src="/guatemamas.jpg"
+          alt="Guatemamas"
+          width={4032}
+          height={3024}
+          className="rounded-lg"
+        />
+        <p className="mt-2 text-gray-600 text-sm italic">Up the road to Santa Cruz la Laguna, Guatemala</p>
+        <p className="text-gray-600 text-sm italic">You're almost there!</p>
+      </div>
     </div>
   );
 }

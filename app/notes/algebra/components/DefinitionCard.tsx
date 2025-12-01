@@ -6,9 +6,11 @@ interface DefinitionCardProps {
   number: number;
   term: string;
   definition: string;
+  image?: string;
+  imageAlt?: string;
 }
 
-export default function DefinitionCard({ number, term, definition }: DefinitionCardProps) {
+export default function DefinitionCard({ number, term, definition, image, imageAlt }: DefinitionCardProps) {
   // Calculate approximate width of "Definition X. " for indentation
   const labelWidth = number < 10 ? "7.5em" : "8em";
 
@@ -20,6 +22,15 @@ export default function DefinitionCard({ number, term, definition }: DefinitionC
       </div>
       <div className="text-black text-sm sm:text-base ml-0 sm:ml-[7.5em]">
         <BlockMath math={definition} />
+        {image && (
+          <div className="mt-2">
+            <img
+              src={image}
+              alt={imageAlt || "Diagram"}
+              className="max-w-md h-auto rounded-lg"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
