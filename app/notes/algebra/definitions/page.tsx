@@ -133,10 +133,12 @@ export default function DefinitionsPage() {
       definition: `\\text{An equivalence relation on } X
                    \\\\ \\text{is a relation that is reflexive, symmetric, and transitive.}
                    \\\\ \\
-                   \\\\ \\text{For example, say two M} \\& \\text{Ms are the same if they have the same color}
+                   \\\\ \\text{For example,} 
+                   \\\\ \\text{say two M} \\& \\text{Ms are the same if they have the same color}
                    \\\\ \\text{This is denoted as } a \\sim b \\iff (a \\text{ has same color as } b).
                    \\\\ \\
-                   \\\\ \\text{Considering different equivalence relations on a set gives different partitions.}
+                   \\\\ \\text{Considering different equivalence relations on a set} 
+                   \\\\ \\text{gives different partitions.}
                    \\\\ \\text{So a single set can be observed in many different ways.}
       `
     },
@@ -532,7 +534,7 @@ export default function DefinitionsPage() {
                    \\\\ \\text{However, neither } 2 \\text{ or } 3 \\text{ are in } 6\\Z.
                    \\\\ \\
                    \\\\ 7 \\Z \\text{ is an example of a prime ideal.}
-                   \\\\ \\text{Because 7 is a prime integer and so its only factors are 1 and 7.}
+                   \\\\ \\text{Since 7 is a prime integer, its only factors are 1 and 7.}
       `
     },
     {
