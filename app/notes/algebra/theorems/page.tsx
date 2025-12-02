@@ -282,7 +282,7 @@ export default function TheoremsPage() {
               \\\\ \\text{So } x^{-1}y \\text{ in } N, \\text{ hence } xN = yN,
               \\\\ \\text{ and so } \\psi \\text{ is injective.}
               \\\\ \\text{Finally to show } \\psi \\text{ is surjective,}
-              \\\\ \\text{let } z \\in \\phi(g).
+              \\\\ \\text{let } z \\in \\phi(G).
               \\\\ \\text{Then } \\exists g \\in G \\text{ such that } z = \\phi(g).
               \\\\ \\text{Then } \\psi(gN) = \\phi(g) = z,
               \\\\ \\text{and so } \\psi \\text{ is surjective.} \\ \\ \\blacksquare
@@ -982,6 +982,60 @@ export default function TheoremsPage() {
               \\\\ x(y-b) \\in I \\text{ and } (x-a)b \\in I,
               \\\\ \\text{so } xy-ab \\in I.
               \\\\ \\text{Thus, } xy+I = ab + I. \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 47,
+      title: "FIT for Rings",
+      statement: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism.}
+                  \\\\ \\text{Then } \\ker(\\phi) \\trianglelefteq R,
+                  \\\\ \\text{and } R/\\ker(\\phi) \\cong \\phi(R) \\text{ canonically.}
+      `,
+      proof: `\\text{We first show that } \\ker(\\phi) \\trianglelefteq R.
+              \\\\ \\text{Note that by theorem 45, } \\ker(\\phi) \\leq R.
+              \\\\ \\text{Let } r \\in R \\text{ and } x \\in \\ker(\\phi).
+              \\\\ \\text{Then } \\phi(rx) = \\phi(r) \\phi(x) = \\phi(r) \\cdot 0 = 0.
+              \\\\ \\text{So } rx \\in ker(\\phi).
+              \\\\ \\text{Similarly, } xr \\in \\ker(\\phi).
+              \\\\ \\text{Hence, } \\ker(\\phi) \\trianglelefteq R.
+              \\\\ \\
+              \\\\ \\text{We now show that } R/\\ker(\\phi) \\cong \\phi(R).
+              \\\\ \\text{Let } \\ker(\\phi) = N.
+              \\\\ \\text{Define } \\psi: R/N \\to \\phi(R)
+              \\\\ \\text{by } \\psi(r+N) = \\phi(r) \\ \\ \\forall r \\in R.
+              \\\\ \\
+              \\\\ \\text{First, we check that } \\psi \\text{ is well-defined}.
+              \\\\ \\text{Let } a,b \\in R \\text{ s.t. } a+N = b+N.
+              \\\\ \\text{Then } (a-b) + N = 0 + N.
+              \\\\ \\text{So } a-b \\in N.
+              \\\\ \\text{Therefore, } \\phi(a-b) = \\phi(a) - \\phi(b) = 0.
+              \\\\ \\text{Thus, we have } \\phi(a) = \\phi(b).
+              \\\\ \\text{Hence, } \\psi \\text{ is well-defined.}
+              \\\\ \\
+              \\\\ \\text{Next we check that } \\psi \\text{ is a ring homomorphism}.
+              \\\\ \\text{Let } a+N, b+N \\in R/N.
+              \\\\ \\text{Then } \\psi((a+N)(b+N)) = \\psi(ab+N) = \\phi(ab)
+              \\\\ \\text{and } \\psi(a+N) \\psi(b+N) = \\phi(a) \\phi(b) = \\phi(ab).
+              \\\\ \\text{So } \\psi((a+N)(b+N)) = \\psi(a+N) \\psi(b+N).
+              \\\\ \\text{Similary, } \\psi((a+N) + (b+N)) 
+              \\\\ = \\psi((a+b)+N) = \\phi(a+b)
+              \\\\ \\text{and } \\psi(a+N) + \\psi(b+N) = \\phi(a) + \\phi(b) = \\phi(a+b).
+              \\\\ \\text{So } \\psi((a+N)+(b+N)) = \\psi(a+N) + \\psi(b+N).
+              \\\\ \\text{Thus, } \\psi \\text{ is a ring homomorphism.}
+              \\\\ \\
+              \\\\ \\text{To show } \\psi \\text{ is injective,}
+              \\\\ \\text{let } a,b \\in R \\text{ s.t. } \\psi(a+N) = \\psi(b+N).
+              \\\\ \\text{Then } 0 = \\psi(b+N) - \\psi(a+N) 
+              \\\\ = \\psi((b-a)+N) = \\phi(b-a).
+              \\\\ \\text{So } b-a \\in N.
+              \\\\ \\text{Therefore, } (b-a) + N = 0 + N,
+              \\\\ \\text{and thus, } b+N = a+N.
+              \\\\ \\
+              \\\\ \\text{Finally, to show } \\psi \\text{ is surjective.}
+              \\\\ \\text{Take } z \\in \\phi(R).
+              \\\\ \\text{Then } \\exists r \\in R \\text{ s.t. } \\phi(r) = z.
+              \\\\ \\text{So } \\psi(r+N) = \\phi(r) = z.
+              \\\\ \\text{Thus, } \\psi \\text{ is surjective.}
 
       `
     },
