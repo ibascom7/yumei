@@ -422,6 +422,18 @@ export default function DefinitionsPage() {
     },
     {
       number: 37,
+      term: "Quotient Ring",
+      definition: `R/I \\text{ is the set of cosets of } I \\text{ with respect to } +.
+                   \\\\ \\text{Denote } R/I = \\{ r+I \\mid r \\in R \\}.
+                   \\\\ \\
+                   \\\\ \\text{For } R/I \\text{ to be a ring } I \\text{ must be an ideal of } R.
+                   \\\\ \\text{This is equipped with the operations:}
+                   \\\\ (x+I) + (y+I) = (x+y)+I \\text{ and}
+                   \\\\ (x+I) \\cdot (y+I) = (xy)+I.
+      `
+    },
+    {
+      number: 37,
       term: "Maximal Ideal",
       definition: `I \\triangleleft R \\text{ is maximal if } I \\neq R,
                    \\\\ \\text{and if } J \\triangleleft R \\text{ s.t. } I \\subseteq J \\subseteq R,

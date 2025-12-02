@@ -798,24 +798,197 @@ export default function TheoremsPage() {
     },
     {
       number: 33,
-      title: "",
-      statement: "",
+      title: "Direct Product Homomorphisms",
+      statement: "\\text{Not Exam 3 Material}",
       proof: ""
     },
     {
       number: 34,
+      title: "Direct Product Observation",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 35,
+      title: "Conditions for G isomorphic to G1 X G2",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 36,
+      title: "k multiple of order iff a^k = e",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 37,
+      title: "Cardinality and Order are the same in Cyclic Groups",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 38,
       title: "Cyclic Groups with Same Order are Isomorphic",
       statement: `\\text{Let } G \\text{ and } K \\text{ be cyclic groups.}
                   \\\\ \\text{Then we have } G \\cong K \\iff |G| = |K|. 
+                  \\\\ \\
+                  \\\\ \\text{Not Exam 3 Material}
       `,
       proof: ""
+    },
+    {
+      number: 39,
+      title: "All Cyclic Groups are isomorphic to Z",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 40,
+      title: "Zm X Zn isomorphic to Zmn iff gcd(m,n) = 1",
+      statement: "\\text{Not Exam 3 Material}",
+      proof: ""
+    },
+    {
+      number: 41,
+      title: "Zn is a ring",
+      statement: `\\text{Let } n \\in \\N. 
+                  \\\\ \\text{Then } (\\Z_n, +, \\cdot) \\text{ is a ring where } [k] \\cdot [\\ell] = [k \\ell].
+                  \\\\ 
+      `,
+      proof: `\\text{We already have that } (\\Z_n, +) \\text{ is an abelian group.}
+              \\\\ \\
+              \\\\ \\text{We now show that } \\cdot \\text{ is a well-defined operation.}
+              \\\\ \\text{Let } k, k', \\ell, \\ell' \\in \\Z \\text{ s.t. } [k]_n = [k']_n \\text{ and } [\\ell]_n = [\\ell']_n.
+              \\\\ \\text{Then } n \\mid (k - k') \\text{ and } n \\mid (\\ell - \\ell').
+              \\\\ \\text{We have} 
+              \\\\ k \\ell - k' \\ell' = k \\ell - k \\ell' + k \\ell' - k' \\ell' = k ( \\ell - \\ell' ) + (k-k')\\ell'.
+              \\\\ \\text{Since } n \\mid k(\\ell - \\ell') \\text{ and } n \\mid (k - k') \\ell'.
+              \\\\ \\text{We get } n \\mid k \\ell - k' \\ell'.
+              \\\\ \\text{Thus, } [k\\ell]_n = [k' \\ell']_n.
+              \\\\ \\
+              \\\\ \\text{To show } \\cdot \\text{ is associative,}
+              \\\\ \\text{let } a,b,c \\in \\Z.
+              \\\\ \\text{Then } [a]_n \\cdot ( [b]_n \\cdot [c]_n ) = [a]_n \\cdot [bc]_n = [abc]_n
+              \\\\ \\text{and } ([a]_n \\cdot [b]_n ) \\cdot [c]_n = [ab]_n \\cdot [c]_n = [abc]_n.
+              \\\\ \\text{Thus, } [a]_n \\cdot ( [b]_n \\cdot [c]_n ) = ([a]_n \\cdot [b]_n ) \\cdot [c]_n.
+              \\\\ \\
+              \\\\ \\text{Finally, to check distributive laws,}
+              \\\\ \\text{let } a,b,c \\in \\Z.
+              \\\\ \\text{Then } ( [a]_n + [b]_n ) \\cdot [c]_n = [a+b]_n \\cdot [c]_n = [(a+b)c]_n
+              \\\\ = [ac + bc]_n = [ac]_n + [bc]_n.
+              \\\\ \\text{Can show left distribution similarly.}
+              \\\\ \\
+              \\\\ \\text{Hence, } (\\Z_n, +, \\cdot) \\text{ is a ring.}
+              `
+    },
+    {
+      number: 42,
+      title: "Algebraic Properties of R",
+      statement: `\\text{Let } R \\text{ be a ring.}
+                  \\\\ \\quad 1) \\ r \\cdot 0 = 0 \\cdot r = 0 \\ \\ \\forall r \\in R.
+                  \\\\ \\quad 2) \\text{ Let } R \\text{ be unital. Then } r \\cdot (-1) = -r \\ \\ \\forall r \\in R.
+      `,
+      proof: `\\text{We first prove (1).}
+              \\\\ \\text{Let } r \\in R. 
+              \\\\ \\text{Since } 0 \\text{ is the neutral element of } (R, +),
+              \\\\ \\text{we have } 0 = 0 + 0.
+              \\\\ \\text{By distributive laws, } 
+              \\\\ r \\cdot 0 = r \\cdot (0+0) = (r \\cdot 0)  + (r \\cdot 0).
+              \\\\ \\text{Since } (R, +) \\text{ is a group, it follows that }
+              \\\\ r \\cdot 0 = 0.
+              \\\\ [(r \\cdot0) \\text{ is its own additive inverse on line 5.}]
+              \\\\ \\
+              \\\\ \\text{We now prove (2).}
+              \\\\ \\text{Let } r \\in R.
+              \\\\ \\text{We have } 
+              \\\\ r \\cdot (-1) + r = r \\cdot (-1) + r \\cdot 1 = r \\cdot (-1+1) = 0.
+              \\\\ \\text{So } r \\cdot (-1) = -r.
+      `
+    },
+    {
+      number: 43,
+      title: "Cancellation Law for Rings",
+      statement: `\\text{If R is an integral domain and} 
+                  \\\\ a,b,c \\in R \\text{ s.t. } ab = ac, 
+                  \\\\ \\text{then either } a = 0 \\text{ or } b = c.
+      `,
+      proof: `\\text{Let } a,b,c \\in R \\text{ s.t. } ab = ac.
+              \\\\ \\text{Then } ab - ac = 0.
+              \\\\ \\text{Which implies, } a(b-c) = 0.
+              \\\\ \\text{Since } R \\text{ is an integral domain,}
+              \\\\ \\text{either } a = 0 \\text{ or } b - c = 0.
+              \\\\ \\text{So, either } a = 0 \\text{ or } b = c.
+      `
+    },
+    {
+      number: 44,
+      title: "Image of Ring Homomorphism Is Subring of Codomain",
+      statement: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism.} 
+                  \\\\ \\text{Then } \\phi(R) \\leq S.
+      `,
+      proof: `\\text{Since } \\phi: (R,+) \\to (S,+)
+              \\\\ \\text{is a group homomorphism,}
+              \\\\ \\phi(R) \\text{ is a subgroup of } S.
+              \\\\ \\text{Let } x,y \\in \\phi(R). 
+              \\\\ \\text{Then } \\exists a,b \\in R \\text{ s.t. } x = \\phi(a) \\text{ and } y = \\phi(b).
+              \\\\ \\text{Then } xy = \\phi(a)\\phi(b) = \\phi(ab) \\in \\phi(R).
+              \\\\ \\text{Hence, } \\phi(R) \\leq S.
+
+      `
+    },
+    {
+      number: 45,
+      title: "Kernel of Ring Homomorphism is Subring of Domain",
+      statement: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism}.
+                  \\\\ \\text{Then } \\ker(\\phi) \\leq R.
+      `,
+      proof: `\\text{Since } \\phi: (R, +) \\to (S, +) \\text{ is a group homomorphism,}
+              \\\\ \\text{we have } (\\ker(\\phi), +) \\leq (R, +).
+              \\\\ \\text{Let } x,y \\in \\ker(\\phi).
+              \\\\ \\text{Then } \\phi(xy) = \\phi(x) \\phi(y) = 0.
+              \\\\ \\text{So } xy \\in \\ker(\\phi).
+              \\\\ \\text{Thus, } \\ker(\\phi) \\leq R.
+      `
+    },
+    {
+      number: 46,
+      title: "R/I is a Ring only when I is an Ideal",
+      statement: `\\text{The formula } (x+I) \\cdot (y+I) = xy+I
+                  \\\\ \\text{is a well-defined binary operation on } R/I
+                  \\\\ \\text{iff } I \\text{ is an ideal in } R.
+                  \\\\ \\text{Moreover, in this case,} (R/I, +, \\cdot) \\text{ is a ring,}
+                  \\\\ \\text{called the quotient ring of } R \\text{ and } I.
+      `,
+      proof: `\\text{Assume the formula}
+              \\\\ \\text{gives a well-defined binary operation.}
+              \\\\ \\text{Let } r \\in R \\text{ and } x \\in I.
+              \\\\ \\text{Then } x+I = 0 + I.
+              \\\\ \\text{By well-definedness of the operation,}
+              \\\\ \\text{We get } (r+I)(x+I) = (r+I)(0+I).
+              \\\\ \\text{So } rx+I = 0+I.
+              \\\\ \\text{Which implies } rx \\in I.
+              \\\\ \\text{Similarly, } xr \\in I.
+              \\\\ \\text{Hence, } I \\trianglelefteq R.
+              \\\\ \\
+              \\\\ \\text{Conversely, assume } I \\trianglelefteq R.
+              \\\\ \\text{Let } a, b, x, y \\in R 
+              \\\\ \\text{s.t. } x+I = a + I \\text{ and } y + I = b + I.
+              \\\\ \\text{Need to show that} 
+              \\\\ xy+I = ab+I \\text{ or } xy-ab \\in I.
+              \\\\ \\text{So we have } x - a \\in I \\text{ and } y-b \\in I.
+              \\\\ \\text{Then } xy - ab = xy - xb + xb - ab 
+              \\\\ = x(y-b) + (x-a)b.
+              \\\\ \\text{Since } I \\trianglelefteq R, 
+              \\\\ x(y-b) \\in I \\text{ and } (x-a)b \\in I,
+              \\\\ \\text{so } xy-ab \\in I.
+              \\\\ \\text{Thus, } xy+I = ab + I. \\ \\ \\blacksquare
+
+      `
     },
     {
       number: 100,
       title:"Maximal Ideal iff Quotient Ring is a Field",
       statement: `
-      `,
-      proof: `
       `
     },
     {
