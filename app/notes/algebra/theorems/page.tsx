@@ -883,7 +883,7 @@ export default function TheoremsPage() {
     },
     {
       number: 42,
-      title: "Algebraic Properties of R",
+      title: "Algebraic Properties of Rings",
       statement: `\\text{Let } R \\text{ be a ring.}
                   \\\\ \\quad 1) \\ r \\cdot 0 = 0 \\cdot r = 0 \\ \\ \\forall r \\in R.
                   \\\\ \\quad 2) \\text{ Let } R \\text{ be unital. Then } r \\cdot (-1) = -r \\ \\ \\forall r \\in R.
@@ -1035,9 +1035,69 @@ export default function TheoremsPage() {
               \\\\ \\text{Take } z \\in \\phi(R).
               \\\\ \\text{Then } \\exists r \\in R \\text{ s.t. } \\phi(r) = z.
               \\\\ \\text{So } \\psi(r+N) = \\phi(r) = z.
-              \\\\ \\text{Thus, } \\psi \\text{ is surjective.}
+              \\\\ \\text{Thus, } \\psi \\text{ is surjective.} \\ \\ \\blacksquare
 
       `
+    },
+    {
+      number: 48,
+      title: "Proper Ideals can't contain the Multiplicative Identity",
+      statement: `\\text{Let } R \\text{ be unital and } I \\trianglelefteq R. 
+                  \\\\ \\text{I is proper iff } 1 \\not \\in I.
+      `,
+      proof: `\\text{Assume } 1 \\not \\in I.
+              \\\\ \\text{Since } 1 \\in R \\text{ and } 1 \\not \\in I,
+              \\\\ I \\neq R.
+              \\\\ \\text{Thus, } I \\subset R.
+              \\\\ \\
+              \\\\ \\text{We proceed by contraposition}
+              \\\\ \\text{to show the forward direction}.
+              \\\\ \\text{Assume } 1 \\in I.
+              \\\\ \\text{Then } \\forall r \\in R, \\ \\ r = 1 \\cdot r \\in I.
+              \\\\ \\text{So } I = R. \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 49,
+      title: "Zorn's Lemma",
+      statement: `\\text{Suppose } (P, \\leq) \\text{ is a non-empty poset}
+                  \\\\ \\text{with the property that every chain in } P
+                  \\\\ \\text{has an upper bound}.
+                  \\\\ \\text{Then } P \\text{ contains a maximal element.}
+      `,
+      proof: `\\text{Proof left as an exercise}.
+              \\\\ \\text{Definitions 56 - 58}.
+      `
+    },
+    {
+      number: 50,
+      title: "Commutative Unital Rings have Maximal Ideals",
+      statement: "\\text{Every commutative unital ring } R \\text{ has a maximal ideal.}",
+      proof: `\\text{Let } P = \\{ \\text{All proper ideals in R} \\}.
+              \\\\ \\text{Let } \\leq \\text{ denote subset inclusion.}
+              \\\\ \\text{Observe that } (P, \\leq) \\text{ is a poset.}
+              \\\\ \\text{Because } \\{0\\} \\in P, \\ P \\text{ is nonempty}.
+              \\\\ \\
+              \\\\ \\text{Let } \\mathcal{C} \\text{ be a chain in } P.
+              \\\\ \\text{Set } I = \\bigcup_{J \\in \\mathcal{C}} J.
+              \\\\ \\
+              \\\\ \\text{We claim that } I \\in P \\text{ and } J \\leq I \\ \\ \\forall J \\in \\mathcal{C}.
+              \\\\ \\text{To show } I \\text{ is an ideal, let } s,t \\in I.
+              \\\\ \\text{Then } \\exists J_1, J_2 \\in \\mathcal{C} \\text{ with } s \\in J_1, \\text{ and } t \\in J_2.
+              \\\\ \\text{WLOG, say } J_1 \\subset J_2. 
+              \\\\ \\text{So } s-t \\in \\bigcup_{J \\in \\mathcal{C}} J = I.
+              \\\\ \\text{Similarly, we can show that}
+              \\\\ \\text{if } s \\in I \\text{ and } r \\in R, \\text{ then } sr \\in I.
+              \\\\ I \\text{ is proper because } 1 \\not \\in I.
+              \\\\ \\text{Clearly } I \\text{ is an upper bound for } \\mathcal{C}.
+              \\\\ \\text{Thus, by Zorn's Lemma } P \\text{ has a maximal element.} \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 51,
+      title: "Properties of ideals in unital rings",
+      statement: `\\text{Let } R \\text{ be a unital ring and } I \\trianglelefteq R.
+      `,
     },
     {
       number: 100,

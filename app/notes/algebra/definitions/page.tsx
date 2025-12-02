@@ -675,6 +675,31 @@ export default function DefinitionsPage() {
                    \\\\ \\R[e_1, e_2, e_3] \\text{ is the set of symmetric polynomials.}
                    \\\\ \\text{Look up the fundamental theorem of symmetric polynomials.}
       `
+    },
+    {
+      number: 56,
+      term: "Poset",
+      definition: `\\text{A partially ordered set (AKA poset)}
+                   \\\\ \\text{is a pair } (P, \\leq)
+                   \\\\ \\text{where } P \\text{ is a set},
+                   \\\\ \\text{and } \\leq \\text{ is an order relation on } P.
+                   \\\\ \\text{However, not every pair of elements needs to be comparable.}
+      `
+    },
+    {
+      number: 57,
+      term: "Upper Bound of a Poset",
+      definition: `\\text{Let } (P, \\leq) \\text{be a poset and } A \\subseteq P.
+                   \\\\ \\text{An upper bound for } A
+                   \\\\ \\text{is an element } m \\in P \\text{ s.t. } p \\leq m  \\ \\ \\forall p \\in P.
+      `
+    },
+    {
+      number: 58,
+      term: "Chain",
+      definition: `\\text{A chain in } (P, \\leq) \\text{ is a subset } \\mathcal{C} \\in P
+                   \\\\ \\text{s.t. } \\forall x, y \\in \\mathcal{C}, \\ \\ x \\leq y \\text{ or } y \\leq x.
+      `
     }
 
   ];
