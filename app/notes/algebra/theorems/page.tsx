@@ -1080,7 +1080,6 @@ export default function TheoremsPage() {
               \\\\ \\
               \\\\ \\text{Let } \\mathcal{C} \\text{ be a chain in } P.
               \\\\ \\text{Set } I = \\bigcup_{J \\in \\mathcal{C}} J.
-              \\\\ \\
               \\\\ \\text{We claim that } I \\in P \\text{ and } J \\leq I \\ \\ \\forall J \\in \\mathcal{C}.
               \\\\ \\text{To show } I \\text{ is an ideal, let } s,t \\in I.
               \\\\ \\text{Then } \\exists J_1, J_2 \\in \\mathcal{C} \\text{ with } s \\in J_1, \\text{ and } t \\in J_2.
@@ -1090,14 +1089,19 @@ export default function TheoremsPage() {
               \\\\ \\text{if } s \\in I \\text{ and } r \\in R, \\text{ then } sr \\in I.
               \\\\ I \\text{ is proper because } 1 \\not \\in I.
               \\\\ \\text{Clearly } I \\text{ is an upper bound for } \\mathcal{C}.
-              \\\\ \\text{Thus, by Zorn's Lemma } P \\text{ has a maximal element.} \\ \\ \\blacksquare
+              \\\\ \\text{Thus, by Zorn's Lemma, } P \\text{ has a maximal element.} \\ \\ \\blacksquare
       `
     },
     {
       number: 51,
-      title: "Properties of ideals in unital rings",
+      title: "Properties of Ideals in Unital Rings",
       statement: `\\text{Let } R \\text{ be a unital ring and } I \\trianglelefteq R.
+                  \\\\ \\quad \\text{1) } I = R
+                  \\\\ \\quad \\text{2) } 1 \\in I
+                  \\\\ \\quad \\text{1) } I \\text{ contains an invertible element.}
       `,
+      proof: `\\text{First, we prove (1)}.
+      `
     },
     {
       number: 100,
