@@ -1100,7 +1100,21 @@ export default function TheoremsPage() {
                   \\\\ \\quad \\text{2) } 1 \\in I
                   \\\\ \\quad \\text{1) } I \\text{ contains an invertible element.}
       `,
-      proof: `\\text{First, we prove (1)}.
+      proof: `\\text{We first prove } (1) \\implies (2).
+              \\\\ \\text{Assume } I = R.
+              \\\\ \\text{Since } R \\text{ is unital,}
+              \\\\ I \\text{ must also contain } 1.
+              \\\\ \\
+              \\\\ \\text{Next we show } (2) \\implies (3).
+              \\\\ \\text{Assume } 1 \\in I.
+              \\\\ \\text{Since } 1 \\text{ is invertible,}
+              \\\\ I \\text{ contains an invertible element.}
+              \\\\ \\
+              \\\\ \\text{Finally we show } (3) \\implies (1)
+              \\\\ \\text{Assume } I \\text{ contains an invertible element } u.
+              \\\\ \\text{Then } \\exists u \\in I \\text{ s.t. } ur = ru = r \\ \\ \\forall r \\in R.
+              \\\\ \\text{Since } I \\text{ is an ideal, } ur, ru \\in I.
+              \\\\ \\text{Thus, } I = R.
       `
     },
     {
