@@ -1118,6 +1118,33 @@ export default function TheoremsPage() {
       `
     },
     {
+      number: 52,
+      title: "Simple Unital Commutative Rings are Fields",
+      statement: `\\text{Let } R \\text{ be a unital commutative ring.}
+                  \\\\ \\text{Then } R \\text{ is a field.} 
+                  \\\\ \\text{iff the only ideals of } R 
+                  \\\\ \\text{are } \\{0\\} \\text{ and } R.
+      `,  
+      proof: `\\text{Assume } R \\text{ is a field.}
+              \\\\ \\text{Let } I \\trianglelefteq R \\text{ s.t. } I \\neq \\{0\\}.
+              \\\\ \\text{Then } \\forall x \\in R \\setminus \\{0\\}, \\ x \\text{ is invertible.}
+              \\\\ \\text{So } \\exists u \\in R \\text{ s.t. } xu = 1.
+              \\\\ \\text{Then } I \\text{ contains an invertible element.}
+              \\\\ \\text{By Theorem 51, } I = R.
+              \\\\ \\text{Thus, the only ideals of } R \\text{ are } \\{0\\} \\text{ and } R.
+              \\\\ \\
+              \\\\ \\text{Conversely, assume } \\{0\\} \\text{ and } R \\text{ are the only ideals of } R.
+              \\\\ \\text{Let } x \\in R \\setminus \\{0\\}
+              \\\\ \\text{and consider } I \\trianglelefteq R \\text{ where } I = \\langle x \\rangle.
+              \\\\ \\text{Since } x \\in I, I \\neq \\{0\\}.
+              \\\\ \\text{So by assumption, } I = R.
+              \\\\ \\text{Thus, } 1 \\in I.
+              \\\\ \\text{So } \\exists u \\in R \\text{ s.t. } xu = 1.
+              \\\\ \\text{Hence, } x \\text{ is invertible.}
+              \\\\ \\text{Therefore, } R \\text{ is a field.}
+      ` 
+    },
+    {
       number: 100,
       title:"Maximal Ideal iff Quotient Ring is a Field",
       statement: `

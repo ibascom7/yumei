@@ -384,7 +384,6 @@ export default function TheoremsPage() {
               \\\\ \\
               \\\\ \\text{Since } f'(c) < 0 \\text{ and } x_2 - x_1 > 0, 
               \\\\ \\text{we must have } f(x_2) < f(x_1). \\text{ Thus } f \\text{ is strictly decreasing on } I.
-
       `
     },
     {
