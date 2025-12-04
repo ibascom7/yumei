@@ -1145,6 +1145,125 @@ export default function TheoremsPage() {
       ` 
     },
     {
+      number: 53,
+      title: "Ideals in Chain are the Same iff Quotient Rings are the Same",
+      statement: `\\text{Let } I \\trianglelefteq J \\trianglelefteq P \\trianglelefteq R.
+                  \\\\ \\text{Then } J = P \\text{ iff } J/I = P/J.
+      `,
+      proof: `\\text{Assume } J = P.
+              \\\\ \\text{Let } j+I \\in J/I \\text{ with } j \\in J.
+              \\\\ \\text{Since } J = P, \\ j \\in P.
+              \\\\ \\text{Therefore, } j+I \\in P/I.
+              \\\\ \\text{So } J/I \\subseteq P/I.
+              \\\\ \\text{Similarly, we can show } P/I \\subseteq J/I.
+              \\\\ \\text{Thus, } J/I = P/I.
+              \\\\ \\
+              \\\\ \\text{Conversely, assume } J/I = P/I.
+              \\\\ \\text{Since } J \\trianglelefteq P, \\ J \\subseteq P.
+              \\\\ \\text{Let } p + I \\in P/I \\text{ with } p \\in P.
+              \\\\ \\text{By assumption } p+I \\in J/I.
+              \\\\ \\text{So } \\exists j \\in J \\text{ s.t. } p + I = j + I.
+              \\\\ \\text{Therefore, } (p-j)+I = 0+I. 
+              \\\\ \\text{Which implies } p-j \\in I.
+              \\\\ \\text{Since } I \\text{ is an ideal, } \\ p = j+p-j \\in J.
+              \\\\ \\text{Thus, } P \\subseteq J.
+              \\\\ \\text{Hence, } J = P.
+      `
+    },
+    {
+      number: 54,
+      title: "Surjective Ring Homomorphism Preserves Ideals",
+      statement: `\\text{Let } \\phi: R \\to S \\text{ be a surjective ring homomorphism.} 
+                  \\\\ \\text{ if } I \\trianglelefteq R, \\text{ then } \\phi(I) \\trianglelefteq S.
+      `,
+      proof: `\\text{By Theorem 44, } \\phi(I) \\leq S.
+              \\\\ \\text{Let } y \\in \\phi(I) \\text{ and } s \\in S.
+              \\\\ \\text{Then } \\exists x \\in I \\text{ s.t. } y = \\phi(x).
+              \\\\ \\text{Also since } \\phi \\text{ is surjective, }
+              \\\\ \\exists r \\in R \\text{ s.t. } s = \\phi(r).
+              \\\\ \\text{Then } sy = \\phi(r) \\phi(x) = \\phi(rx).
+              \\\\ \\text{Since } I \\trianglelefteq R, \\ rx \\in I.
+              \\\\ \\text{So } sy = \\phi(rx) \\in \\phi(I).
+              \\\\ \\text{Similarly, } ys = \\phi(xr) \\in \\phi(I).
+              \\\\ \\text{Hence, } \\phi(I) \\trianglelefteq S.
+      `
+    },
+    {
+      number: 55,
+      title: "Isaiah Original (From Office Hours)",
+      statement: `\\text{Let } \\phi: R \\to S \\text{ be a ring homomorphism.}
+                  \\\\ \\text{If } J \\trianglelefteq S, \\text{ then } \\phi^{-1}(J) \\trianglelefteq R.
+                  \\\\ \\
+                  \\\\ \\text{Preimage: } \\phi^{-1}(J) = \\{ r \\in R \\ | \\ \\phi(r) \\in J \\}.
+      `,
+      proof: `\\text{Assume } J \\trianglelefteq S.
+              \\\\ \\text{Then } 0_S \\in J \\text{ since } J \\text{ is an ideal.}
+              \\\\ \\text{So } \\phi^{-1}(J) \\text{ is non-empty because } 
+              \\\\ \\phi(0_R) = 0_S \\in J \\implies 0_R \\in \\phi^{-1}(J).
+              \\\\ \\text{Let } a,b \\in \\phi^{-1}(J).
+              \\\\ \\text{Then } \\phi(a), \\phi(b) \\in J.
+              \\\\ \\text{Since } J \\text{ is an ideal, } 
+              \\\\ \\phi(a) - \\phi(b) = \\phi(a-b) \\in J.
+              \\\\ \\text{So } a-b \\in \\phi^{-1}(J).
+              \\\\ \\text{Thus, } \\phi^{-1}(J) \\text{ is a subgroup of } (R, +).
+              \\\\ \\
+              \\\\ \\text{Let } a \\in \\phi^{-1}(J) \\text{ and } r \\in R.
+              \\\\ \\text{Then } \\phi(a) \\in J \\text{ and } \\phi(r) \\in S.
+              \\\\ \\text{Since } J \\trianglelefteq S,
+              \\\\ \\text{we have } \\phi(r) \\phi(a) = \\phi(ra) \\in J.
+              \\\\ \\text{So } ra \\in \\phi^{-1}(J).
+              \\\\ \\text{Similarly, } ar \\in \\phi^{-1}(J).
+              \\\\ \\text{Hence, } \\phi^{-1}(J) \\trianglelefteq R. \\ \\ \\blacksquare
+      `
+    },
+    {
+      number: 56,
+      title: "Natural Homomorphism to Quotient Ring",
+      statement: `\\text{Let } I \\trianglelefteq R. 
+                  \\\\ \\text{Then the map } \\pi: R \\to R/I
+                  \\\\ \\text{defined by } \\pi(r) = r + I \\ \\ \\forall r \\in R
+                  \\\\ \\text{is a surjective ring homomorphism.}
+      `,
+      proof: `\\text{Let } x, y \\in R.
+              \\\\ \\text{Then } \\pi(x+y) = (x+y) + I = (x+I) + (y+I) = \\pi(x) + \\pi(y)
+              \\\\ \\text{and, } \\pi(xy) = xy + I = (x+I)(y+I) = \\pi(x) \\pi(y).
+              \\\\ \\text{Thus, } \\pi \\text{ is a ring homomorphism.}
+              \\\\ \\
+              \\\\ \\text{Let } a + I \\in R/I.
+              \\\\ \\text{Then } \\pi(a) = a + I.
+              \\\\ \\text{So } \\pi \\text{ is surjective.} 
+      `
+    },
+    {
+      number: 57,
+      title: "Ideals of Quotient Rings Can be Quotient Rings of Ideals",
+      statement: `\\text{Let R be a ring and } I \\trianglelefteq R.
+                  \\\\ \\text{If } I \\trianglelefteq J \\trianglelefteq R, \\text{ then } J/I \\trianglelefteq R/I.
+                  \\\\ \\text{Conversely, if } K \\trianglelefteq R/I, 
+                  \\\\ \\text{then } \\exists I \\trianglelefteq J \\trianglelefteq R \\text{ s.t. } K = J/I.
+                  \\\\ \\
+                  \\\\ \\text{This proof is different from the one in the notes.}
+                  \\\\ \\text{I prefered this method from Theorem 55.}
+      `,
+      proof: `\\text{Define } \\pi: R \\to R/I \\text{ by } \\pi(r) = r + I \\ \\ \\forall r \\in R.
+              \\\\ \\text{Assume } I \\trianglelefteq J \\trianglelefteq R.
+              \\\\ \\text{By Theorem 56, } \\pi \\text{ is a surjective ring homomorphism}
+              \\\\ \\text{and } J \\trianglelefteq R \\text{ by assumption}.
+              \\\\ \\text{So by Theorem 54, we have } \\pi(J) \\trianglelefteq R/I.
+              \\\\ \\text{Note that } \\pi(J) = J/I.
+              \\\\ \\text{Thus, } J/I \\trianglelefteq R/I.
+              \\\\ \\
+              \\\\ \\text{Conversely, assume } K \\trianglelefteq R/I.
+              \\\\ \\text{Define } J = \\pi^{-1}(K) = \\{ r \\in R \\mid \\pi(r) \\in K \\}.
+              \\\\ \\text{By assumption, } (K, +) \\leq (R/I, +).
+              \\\\ \\text{So } K \\text{ and } R/I \\text{ share the same identity element } 0 + I.
+              \\\\ \\text{Thus, } \\pi(0) = 0 + I \\in K,
+              \\\\ \\text{which implies } 0 \\in J.
+              \\\\ \\text{Let } a,b \\in J. \\text{ Then } \\pi(a), \\pi(b) \\in K.
+              \\\\ \\text{Then } \\pi(a) - \\pi(b) = \\pi(a-b) \\in K,
+      `
+    },
+    {
       number: 100,
       title:"Maximal Ideal iff Quotient Ring is a Field",
       statement: `
