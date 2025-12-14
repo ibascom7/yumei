@@ -799,8 +799,43 @@ export default function TheoremsPage() {
     {
       number: 33,
       title: "Direct Product Homomorphisms",
-      statement: "\\text{Not Exam 3 Material}",
-      proof: ""
+      statement: `\\text{Let } G_1 \\text{ and } G_2 \\text{ be groups,}
+                  \\\\ \\text{and let } G = G_1 \\times G_2.
+                  \\\\ \\text{For each } i = 1, 2 
+                  \\\\ \\text{define } \\rho_1: G_1 \\to G \\text{ by } \\rho_1(g_1) = (g_1, e) \\ \\ \\forall g_1 \\in G_1,
+                  \\\\ \\text{and } \\pi_1: G \\to G_1 \\text{ by } \\pi_1((g_1, g_2))= g_1.
+                  \\\\ \\text{Then } \\rho_1 \\text{ is an injective homomorphism,}
+                  \\\\ \\pi_1 \\text{ is a surjective homomorphism},
+                  \\\\ \\ker(\\pi_1) = \\{e\\} \\times G_2,
+                  \\\\ \\text{and } G/\\ker(\\pi_1) \\cong G_1. 
+                  \\\\ \\text{These same homomorphisms can be defined for } G_2.
+                  \\\\ \\text{Just swap the 1's and 2's and flip } \\rho 
+                  \\\\ \\text{so } \\rho_2(g_2) = (e, g_2) 
+      `,
+      proof: `\\text{To see } \\rho_1 \\text{ is injective, let } g_1, h_1 \\in G_1,
+              \\\\ \\text{and assume } \\rho_1(g_1) = \\rho_1(h_1).
+              \\\\ \\text{Then } (g_1, e) = (h_1, e). 
+              \\\\ \\text{Which implies } g_1 = h_1. \\text{ Thus, } \\rho_1 \\text{ is injective.}
+              \\\\ \\
+              \\\\ \\text{To see } \\rho_1 \\text{ is a homomorphism, let } g_1, h_1 \\in G_1. 
+              \\\\ \\text{Then } \\rho_1(g_1h_1) = (g_1h_1,e) = (g_1, e) (h_1, e) = \\rho_1(g_1)\\rho(h_1).
+              \\\\ \\text{So } \\rho_1 \\text{ is a group homomorphism.}
+              \\\\ \\
+              \\\\ \\text{We now show that } \\pi_1 \\text{ is a surjective homomorphism.}
+              \\\\ \\text{Let } g_1, h_1 \\in G_1 \\text{ and } g_2, h_2 \\in G_2.
+              \\\\ \\text{Then } \\pi_1((g_1,g_2)(h_1,h_2)) = \\pi_1((g_1h_1,g_1h_2)) = g_1h_1
+              \\\\ = \\pi_1((g_1,g_2)) \\pi_1((h_1,h_2)). \\text{ Thus, } \\pi_1 \\text{ is homomorphic}.
+              \\\\ \\
+              \\\\ \\text{Since } g_1 \\in G_1 \\text{ is arbitrary and } \\pi_1((g_1, g_2))= g_1,
+              \\\\ \\pi_1 \\text{ is surjective.}
+              \\\\ \\
+              \\\\ \\text{Let } (g_1, g_2) \\in G_1 \\times G_2.
+              \\\\ \\text{Then } (g_1, g_2) \\in \\ker(\\pi_1) \\iff \\pi_1((g_1, g_2)) = e
+              \\\\ \\iff g_1 = e.
+              \\\\ \\text{Thus, } ker(\\pi_1) = \\{(e,g_2) \\mid g_2 \\in G_2\\} = \\{e\\} \\times G_2.
+              \\\\ \\
+              \\\\ \\text{Hence, by FIT, } G/\\ker(\\pi_1) \\cong G_1.
+      `
     },
     {
       number: 34,
@@ -1117,6 +1152,7 @@ export default function TheoremsPage() {
               \\\\ \\text{Thus, } I = R.
       `
     },
+    
     {
       number: 52,
       title: "Simple Unital Commutative Rings are Fields",
