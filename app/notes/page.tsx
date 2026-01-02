@@ -28,7 +28,7 @@ export default function NotesPage() {
     },
     {
       name: "Data Programming",
-      href: "/notes/data-programming",
+      href: "/notes/complex-analysis",
       content: [
         { label: "theorems", count: 0 },
         { label: "definitions", count: 0 },

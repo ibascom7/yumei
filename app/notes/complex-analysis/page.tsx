@@ -1,7 +1,7 @@
-export default function DataProgrammingPage() {
+export default function ComplexAnalysisPage() {
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Data Programming</h1>
+      <h1 className="text-3xl font-bold mb-6">Complex Analysis</h1>
       <div className="prose prose-lg max-w-none">
         <p>Work in progress maybe??</p>
       </div>

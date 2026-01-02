@@ -14,7 +14,7 @@ export default function NotesLayout({
   const classes = [
     { name: "Abstract Algebra", href: "/notes/algebra", color: "red" },
     { name: "Intermediate Analysis", href: "/notes/intermediate-analysis", color: "blue" },
-    { name: "Data Programming", href: "/notes/data-programming", color: "green" },
+    { name: "Data Programming", href: "/notes/complex-analysis", color: "green" },
   ];
 
   return (
