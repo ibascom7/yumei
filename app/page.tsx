@@ -24,7 +24,7 @@ export default function Home() {
           />
           <Link
             href="/projects"
-            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 md:px-10 md:py-5 lg:px-14 lg:py-7 md:text-xl lg:text-2xl shadow-md transition-colors border-2 md:border-3 lg:border-4 border-purple-900 text-center"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 md:px-10 md:py-5 lg:px-14 lg:py-7 md:text-xl lg:text-2xl shadow-md transition-colors border-2 md:border-3 lg:border-4 border-green-900 text-center"
           >
             Projects
           </Link>

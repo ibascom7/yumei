@@ -8,9 +8,24 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState("Select a project");
 
   const projects = [
-    { name: "Project 1", id: "project-1" },
-    { name: "Project 2", id: "project-2" },
-    { name: "Project 3", id: "project-3" },
+    {
+      name: "Influencers",
+      id: "project-1",
+      image: "/facebook-network.png",
+      description: "Who is the most influential influencer?",
+    },
+    {
+      name: "Project 2",
+      id: "project-2",
+      image: "/placeholder.png",
+      description: "Description for project 2 goes here.",
+    },
+    {
+      name: "Project 3",
+      id: "project-3",
+      image: "/placeholder.png",
+      description: "Description for project 3 goes here.",
+    },
   ];
 
   return (
@@ -37,7 +52,7 @@ export default function Projects() {
             <select
               value={selectedProject}
               onChange={(e) => setSelectedProject(e.target.value)}
-              className="px-4 py-2 border-2 border-purple-800 rounded bg-white text-black hover:bg-purple-50 transition-colors cursor-pointer"
+              className="px-4 py-2 border border-gray-300 rounded bg-white text-black hover:bg-gray-50 transition-colors cursor-pointer"
             >
               <option disabled>Select a project</option>
               {projects.map((project) => (
@@ -53,10 +68,39 @@ export default function Projects() {
       {/* Main content */}
       <main className="flex-1 p-3 sm:p-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-purple-800 mb-8">Projects</h1>
+          <h1 className="text-4xl font-bold mb-8">Projects</h1>
 
-          <div className="bg-white p-6 border-2 border-gray-300 rounded shadow-sm">
-            <p className="text-gray-900">Coming soon...</p>
+          <div className="space-y-4">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="border border-gray-300 rounded-lg p-3 sm:p-4 bg-white shadow-sm"
+              >
+                <Link
+                  href={`/projects/${project.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="font-bold text-lg sm:text-xl text-black hover:text-gray-600 transition-colors"
+                >
+                  {project.name}
+                </Link>
+                <hr className="border-gray-300 my-2 sm:my-3" />
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <div className="flex-shrink-0">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={150}
+                      height={150}
+                      className="rounded-lg w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] object-cover"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-gray-700 text-sm sm:text-base">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </main>
