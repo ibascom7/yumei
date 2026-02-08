@@ -14,18 +14,6 @@ export default function Projects() {
       image: "/facebook-network.png",
       description: "Who is the most influential influencer?",
     },
-    {
-      name: "Project 2",
-      id: "project-2",
-      image: "/placeholder.png",
-      description: "Description for project 2 goes here.",
-    },
-    {
-      name: "Project 3",
-      id: "project-3",
-      image: "/placeholder.png",
-      description: "Description for project 3 goes here.",
-    },
   ];
 
   return (
